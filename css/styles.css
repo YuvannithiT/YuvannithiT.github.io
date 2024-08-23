@@ -1,3 +1,4 @@
+/* Root Variables */
 :root {
     --background-color: #000000; /* Pure black */
     --text-color: #E0E0E0; /* Light gray for better readability */    
@@ -16,6 +17,7 @@
     --transition: all 0.3s ease;
 }
 
+/* General Styles */
 html, body {
     height: 100%;
     margin: 0;
@@ -31,6 +33,7 @@ html, body {
     color: var(--text-color);
 }
 
+/* Canvas */
 #contourCanvas {
     position: fixed;
     top: 0;
@@ -38,9 +41,10 @@ html, body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    opacity: 0.25;
+    opacity: 0.5;
 }
 
+/* Layout Containers */
 .page-container {
     display: flex;
     flex-direction: column;
@@ -55,6 +59,7 @@ main {
     padding: 0 var(--spacing-md);
 }
 
+/* Headings */
 h1, h2, h3, h4 {
     margin-bottom: var(--spacing-sm);
 }
@@ -65,6 +70,7 @@ h3 { font-weight: 550; }
 h4 { font-weight: 450; }
 p { font-weight: 400; }
 
+/* Gradient Text Headings */
 h1 {
     background: linear-gradient(45deg, var(--accent-2), var(--accent-3));
     -webkit-background-clip: text;
@@ -105,6 +111,7 @@ h4 {
     z-index: 1;
 }
 
+/* Links */
 a {
     border-bottom: 2.5px solid transparent; /* Invisible border initially */
     text-decoration: none;
@@ -117,6 +124,12 @@ a:hover {
     text-decoration: none;
 }
 
+.no-decor:hover {
+    border-bottom: none;
+    text-decoration: none;
+}
+
+/* Cards */
 .grid {
     display: flex;
     flex-direction: column;
@@ -129,7 +142,7 @@ a:hover {
     backdrop-filter: blur(10px);
 }
 
-.nasa-card, .nasa-text-card {
+.img-card, .text-card {
     display: flex;
     flex-direction: column;
     border-radius: var(--border-radius);
@@ -137,15 +150,14 @@ a:hover {
     margin-bottom: var(--spacing-md);
     overflow: hidden;
     z-index: 1;
-    /*background: linear-gradient(135deg, rgba(75, 0, 130, 0.15), rgba(0, 206, 209, 0.15));
-    backdrop-filter: blur(10px);*/
 }
 
-.nasa-card:hover, .nasa-text-card:hover {
+.img-card:hover, .text-card:hover {
     transform: translateY(-5px);
 }
 
-.nasa-grid {
+/* Grid Layout */
+.sub-grid {
     display: grid;
     gap: var(--spacing-md);
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -153,19 +165,19 @@ a:hover {
     margin: 0 auto;
 }
 
-.nasa-card img {
+.img-card img {
     width: 100%;
     height: auto;
     object-fit: cover;
     aspect-ratio: 16 / 9;
     border-radius: var(--border-radius);
-    /*cursor: pointer;*/
 }
 
-.nasa-card-content {
+.img-card-content {
     padding: var(--spacing-md) 0 0;
 }
 
+/* Header and Footer */
 header, footer {
     padding: var(--spacing-md);
     z-index: 1;
@@ -187,7 +199,7 @@ header h1 {
     margin: 0;
 }
 
-.header-content {
+.header-content, .footer-content {
     max-width: var(--max-width);
     margin: 0 auto;
     display: flex;
@@ -198,17 +210,7 @@ header h1 {
     text-shadow: 2px 2px 5px var(--shadow-color);
 }
 
-.footer-content {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    color: var(--hf-color);
-    text-shadow: 2px 2px 5px var(--shadow-color);
-}
-
+/* Navigation */
 nav ul {
     list-style: none;
     padding: 0;
@@ -232,6 +234,7 @@ nav ul li a {
     border-radius: var(--border-radius);
 }
 
+/* Contact Buttons */
 .contact-links {
     display: flex;
     gap: var(--spacing-md);
@@ -249,6 +252,7 @@ nav ul li a {
     padding: 5px;
     border-radius: 50%;
     transition: var(--transition);
+    fill: currentColor;
 }
 
 svg {
@@ -261,12 +265,14 @@ svg {
     color: var(--background-color);
 }
 
+/* Centered Content */
 main.center-content {
     display: flex;
     align-items: center; /* Center vertically */
     justify-content: center; /* Center horizontally */
 }
 
+/* Under Construction */
 .under-construction {
     display: flex;
     flex-direction: column;
@@ -279,8 +285,9 @@ main.center-content {
     border-radius: 5px;
 }
 
+/* Media Queries */
 @media (max-width: 992px) {
-    .nasa-grid {
+    .sub-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
@@ -323,7 +330,7 @@ main.center-content {
 }
 
 @media (max-width: 768px) {
-    .nasa-grid {
+    .sub-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
@@ -366,7 +373,7 @@ main.center-content {
 }
 
 @media (max-width: 576px) {
-    .nasa-grid {
+    .sub-grid {
         grid-template-columns: 1fr;
     }
 
