@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Character encoding for the document -->
     <meta charset="UTF-8">
-    <!-- Viewport settings for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Title of the webpage -->
     <title>Under Construction - Yuvannithi's Portfolio</title>
-    <!-- Importing custom font from Google Fonts -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-    </style>
-    <!-- Linking to the external stylesheet -->
     <link rel="stylesheet" href="../css/styles.css">
+    <script>
+        (function() {
+            function getInitialTheme() {
+                const storedTheme = localStorage.getItem('theme');
+                if (storedTheme) {
+                    return storedTheme;
+                }
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            const initialTheme = getInitialTheme();
+            document.documentElement.classList.toggle('dark-mode', initialTheme === 'dark');
+        })();
+    </script>
 </head>
 <body>
-    <!-- Canvas for drawing contour patterns -->
-    <canvas id="contourCanvas"></canvas>
-    
-    <!-- Main container for the page content -->
     <div class="page-container">
-        <!-- Header section with navigation -->
+        <canvas id="contourCanvas"></canvas>
         <header>
             <div class="header-content">
-                <!-- Site title and logo link -->
                 <div>
                     <h1><a href="../index.html">Yuvannithi's Portfolio</a></h1>
                 </div>
-                <!-- Navigation menu -->
                 <nav>
                     <ul>
                         <li><a href="../index.html">Home</a></li>
@@ -35,39 +34,39 @@
                         <li><a href="blog.html">Blog</a></li>
                     </ul>
                 </nav>
+                <button id="theme-toggle">
+                    <svg class="sun">
+                        <use href="../svg/light-dark-mode-icons.svg#icon-sun"></use>
+                    </svg>
+                    <svg class="moon">
+                        <use href="../svg/light-dark-mode-icons.svg#icon-moon"></use>
+                    </svg>
+                </button>  
             </div>
         </header>
-        
-        <!-- Main content area -->
         <main class="center-content">
-            <!-- Under construction notice -->
             <div class="under-construction">
                 <h2>UNDER CONSTRUCTION</h2>
                 <h3>Working hard to bring you this content. Please check back soon!</h3>
             </div>
         </main>
-        
-        <!-- Footer section -->
         <footer>
             <div class="footer-content">
                 <p>Connect with me</p>
-                <!-- Contact links -->
                 <div class="contact-links">
                     <a href="mailto:prof21yuvan@gmail.com" target="_blank" class="contact-button">
                         <svg>
-                            <use href="../svg/icons.svg#icon-email"></use>
+                            <use href="../svg/contact-icons.svg#icon-email"></use>
                         </svg>
                     </a>
-                    
                     <a href="https://www.linkedin.com/in/yuvannithi-thirumaran-66034393/" target="_blank" class="contact-button">
                         <svg>
-                            <use href="../svg/icons.svg#icon-linkedin"></use>
+                            <use href="../svg/contact-icons.svg#icon-linkedin"></use>
                         </svg>
                     </a>
-                    
                     <a href="https://github.com/YuvannithiT" target="_blank" class="contact-button">
                         <svg>
-                            <use href="../svg/icons.svg#icon-github"></use>
+                            <use href="../svg/contact-icons.svg#icon-github"></use>
                         </svg>
                     </a>
                 </div>
@@ -77,8 +76,7 @@
             </div>
         </footer>
     </div>
-    
-    <!-- JavaScript for Van der Pol pattern -->
+    <script src="../js/themeToggle.js"></script>
     <script src="../js/vanDerPolPattern.js"></script>
 </body>
 </html>

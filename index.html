@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Character encoding and viewport settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Page title -->
     <title>Home - Yuvannithi's Portfolio</title>
-    
-    <!-- Import Orbitron font from Google Fonts -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-    </style>
-    
-    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="css/styles.css">
+    <script>
+        (function() {
+            function getInitialTheme() {
+                const storedTheme = localStorage.getItem('theme');
+                if (storedTheme) {
+                    return storedTheme;
+                }
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            const initialTheme = getInitialTheme();
+            document.documentElement.classList.toggle('dark-mode', initialTheme === 'dark');
+        })();
+    </script>
 </head>
 <body>
-    <!-- Canvas for contour visualization -->
-    <canvas id="contourCanvas"></canvas>
-    
     <div class="page-container">
-        <!-- Header section -->
+        <canvas id="contourCanvas"></canvas>
         <header>
             <div class="header-content">
                 <div>
-                    <!-- Main title and home link -->
                     <h1><a href="index.html">Yuvannithi's Portfolio</a></h1>
                 </div>
-                <!-- Navigation menu -->
                 <nav>
                     <ul>
                         <li><a href="index.html" class="active">Home</a></li>
@@ -36,21 +34,23 @@
                         <li><a href="html/blog.html">Blog</a></li>
                     </ul>
                 </nav>
+                <button id="theme-toggle">
+                    <svg class="sun">
+                        <use href="svg/light-dark-mode-icons.svg#icon-sun"></use>
+                    </svg>
+                    <svg class="moon">
+                        <use href="svg/light-dark-mode-icons.svg#icon-moon"></use>
+                    </svg>
+                </button>                
             </div>
         </header>
-        
-        <!-- Main content area -->
         <main>
             <div class="grid">
-                <!-- Welcome section -->
                 <h2>Welcome to My Portfolio</h2>
                 <p>I'm Yuvannithi Thirumaran, an Aerospace Engineer with a B.Sc and M.Sc in Aerospace Engineering from Embry-Riddle Aeronautical University. I specialize in dynamics, control, and modeling & simulation for aircraft and rocket launch vehicles. My current work is on rocket trajectory optimization and GNC, where I develop high-fidelity models and control systems. Explore my work to discover my projects, professional experience, and the skills I bring to the field of aerospace engineering. Thank you for visiting—let's connect!</p>
             </div>
-            
             <div class="grid">
-                <!-- Section with clickable cards -->
                 <div class="sub-grid">
-                    <!-- Experience card -->
                     <a href="html/experience.html" class="img-card">
                         <div>
                             <img src="/images/experience.png" alt="Aerospace Dynamics and Control">
@@ -60,8 +60,6 @@
                             </div>
                         </div>
                     </a>
-                    
-                    <!-- Blog card -->
                     <a href="html/blog.html" class="img-card">
                         <div>
                             <img src="/images/blog.png" alt="Aerospace Blog">
@@ -74,28 +72,23 @@
                 </div>
             </div>             
         </main>
-        
-        <!-- Footer section -->
         <footer>
             <div class="footer-content">
                 <p>Connect with me</p>
-                <!-- Contact links -->
                 <div class="contact-links">
                     <a href="mailto:prof21yuvan@gmail.com" target="_blank" class="contact-button">
                         <svg>
-                            <use href="../svg/icons.svg#icon-email"></use>
+                            <use href="svg/contact-icons.svg#icon-email"></use>
                         </svg>
                     </a>
-                    
                     <a href="https://www.linkedin.com/in/yuvannithi-thirumaran-66034393/" target="_blank" class="contact-button">
                         <svg>
-                            <use href="../svg/icons.svg#icon-linkedin"></use>
+                            <use href="svg/contact-icons.svg#icon-linkedin"></use>
                         </svg>
                     </a>
-                    
                     <a href="https://github.com/YuvannithiT" target="_blank" class="contact-button">
                         <svg>
-                            <use href="../svg/icons.svg#icon-github"></use>
+                            <use href="svg/contact-icons.svg#icon-github"></use>
                         </svg>
                     </a>
                 </div>
@@ -105,8 +98,7 @@
             </div>
         </footer>
     </div>
-    
-    <!-- Link to external JavaScript file for Van der Pol pattern -->
+    <script src="js/themeToggle.js"></script>
     <script src="js/vanDerPolPattern.js"></script>
 </body>
 </html>

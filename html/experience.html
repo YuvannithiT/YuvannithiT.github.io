@@ -1,38 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta tags for character encoding and viewport settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Page title -->
     <title>Experience - Yuvannithi's Portfolio</title>
-    
-    <!-- Import Google Fonts: Orbitron -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-    </style>
-    
-    <!-- Link to external CSS stylesheet -->
     <link rel="stylesheet" href="../css/styles.css">
+    <script>
+        (function() {
+            function getInitialTheme() {
+                const storedTheme = localStorage.getItem('theme');
+                if (storedTheme) {
+                    return storedTheme;
+                }
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            const initialTheme = getInitialTheme();
+            document.documentElement.classList.toggle('dark-mode', initialTheme === 'dark');
+        })();
+    </script>
 </head>
 <body>
-    <!-- Canvas for contour pattern -->
-    <canvas id="contourCanvas"></canvas>
-    
-    <!-- Page container for structured layout -->
     <div class="page-container">
-        
-        <!-- Header section with navigation -->
+        <canvas id="contourCanvas"></canvas>
         <header>
             <div class="header-content">
-                
-                <!-- Portfolio title and link to homepage -->
                 <div>
                     <h1><a href="../index.html">Yuvannithi's Portfolio</a></h1>
                 </div>
-                
-                <!-- Navigation menu -->
                 <nav>
                     <ul>
                         <li><a href="../index.html">Home</a></li>
@@ -40,20 +34,20 @@
                         <li><a href="blog.html">Blog</a></li>
                     </ul>
                 </nav>
+                <button id="theme-toggle">
+                    <svg class="sun">
+                        <use href="../svg/light-dark-mode-icons.svg#icon-sun"></use>
+                    </svg>
+                    <svg class="moon">
+                        <use href="../svg/light-dark-mode-icons.svg#icon-moon"></use>
+                    </svg>
+                </button>   
             </div>
         </header>
-        
-        <!-- Main content area -->
         <main>
-            
-            <!-- Work experience section -->
             <div class="grid">
                 <h2>Work</h2>
-                
-                <!-- Sub-grid for work experience items -->
                 <div class="sub-grid">
-                    
-                    <!-- Work experience card: Rocket Trajectory Engineer -->
                     <a href="under-construction.html" class="text-card">
                         <div>
                             <h3>Rocket Trajectory Engineer</h3>
@@ -61,8 +55,6 @@
                             <p>Developing 6-DOF rocket models and focusing on dynamics, stability, and GNC design. Optimizing rocket trajectory and implementing quaternion rotations.</p>
                         </div>
                     </a>
-                    
-                    <!-- Work experience card: Engineering Lead Assistant -->
                     <a href="under-construction.html" class="text-card">
                         <div>
                             <h3>Engineering Lead Assistant</h3>
@@ -72,31 +64,21 @@
                     </a>
                 </div>
             </div>
-            
-            <!-- Projects section -->
             <div class="grid">
                 <h2>Projects</h2>
-                
-                <!-- Sub-grid for project items -->
                 <div class="sub-grid">
-                    
-                    <!-- Project card: Modeling and Simulation of a Satellite AOCS -->
                     <a href="under-construction.html" class="text-card">
                         <div>
                             <h3>Modeling and Simulation of a Satellite AOCS</h3>
                             <p>Developed a feedback control AOCS for a satellite with pyramidal reaction wheels. Achieved reorientation using quaternion kinematics and PD control.</p>
                         </div>
                     </a>
-                    
-                    <!-- Project card: Autopilot Control of a VTOL UAM Aircraft -->
                     <a href="under-construction.html" class="text-card">
                         <div>
                             <h3>Autopilot Control of a VTOL UAM Aircraft</h3>
                             <p>Created a 6-DOF model and its autopilot for an eVTOL's autonomous mission requirements. Verified and validated through HIL testing.</p>
                         </div>
                     </a>
-                    
-                    <!-- Project card: Estimation Comparison: LKF versus EKF -->
                     <a href="under-construction.html" class="text-card">
                         <div>
                             <h3>Estimation Comparison: LKF versus EKF</h3>
@@ -106,28 +88,23 @@
                 </div>
             </div>
         </main>
-        
-        <!-- Footer section -->
         <footer>
             <div class="footer-content">
                 <p>Connect with me</p>
-                <!-- Contact links -->
                 <div class="contact-links">
                     <a href="mailto:prof21yuvan@gmail.com" target="_blank" class="contact-button">
                         <svg>
-                            <use href="../svg/icons.svg#icon-email"></use>
+                            <use href="../svg/contact-icons.svg#icon-email"></use>
                         </svg>
                     </a>
-                    
                     <a href="https://www.linkedin.com/in/yuvannithi-thirumaran-66034393/" target="_blank" class="contact-button">
                         <svg>
-                            <use href="../svg/icons.svg#icon-linkedin"></use>
+                            <use href="../svg/contact-icons.svg#icon-linkedin"></use>
                         </svg>
                     </a>
-                    
                     <a href="https://github.com/YuvannithiT" target="_blank" class="contact-button">
                         <svg>
-                            <use href="../svg/icons.svg#icon-github"></use>
+                            <use href="../svg/contact-icons.svg#icon-github"></use>
                         </svg>
                     </a>
                 </div>
@@ -137,8 +114,7 @@
             </div>
         </footer>
     </div>
-    
-    <!-- JavaScript file for Van der Pol pattern -->
+    <script src="../js/themeToggle.js"></script>
     <script src="../js/vanDerPolPattern.js"></script>
 </body>
 </html>

@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Meta Information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Yuvannithi's Portfolio</title>
-    
-    <!-- Import Google Fonts -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-    </style>
-    
-    <!-- Link to External CSS -->
     <link rel="stylesheet" href="../css/styles.css">
+    <script>
+        (function() {
+            function getInitialTheme() {
+                const storedTheme = localStorage.getItem('theme');
+                if (storedTheme) {
+                    return storedTheme;
+                }
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            const initialTheme = getInitialTheme();
+            document.documentElement.classList.toggle('dark-mode', initialTheme === 'dark');
+        })();
+    </script>
 </head>
-
 <body>
-    <!-- Canvas for JavaScript Drawing -->
-    <canvas id="contourCanvas"></canvas>
-    
-    <!-- Page Container -->
     <div class="page-container">
-        <!-- Header Section -->
+        <canvas id="contourCanvas"></canvas>
         <header>
             <div class="header-content">
-                <!-- Header Title with Navigation Links -->
                 <div>
                     <h1><a href="../index.html">Yuvannithi's Portfolio</a></h1>
                 </div>
@@ -36,22 +34,24 @@
                         <li><a href="blog.html" class="active">Blog</a></li>
                     </ul>
                 </nav>
+                <button id="theme-toggle">
+                    <svg class="sun">
+                        <use href="../svg/light-dark-mode-icons.svg#icon-sun"></use>
+                    </svg>
+                    <svg class="moon">
+                        <use href="../svg/light-dark-mode-icons.svg#icon-moon"></use>
+                    </svg>
+                </button>   
             </div>
         </header>
-        
-        <!-- Main Content Section -->
         <main>
             <div class="grid">
-                <!-- Blog Introduction -->
                 <h2>Blog</h2>
                 <p>Explore my blog for a deep dive into dynamics and control within aerospace engineering. Here, I share detailed insights, lessons, and personal perspectives on topics such as stability, control systems, modeling and simulation, GNC, state estimation, and other advanced concept areas that I am actively exploring and mastering. Whether you're a fellow professional, enthusiast, or simply curious about the field, I invite you to delve into these thoughtfully crafted articles and tutorials to enhance your understanding and knowledge.</p>
             </div>
-            
             <div class="grid">
-                <!-- Recent Posts Section -->
                 <h2>Recent Posts</h2>
                 <div class="sub-grid">
-                    <!-- Individual Post Links -->
                     <a href="under-construction.html" class="text-card">
                         <div>
                             <h3>Understanding Quaternion-Based Rotations in Aerospace</h3>
@@ -59,7 +59,6 @@
                             <p>In this post, I delve into the mathematics and applications of quaternion-based rotations, which are essential in modern aerospace engineering for accurately modeling the orientation and rotations.</p>
                         </div>
                     </a>
-                    
                     <a href="under-construction.html" class="text-card">
                         <div>
                             <h3>Optimizing Rocket Trajectories: Challenges and Solutions</h3>
@@ -67,7 +66,6 @@
                             <p>This article explores the complexities of rocket trajectory optimization, including the key factors that influence trajectory planning and the fundamental solutions to be implemented.</p>
                         </div>
                     </a>
-                    
                     <a href="under-construction.html" class="text-card">
                         <div>
                             <h3>State Estimation Techniques: From LKF to PKF</h3>
@@ -78,28 +76,23 @@
                 </div>
             </div>
         </main>
-        
-        <!-- Footer section -->
         <footer>
             <div class="footer-content">
                 <p>Connect with me</p>
-                <!-- Contact links -->
                 <div class="contact-links">
                     <a href="mailto:prof21yuvan@gmail.com" target="_blank" class="contact-button">
                         <svg>
-                            <use href="../svg/icons.svg#icon-email"></use>
+                            <use href="../svg/contact-icons.svg#icon-email"></use>
                         </svg>
                     </a>
-                    
                     <a href="https://www.linkedin.com/in/yuvannithi-thirumaran-66034393/" target="_blank" class="contact-button">
                         <svg>
-                            <use href="../svg/icons.svg#icon-linkedin"></use>
+                            <use href="../svg/contact-icons.svg#icon-linkedin"></use>
                         </svg>
                     </a>
-                    
                     <a href="https://github.com/YuvannithiT" target="_blank" class="contact-button">
                         <svg>
-                            <use href="../svg/icons.svg#icon-github"></use>
+                            <use href="../svg/contact-icons.svg#icon-github"></use>
                         </svg>
                     </a>
                 </div>
@@ -109,9 +102,7 @@
             </div>
         </footer>
     </div>
-    
-    <!-- Link to External JavaScript -->
+    <script src="../js/themeToggle.js"></script>
     <script src="../js/vanDerPolPattern.js"></script>
 </body>
-
 </html>
