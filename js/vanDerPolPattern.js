@@ -20,12 +20,17 @@ const maxIterations = 5000; // Number of iterations for simulation
 const scaleFactor = 15; // Scale for drawing the oscillator
 const stabilizationPeriod = 1000; // Number of iterations to allow for stabilization
 
+// Function to get CSS variable value
+function getCSSVariableValue(variable) {
+    return getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
+}
+
 // Color scheme for the oscillators
 const colors = [
-    '#00FFFF', // Cyan
-    '#1E90FF', // Dodger Blue
-    '#32CD32', // Lime Green
-    '#FF4500'  // Orange Red
+    getCSSVariableValue('--accent-1'),
+    getCSSVariableValue('--accent-2'),
+    getCSSVariableValue('--accent-3'),
+    getCSSVariableValue('--accent-4')
 ];
 
 // Function to draw a single Van der Pol oscillator
@@ -72,16 +77,14 @@ function drawVanDerPolOscillator(x0, y0, scale, color, lineWidth) {
 
 // Function to draw multiple nested Van der Pol oscillators
 function drawNestedOscillators() {
-    // Clear the canvas and set background
+    // Clear the canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#000000'; // Black background
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     const numOscillators = 60;
 
     // Draw each oscillator with varying parameters
     for (let i = 0; i < numOscillators; i++) {
-        const scale = scaleFactor + i * 20;
+        const scale = scaleFactor + i * 25;
         const x0 = 0.5 + i * 0.05;
         const y0 = 0.5 + i * 0.05;
         const color = colors[i % colors.length];
@@ -89,17 +92,6 @@ function drawNestedOscillators() {
 
         drawVanDerPolOscillator(x0, y0, scale, color, lineWidth);
     }
-
-    // Add a subtle gradient overlay
-    const gradient = ctx.createRadialGradient(
-        canvas.width / 2, canvas.height / 2, 0,
-        canvas.width / 2, canvas.height / 2, canvas.width / 2
-    );
-    gradient.addColorStop(0, 'rgba(13, 13, 13, 0)');
-    gradient.addColorStop(1, 'rgba(26, 26, 26, 0.7)');
-    
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
 // Initial drawing of nested oscillators
