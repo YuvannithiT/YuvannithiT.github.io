@@ -243,7 +243,7 @@ a {
 .sub-grid {
     display: grid;
     gap: var(--spacing-md);
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     max-width: var(--max-width);
     margin: 0 auto;
 }
@@ -402,16 +402,14 @@ main.center-content {
 
 /* Responsive Styles */
 @media (max-width: 1440px) {
-    .sub-grid,
-    .nasa-image-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    .sub-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
 
 @media (max-width: 992px) {
-    .sub-grid,
-    .nasa-image-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .sub-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .header-content,
@@ -441,9 +439,8 @@ main.center-content {
 }
 
 @media (max-width: 768px) {
-    .sub-grid,
-    .nasa-image-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    .sub-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
     }
 
     .under-construction {
@@ -452,8 +449,7 @@ main.center-content {
 }
 
 @media (max-width: 576px) {
-    .sub-grid,
-    .nasa-image-grid {
+    .sub-grid {
         grid-template-columns: 1fr;
     }
 
@@ -469,8 +465,7 @@ main.center-content {
     .header-content,
     .footer-content,
     main,
-    .sub-grid,
-    .nasa-image-grid {
+    .sub-grid {
         max-width: var(--max-width);
         margin-left: auto;
         margin-right: auto;
