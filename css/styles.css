@@ -1,6 +1,4 @@
-/* Root Variables */
 :root {
-    /* Light mode */
     --background-color: #FFFFFF;
     --text-color: #000000;    
     --accent-1: #00CCCC;
@@ -17,7 +15,6 @@
     --transition: all 0.3s ease;
 }
 
-/* Dark mode variables */
 :root.dark-mode {
     --background-color: #000000;
     --text-color: #FFFFFF;    
@@ -52,65 +49,60 @@
     height: 24px;
 }
 
-/* Hide the sun icon in light mode */
 .sun {
     display: none;
 }
 
-/* Show the sun icon in dark mode */
 .dark-mode .sun {
     display: inline;
 }
 
-/* Hide the moon icon in dark mode */
 .dark-mode .moon {
     display: none;
 }
 
-/* Font Face Declarations */
 @font-face {
-    font-family: 'el';
+    font-family: 'eml';
     src: url('../emirates-sans/Emirates-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'em';
+    font-family: 'emm';
     src: url('../emirates-sans/Emirates-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'eb';
+    font-family: 'emb';
     src: url('../emirates-sans/Emirates-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'el';
+    font-family: 'emli';
     src: url('../emirates-sans/Emirates-LightItalic.ttf') format('truetype');
     font-weight: 300;
     font-style: italic;
 }
 
 @font-face {
-    font-family: 'el';
+    font-family: 'emmi';
     src: url('../emirates-sans/Emirates-MediumItalic.ttf') format('truetype');
     font-weight: 500;
     font-style: italic;
 }
 
 @font-face {
-    font-family: 'el';
+    font-family: 'embi';
     src: url('../emirates-sans/Emirates-BoldItalic.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
 }
 
-/* General Styles */
 html, body {
     height: 100%;
     margin: 0;
@@ -124,7 +116,6 @@ html, body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Canvas */
 #contourCanvas {
     position: fixed;
     top: 0;
@@ -136,7 +127,6 @@ html, body {
     z-index: 0;
 }
 
-/* Layout Containers */
 .page-container {
     display: flex;
     flex-direction: column;
@@ -151,19 +141,17 @@ main {
     padding: 0 var(--spacing-md);
 }
 
-/* Headings */
 h1, h2, h3, h4 {
     margin-bottom: var(--spacing-sm);
 }
 
-/* Gradient Text Headings */
 h1 {
     background: linear-gradient(45deg, var(--accent-2), var(--accent-3));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     z-index: 1;
-    font-family: 'eb';
+    font-family: 'emb';
     font-size: 42px;
 }
 
@@ -173,7 +161,7 @@ h2 {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     z-index: 1;
-    font-family: 'em';
+    font-family: 'emm';
     font-size: 30px;
 }
 
@@ -183,7 +171,7 @@ h3 {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     z-index: 1;
-    font-family: 'em';
+    font-family: 'emmi';
     font-size: 24px;
 }
 
@@ -193,16 +181,15 @@ h4 {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     z-index: 1;
-    font-family: 'el';
+    font-family: 'eml';
     font-size: 20px;
 }
 
 p {
-    font-family: 'el';
+    font-family: 'eml';
     font-size: 18px;
 }
 
-/* Links */
 a {
     text-decoration: none;
     color: inherit;
@@ -269,7 +256,6 @@ a {
     transform: none;
 }
 
-/* Header */
 header {
     padding: var(--spacing-sm);
     z-index: 1;
@@ -294,11 +280,10 @@ header h1 {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-variant: small-caps;
-    font-family: em;
     font-size: 30px;
+    font-family: 'emm';
 }
 
-/* Footer */
 footer {
     padding: var(--spacing-sm);
     z-index: 1;
@@ -323,11 +308,10 @@ footer {
 }
 
 footer p {
-    font-family: 'el';
+    font-family: 'eml';
     font-size: 20px;
 }
 
-/* Navigation */
 nav ul {
     list-style: none;
     padding: 0;
@@ -352,7 +336,6 @@ nav ul li a.active {
     border-bottom: 2.5px solid var(--accent-2);
 }
 
-/* Contact Buttons */
 .contact-links {
     display: flex;
     gap: var(--spacing-md);
@@ -386,8 +369,8 @@ svg {
 
 main.center-content {
     display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    align-items: center;
+    justify-content: center;
 }
 
 .under-construction {
@@ -402,7 +385,6 @@ main.center-content {
     border-radius: 2.5px;
 }
 
-/* Responsive Styles */
 @media (max-width: 1440px) {
     .sub-card {
         grid-template-columns: repeat(auto-fit, minmax(max(100%/3, 300px), 1fr));
@@ -462,7 +444,6 @@ main.center-content {
     }
 }
 
-/* Ensure content doesn't exceed max-width on larger screens */
 @media (min-width: 1441px) {
     .header-content,
     .footer-content,
@@ -474,7 +455,6 @@ main.center-content {
     }
 }
 
-/* Landscape orientation adjustments */
 @media (orientation: landscape) and (max-height: 500px) {
     .header-content,
     .footer-content {
