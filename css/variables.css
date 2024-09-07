@@ -1,0 +1,18 @@
+:root {
+    --background: #F5F5F5;
+    --text: #000000;
+    --theme: #002147;
+    --card: 1, 1, 1;
+    --spacing-sm: 10px;
+    --spacing-md: 25px;
+    --spacing-lg: 40px;
+    --border-radius: 2.5px;
+    --max-width: 1440px;
+}
+
+:root.dark-mode {
+    --background: #121212;
+    --text: #FFFFFF;
+    --theme: #4A90E2;
+    --card: 255, 255, 255;
+}

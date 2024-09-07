@@ -1,0 +1,43 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed;
+    background-size: cover;
+    line-height: 2;
+    letter-spacing: 0.5px;
+    background: var(--background);
+    color: var(--text);
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out;
+}
+
+#contourCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    z-index: 1;
+}
+
+main {
+    flex: 1;
+    max-width: var(--max-width);
+    margin: var(--spacing-lg) auto;
+    padding: 0 var(--spacing-md);
+}
+
+main.center-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,33 @@
+footer {
+    z-index: 1;
+    line-height: 1;
+}
+
+.footer-content {
+    max-width: var(--max-width);
+    margin: 0px  auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-variant: small-caps;
+}
+
+footer p {
+    color: var(--theme);
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-left p {
+    margin-right: var(--spacing-md);
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+}

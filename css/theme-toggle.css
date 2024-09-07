@@ -1,0 +1,34 @@
+#theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    padding: var(--spacing-sm) var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    fill: currentColor;
+    z-index: 1;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+#theme-toggle svg {
+    width: 24px;
+    height: 24px;
+}
+
+.sun {
+    display: none;
+}
+
+.dark-mode .sun {
+    display: inline;
+}
+
+.dark-mode .moon {
+    display: none;
+}
