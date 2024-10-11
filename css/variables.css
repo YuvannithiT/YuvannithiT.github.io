@@ -1,7 +1,8 @@
 :root {
     --background: #FFFFFF;
+    /*--background: #F0F0F0;*/
     --text: #000000;
-    --theme: #002147;
+    --theme: #FF5722;
     --card: 1, 1, 1;
     --spacing-sm: 10px;
     --spacing-md: 25px;
@@ -11,8 +12,9 @@
 }
 
 :root.dark-mode {
-    --background: #121212;
+    --background: #000000;
+    /*--background: #121212;*/
     --text: #FFFFFF;
-    --theme: #4A90E2;
+    --theme: #00BFFF;
     --card: 255, 255, 255;
 }
