@@ -21,14 +21,15 @@
     </script>
 </head>
 <body>
-    <div class="page-container">
+    <div class="page page-container">
         <canvas id="contourCanvas"></canvas>
-        <header>
+
+        <header class="content">
             <div class="header-content">
                 <div class="left-align">
-                    <h1><a href="../index.html">Yuvannithi Thirumaran's Portfolio</a></h1>
+                    <h1><a href="../index.html" class="no-link-style">Yuvannithi's Portfolio</a></h1>
                 </div>
-                <nav  class="right-align">
+                <nav class="right-align">
                     <ul>
                         <li><h2><a href="../index.html">Home</a></h2></li>
                         <li><h2><a href="work.html">Work</a></h2></li>
@@ -46,21 +47,22 @@
                 </button>                
             </div>
         </header>
-        <main>
+
+        <main class="content">
             <div class="card">
                 <h2>Key Projects</h2>
                 <p>Discover some of the key projects I have worked on, demonstrating my expertise in the dynamics and control domain of aerospace engineering.</p>
                 <div class="sub-card">
                     <div class="text-card">
                         <h3><a href="under-construction.html">Modeling and Simulation of Satellite AOCS</a></h3>
-                        <p>Developed a feedback control attitude and orbit control system (AOCS) for a satellite using pyramidal reaction wheels. Achieved precise reorientation through quaternion kinematics and proportional-derivative (PD) control.</p>
+                        <p>Developed a feedback control AOCS for a satellite using pyramidal reaction wheels. Achieved precise reorientation through quaternion kinematics and proportional-derivative (PD) control.</p>
                     </div>
                     <div class="text-card">
                         <h3><a href="under-construction.html">Autopilot Control for VTOL UAM Aircraft</a></h3>
-                        <p>Designed a 6-DOF model and autopilot system for an eVTOL aircraft, tailored to meet autonomous mission requirements. Conducted hardware-in-the-loop (HIL) testing to verify and validate system performance.</p>
+                        <p>Designed a 6-DOF model and autopilot system for an eVTOL aircraft, tailored to meet autonomous mission requirements. Conducted HIL testing to verify and validate system performance.</p>
                     </div>
                     <div class="text-card">
-                        <h3><a href="under-construction.html">Comparison of Estimation Techniques: LKF vs. EKF</a></h3>
+                        <h3><a href="under-construction.html">Comparison of Estimation: LKF vs. EKF</a></h3>
                         <p>Conducted a comparative analysis of Linear Kalman Filter (LKF) and Extended Kalman Filter (EKF) in terms of precision and efficiency, implemented and tested on nonlinear aircraft dynamics.</p>
                     </div>
                     <div class="text-card">
@@ -70,7 +72,8 @@
                 </div>
             </div>
         </main>
-        <footer>
+
+        <footer class="content">
             <div class="footer-content">
                 <div class="footer-left">
                     <p>Get in Touch:</p>
@@ -98,7 +101,9 @@
             </div>
         </footer>
     </div>
+
     <script src="../js/themeToggle.js"></script>
     <script src="../js/backgroundPattern.js"></script>
+    <script src="../js/transitions.js"></script>
 </body>
 </html>

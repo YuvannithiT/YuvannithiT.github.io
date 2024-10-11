@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experience - Yuvannithi Thirumaran's Portfolio</title>
-    <!-- <link rel="stylesheet" href="../css/styles.css"> -->
     <link rel="stylesheet" href="../css/modular.css">
     <script>
         (function() {
@@ -21,14 +20,15 @@
     </script>
 </head>
 <body>
-    <div class="page-container">
+    <div class="page page-container">
         <canvas id="contourCanvas"></canvas>
-        <header>
+        
+        <header class="content">
             <div class="header-content">
                 <div class="left-align">
-                    <h1><a href="../index.html">Yuvannithi Thirumaran's Portfolio</a></h1>
+                    <h1><a href="../index.html" class="no-link-style">Yuvannithi's Portfolio</a></h1>
                 </div>
-                <nav  class="right-align">
+                <nav class="right-align">
                     <ul>
                         <li><h2><a href="../index.html">Home</a></h2></li>
                         <li><h2><a href="work.html">Work</a></h2></li>
@@ -43,10 +43,11 @@
                     <svg class="moon">
                         <use href="../svg/light-dark-mode-icons.svg#icon-moon"></use>
                     </svg>
-                </button>                
+                </button>
             </div>
         </header>
-        <main>
+
+        <main class="content">
             <div class="card">
                 <h2>Professional Experience</h2>
                 <p>Explore my professional work experience and the roles I have taken on in various aerospace engineering responsibilities.</p>
@@ -57,14 +58,15 @@
                         <p>Developed 6-DOF rocket models, focusing on dynamics, stability, and guidance, navigation, and control (GNC) design. Enhanced rocket trajectory optimization and implemented quaternion rotations.</p>
                     </div>
                     <div class="text-card">
-                    <h3><a href="under-construction.html">Engineering Lead Assistant</a></h3>
+                        <h3><a href="under-construction.html">Engineering Lead Assistant</a></h3>
                         <h4>Eagle Flight Research Center, Daytona Beach, USA</h4>
                         <p>Modeled and simulated a 4-DOF powered parachute. Improved model accuracy using Lagrangian methods and parachute aerodynamic flight data.</p>
                     </div>
                 </div>
             </div>
         </main>
-        <footer>
+
+        <footer class="content">
             <div class="footer-content">
                 <div class="footer-left">
                     <p>Get in Touch:</p>
@@ -92,7 +94,9 @@
             </div>
         </footer>
     </div>
+
     <script src="../js/themeToggle.js"></script>
     <script src="../js/backgroundPattern.js"></script>
+    <script src="../js/transitions.js"></script>
 </body>
 </html>
