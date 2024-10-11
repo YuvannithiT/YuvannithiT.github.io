@@ -1,44 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const links = document.querySelectorAll('.nav-link');
     const pages = document.querySelectorAll('.page');
-    const contents = document.querySelectorAll('.content');
+    const contentSections = document.querySelectorAll('.content-section');
 
-    function showPageBackground(page) {
+    function showPage(page) {
         page.classList.add('visible');
-    }
-
-    function showContent() {
-        contents.forEach(content => {
-            content.classList.add('content-visible');
+        contentSections.forEach((section, index) => {
+            section.style.setProperty('--delay', `${index * 0.2}s`);
         });
     }
 
-    function hideContent() {
-        contents.forEach(content => {
-            content.classList.remove('content-visible');
+    function hidePages() {
+        pages.forEach(page => {
+            page.classList.remove('visible');
         });
     }
 
-    links.forEach(link => {
-        link.addEventListener('click', function (e) {
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', (e) => {
             e.preventDefault();
-
-            const targetPageId = this.getAttribute('href').substring(1);
-            const targetPage = document.getElementById(targetPageId);
-
-            pages.forEach(page => {
-                page.classList.remove('visible');
-            });
-
-            hideContent();
-
-            setTimeout(() => {
-                showPageBackground(targetPage);
-                showContent();
-            }, 500);
+            const targetPage = document.getElementById(link.getAttribute('href').substring(1));
+            hidePages();
+            setTimeout(() => showPage(targetPage), 500);
         });
     });
 
-    showPageBackground(document.querySelector('.page'));
-    showContent();
+    showPage(document.querySelector('.page'));
 });
