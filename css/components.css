@@ -7,22 +7,12 @@ a {
     transition: color 0.3s ease;
 }
 
-a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: var(--theme);
-    left: 0;
-    bottom: -2px;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
+a:hover {
+    opacity: 0.75;
 }
 
-a:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+.no-link-style:hover {
+    opacity: 1;
 }
 
 .card {
