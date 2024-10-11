@@ -13,12 +13,15 @@ nav ul li h2 {
     font-variant: small-caps;
 }
 
-nav ul li a {
+nav ul li {
     padding: var(--spacing-sm);
+}
+
+nav ul li a {
     text-decoration: none;
     border-radius: var(--border-radius);
     position: relative;
-    display: inline-block;
+    display: inline;
     color: inherit;
     transition: color 0.3s ease;
 }
@@ -30,7 +33,7 @@ nav ul li a::after {
     height: 2px;
     background-color: var(--theme);
     left: 0;
-    bottom: -2px;
+    bottom: 5px;
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.3s ease;
@@ -39,4 +42,8 @@ nav ul li a::after {
 nav ul li a:hover::after {
     transform: scaleX(1);
     transform-origin: left;
+}
+
+nav ul li a:hover {
+    opacity: 1;
 }
