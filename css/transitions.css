@@ -1,24 +1,45 @@
 .page {
-    position: relative;
-    width: 100%;
-    height: 100vh;
     opacity: 0;
-    transform: translateY(1000px); /* Y-axis movement for the page */
-    transition: opacity 1.25s ease-in-out, transform 1.25s ease-in-out;
+    pointer-events: none;
+    transition: opacity 3s ease-in-out;
 }
 
 .page.visible {
     opacity: 1;
-    transform: translateY(0); /* Y-axis goes to 0 when page becomes visible */
+    pointer-events: all;
 }
 
-.content {
-    transform: translate(-1000px, -1000px);
+.content-section {
     opacity: 0;
-    transition: transform 1.25s ease-in-out, opacity 1.25s ease-in-out;
+    transform: translateY(20px);
+    transition: opacity 3s ease-in-out, transform 3s ease-in-out;
+    transition-delay: var(--delay, 0s);
+    position: relative;
 }
 
-.page.visible .content {
-    transform: translate(0, 0); /* Content moves to its natural position */
+.content-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 1);
+    transition: opacity 3s ease-in-out;
+    transition-delay: var(--delay, 0s);
+    z-index: 1;
+}
+
+.page.visible .content-section {
     opacity: 1;
+    transform: translateY(0);
+}
+
+.page.visible .content-section::before {
+    opacity: 0;
+}
+
+  .content-section > * {
+    position: relative;
+    z-index: 2;
 }
