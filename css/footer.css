@@ -11,11 +11,13 @@ footer {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    font-variant: small-caps;
 }
 
 footer p {
     color: var(--theme);
+    font-variant: small-caps;
+    font-size: 1.125em;
+    font-weight: bold;
 }
 
 .footer-left {
