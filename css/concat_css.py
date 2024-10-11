@@ -14,6 +14,7 @@ css_files = [
     'components.css',
     'footer.css',
     'contact-icons.css',
+    'transitions.css',
     'responsive-styles.css'
 ]
 
