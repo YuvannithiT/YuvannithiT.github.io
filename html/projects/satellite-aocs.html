@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satellite AOCS - Yuvannithi Thirumaran</title>
+    <link rel="stylesheet" href="../../css/modular.css">
+    <script>
+        (function() {
+            function getInitialTheme() {
+                const storedTheme = localStorage.getItem('theme');
+                if (storedTheme) {
+                    return storedTheme;
+                }
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            const initialTheme = getInitialTheme();
+            document.documentElement.classList.toggle('dark-mode', initialTheme === 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <div class="page page-container">
+        <canvas id="contourCanvas"></canvas>
+        
+        <header class="content">
+            <div class="header-content">
+                <div class="left-align">
+                    <h1><a href="../../index.html" class="no-link-style">Yuvannithi Thirumaran</a></h1>
+                </div>
+                <nav class="right-align">
+                    <ul>
+                        <li><h2><a href="../../index.html">Home</a></h2></li>
+                        <li><h2><a href="../work.html">Work</a></h2></li>
+                        <li><h2><a href="../projects.html">Projects</a></h2></li>
+                        <li><h2><a href="../blog.html">Blog</a></h2></li>
+                    </ul>
+                </nav>
+                <button id="theme-toggle">
+                    <svg class="sun">
+                        <use href="../../svg/light-dark-mode-icons.svg#icon-sun"></use>
+                    </svg>
+                    <svg class="moon">
+                        <use href="../../svg/light-dark-mode-icons.svg#icon-moon"></use>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <main class="content">
+            <div class="card">
+                <h2><strong>Modeling and Simulation of Satellite AOCS</strong></h2>
+                <h2>Overview</h2>
+                <p>Developed a feedback control AOCS for a satellite using pyramidal reaction wheels. Achieved precise reorientation through quaternion kinematics and proportional-derivative (PD) control.</p>
+                <h2>Objective</h2>
+                <p>Coming soon!</p>
+                <h2>Methodology</h2>
+                <ul>
+                    <li><p>Developed a closed-loop Simulink model for satellite AOCS with a pyramidal reaction wheel architecture.</p></li>
+                    <li><p>Formulated satellite dynamics moment equations in a model-based design framework with reaction wheels.</p></li>
+                    <li><p>Achieved satellite reorientation and angular rate control using quaternion kinematics and PD control.</p></li>
+                    <li><p>Designed and executed a SIL testing plan addressing hardware integration and noise modeling challenges</p></li>
+                </ul>
+                <h2>Challenges</h2>
+                <p>Coming soon!</p>
+                <h2>Visuals</h2>
+                <p>Coming soon!</p>
+                <h2>Future Scope</h2>
+                <p>Coming soon!</p>
+            </div>
+        </main>
+
+        <footer class="content">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>Get in Touch:</p>
+                    <div class="contact-links">
+                        <a href="mailto:prof21yuvan@gmail.com" target="_blank" class="contact-button no-link-style">
+                            <svg>
+                                <use href="../svg/contact-icons.svg#icon-email"></use>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/yuvannithi-thirumaran-66034393/" target="_blank" class="contact-button no-link-style">
+                            <svg>
+                                <use href="../svg/contact-icons.svg#icon-linkedin"></use>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/YuvannithiT" target="_blank" class="contact-button no-link-style">
+                            <svg>
+                                <use href="../svg/contact-icons.svg#icon-github"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <p>&copy; 2024 Yuvannithi Thirumaran</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../../js/themeToggle.js"></script>
+    <script src="../../js/backgroundPattern.js"></script>
+    <script src="../../js/transitions.js"></script>
+</body>
+</html>
