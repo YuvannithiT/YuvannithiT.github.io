@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Lead Assistant - Yuvannithi Thirumaran</title>
+    <link rel="stylesheet" href="../../css/modular.css">
+    <script>
+        (function() {
+            function getInitialTheme() {
+                const storedTheme = localStorage.getItem('theme');
+                if (storedTheme) {
+                    return storedTheme;
+                }
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            const initialTheme = getInitialTheme();
+            document.documentElement.classList.toggle('dark-mode', initialTheme === 'dark');
+        })();
+    </script>
+</head>
+<body>
+    <div class="page page-container">
+        <canvas id="contourCanvas"></canvas>
+        
+        <header class="content">
+            <div class="header-content">
+                <div class="left-align">
+                    <h1><a href="../../index.html" class="no-link-style">Yuvannithi Thirumaran</a></h1>
+                </div>
+                <nav class="right-align">
+                    <ul>
+                        <li><h2><a href="../../index.html">Home</a></h2></li>
+                        <li><h2><a href="../work.html">Work</a></h2></li>
+                        <li><h2><a href="../projects.html">Projects</a></h2></li>
+                        <li><h2><a href="../blog.html">Blog</a></h2></li>
+                    </ul>
+                </nav>
+                <button id="theme-toggle">
+                    <svg class="sun">
+                        <use href="../../svg/light-dark-mode-icons.svg#icon-sun"></use>
+                    </svg>
+                    <svg class="moon">
+                        <use href="../../svg/light-dark-mode-icons.svg#icon-moon"></use>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <main class="content">
+            <div class="card">
+                <h1>Engineering Lead Assistant</h1>
+                <h2>Eagle Flight Research Center | May 2020 - August 2020</h2>
+                <h3>Responsibilities</h3>
+                <ul>
+                    <li><p>Created a 4-DOF Lagrangian dynamics model of a powered parachute using MATLAB and Simulink.</p></li>
+                    <li><p>Enhanced simulation accuracy by integrating flight data, reducing computational error margins by 25%.</p></li>
+                    <li><p>Collaborated with teams on failure mode analysis and proposed designs aligning with aerospace standards.</p></li>
+                </ul>
+                <h3>Challenges</h3>
+                <p>Coming soon!</p>
+                <h3>Approach</h3>
+                <p>Coming soon!</p>
+                <h3>Learnings</h3>
+                <p>Coming soon!</p>
+                <h3>Achievements</h3>
+                <p>Coming soon!</p>
+                <h3>Visuals</h3>
+                <p>Coming soon!</p>
+            </div>
+        </main>
+
+        <footer class="content">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="contact-links">
+                        <a href="mailto:prof21yuvan@gmail.com" target="_blank" class="contact-button no-link-style">
+                            <svg>
+                                <use href="../../svg/contact-icons.svg#icon-email"></use>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/yuvannithi-thirumaran-66034393/" target="_blank" class="contact-button no-link-style">
+                            <svg>
+                                <use href="../../svg/contact-icons.svg#icon-linkedin"></use>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/YuvannithiT" target="_blank" class="contact-button no-link-style">
+                            <svg>
+                                <use href="../../svg/contact-icons.svg#icon-github"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <p>&copy; 2024 Yuvannithi Thirumaran</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../../js/themeToggle.js"></script>
+    <script src="../../js/backgroundPattern.js"></script>
+    <script src="../../js/transitions.js"></script>
+</body>
+</html>
