@@ -8,28 +8,24 @@ const scaleFactor = 15;
 const stabilizationPeriod = 1000;
 const numOscillators = 30;
 
-// Define hardcoded colors for light and dark modes
-const lightModeColor = '#002147';  // Black with 10% opacity
-const darkModeColor = '#4A90E2';   // White with 10% opacity
+const lightModeColor = '#49159e';
+const darkModeColor = '#BD99FF';
 
-// Cache for storing paths
 let cachedPaths = [];
 let animationFrameId;
-let colors = [getCurrentColor()];  // Initialize with current theme color
+let colors = [getCurrentColor()];
 
 function resizeCanvas() {
     const devicePixelRatio = window.devicePixelRatio || 1;
     canvas.width = window.innerWidth * devicePixelRatio;
     canvas.height = window.innerHeight * devicePixelRatio;
-    ctx.scale(devicePixelRatio, devicePixelRatio);  // Adjust canvas scaling
+    ctx.scale(devicePixelRatio, devicePixelRatio);
 }
 
-// Function to get the current color based on the theme
 function getCurrentColor() {
     return document.documentElement.classList.contains('dark-mode') ? darkModeColor : lightModeColor;
 }
 
-// Calculate oscillator path and cache it
 function calculateOscillatorPath(x0, y0, scale) {
     let path = [];
     let x = x0;
@@ -48,7 +44,6 @@ function calculateOscillatorPath(x0, y0, scale) {
 
         path.push({x: xPos, y: yPos});
 
-        // Adjust step size based on velocity to optimize performance
         const velocity = Math.hypot(dx, dy);
         dt_dynamic = velocity > 0.1 ? dt : dt * 2;
     }
@@ -56,7 +51,6 @@ function calculateOscillatorPath(x0, y0, scale) {
     return path;
 }
 
-// Cache the paths of the oscillators to avoid recomputation
 function cacheOscillators() {
     cachedPaths = [];
     for (let i = 0; i < numOscillators; i++) {
@@ -68,10 +62,9 @@ function cacheOscillators() {
     }
 }
 
-// Function to draw cached oscillators with updated colors
 function drawCachedOscillators() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    colors[0] = getCurrentColor();  // Update color based on current theme
+    colors[0] = getCurrentColor();
 
     cachedPaths.forEach((path, i) => {
         ctx.beginPath();
@@ -85,7 +78,6 @@ function drawCachedOscillators() {
     });
 }
 
-// Function to redraw using requestAnimationFrame for better performance
 function drawWithRequestAnimationFrame() {
     if (animationFrameId) {
         cancelAnimationFrame(animationFrameId);
@@ -93,23 +85,20 @@ function drawWithRequestAnimationFrame() {
     animationFrameId = requestAnimationFrame(drawCachedOscillators);
 }
 
-// Initial setup
 function setup() {
     resizeCanvas();
-    cacheOscillators();   // Cache the paths for the oscillators
-    drawWithRequestAnimationFrame();  // Draw the oscillators
+    cacheOscillators();
+    drawWithRequestAnimationFrame();
 }
 
-// Redraw the background pattern when the theme changes
 function redrawBackgroundPattern() {
     colors[0] = getCurrentColor();
     drawWithRequestAnimationFrame();
 }
 
-// Event listeners
 window.addEventListener('resize', () => {
     resizeCanvas();
-    cacheOscillators();   // Re-cache paths after resize
+    cacheOscillators();
     drawWithRequestAnimationFrame();
 });
 
@@ -125,6 +114,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     observer.observe(htmlElement, { attributes: true });
 
-    // Initial draw after DOM is loaded
     setup();
 });

@@ -10,6 +10,7 @@ function toggleTheme() {
     }
     updateThemeIcons();
 }
+
 function setInitialTheme() {
     const storedTheme = localStorage.getItem('theme');
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');   
@@ -22,6 +23,7 @@ function setInitialTheme() {
     }
     updateThemeIcons();
 }
+
 function updateThemeIcons() {
     const isDarkMode = document.body.classList.contains('dark-mode');
     const sunIcon = document.querySelector('.icon-sun');
