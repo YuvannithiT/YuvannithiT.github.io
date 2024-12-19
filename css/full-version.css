@@ -3,7 +3,7 @@
     --background: #FFFFFF;
     /*--background: #F0F0F0;*/
     --text: #000000;
-    --theme: #FF5722;
+    --theme: #49159e;
     --card: 1, 1, 1;
     --spacing-sm: 10px;
     --spacing-md: 25px;
@@ -16,7 +16,7 @@
     --background: #000000;
     /*--background: #121212;*/
     --text: #FFFFFF;
-    --theme: #00BFFF;
+    --theme: #BD99FF;
     --card: 255, 255, 255;
 }
 
@@ -41,7 +41,7 @@ html, body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    opacity: 0.075;
+    opacity: 0.1;
     z-index: 0;
 }
 
@@ -219,7 +219,7 @@ nav ul li a::after {
     content: '';
     position: absolute;
     width: 100%;
-    height: 2px;
+    height: 1.75px;
     background-color: var(--theme);
     left: 0;
     bottom: 5px;
@@ -303,7 +303,7 @@ a:hover {
 
 .sub-card {
     display: grid;
-    gap: var(--spacing-md);
+    gap: var(--spacing-lg);
     grid-template-columns: repeat(auto-fit, minmax(max(100%/4, 350px), 1fr));
     max-width: var(--max-width);
     margin-bottom: var(--spacing-md);
@@ -318,18 +318,21 @@ a:hover {
     margin-bottom: var(--spacing-md);
     z-index: 1;
     overflow: hidden;
+    /*background: rgba(var(--card), 0.05);
+    backdrop-filter: blur(5px);*/
 }
 
 .img-card img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    aspect-ratio: 16 / 9;
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    aspect-ratio: 1 / 1;
+    /*border-radius: var(--border-radius) var(--border-radius) 0 0;*/
+    border-radius: var(--border-radius);
 }
 
 .img-card-content {
-    padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
+    padding: 0;
     transform: none;
 }
 
@@ -341,8 +344,8 @@ a:hover {
     margin-bottom: var(--spacing-md);
     z-index: 1;
     overflow: hidden;
-    /*background: rgba(var(--card), 0.1);
-    backdrop-filter: blur(5px);*/
+    background: rgba(var(--card), 0.05);
+    backdrop-filter: blur(5px);
 }
 
 .under-construction {
@@ -427,7 +430,7 @@ svg {
 .page {
     opacity: 0;
     pointer-events: none;
-    transition: opacity 3s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 
 .page.visible {
@@ -438,7 +441,7 @@ svg {
 .content-section {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 3s ease-in-out, transform 3s ease-in-out;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
     transition-delay: var(--delay, 0s);
     position: relative;
 }
@@ -451,7 +454,7 @@ svg {
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 1);
-    transition: opacity 3s ease-in-out;
+    transition: opacity 1s ease-in-out;
     transition-delay: var(--delay, 0s);
     z-index: 1;
 }

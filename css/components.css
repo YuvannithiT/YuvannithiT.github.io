@@ -27,7 +27,7 @@ a:hover {
 
 .sub-card {
     display: grid;
-    gap: var(--spacing-md);
+    gap: var(--spacing-lg);
     grid-template-columns: repeat(auto-fit, minmax(max(100%/4, 350px), 1fr));
     max-width: var(--max-width);
     margin-bottom: var(--spacing-md);
@@ -42,18 +42,21 @@ a:hover {
     margin-bottom: var(--spacing-md);
     z-index: 1;
     overflow: hidden;
+    /*background: rgba(var(--card), 0.05);
+    backdrop-filter: blur(5px);*/
 }
 
 .img-card img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    aspect-ratio: 16 / 9;
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    aspect-ratio: 1 / 1;
+    /*border-radius: var(--border-radius) var(--border-radius) 0 0;*/
+    border-radius: var(--border-radius);
 }
 
 .img-card-content {
-    padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
+    padding: 0;
     transform: none;
 }
 
@@ -65,8 +68,8 @@ a:hover {
     margin-bottom: var(--spacing-md);
     z-index: 1;
     overflow: hidden;
-    /*background: rgba(var(--card), 0.1);
-    backdrop-filter: blur(5px);*/
+    background: rgba(var(--card), 0.05);
+    backdrop-filter: blur(5px);
 }
 
 .under-construction {
