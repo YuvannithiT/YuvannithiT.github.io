@@ -72,7 +72,7 @@ function drawCachedOscillators() {
         for (let j = stabilizationPeriod + 1; j < path.length; j++) {
             ctx.lineTo(path[j].x, path[j].y);
         }
-        ctx.lineWidth = 2 - (i / numOscillators) * 1;
+        ctx.lineWidth = 4 - (i / numOscillators) * 1;
         ctx.strokeStyle = colors[i % colors.length];
         ctx.stroke();
     });
