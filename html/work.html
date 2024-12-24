@@ -23,17 +23,16 @@
     <div class="page page-container">
         <canvas id="contourCanvas"></canvas>
         
-        <header class="content">
+        <header>
             <div class="header-content">
                 <div class="left-align">
-                    <h1><a href="../index.html" class="no-link-style">Yuvannithi Thirumaran</a></h1>
+                    <h1><a href="../index.html">Yuvannithi Thirumaran</a></h1>
                 </div>
                 <nav class="right-align">
                     <ul>
                         <li><h2><a href="../index.html">Home</a></h2></li>
                         <li><h2><a href="work.html">Work</a></h2></li>
                         <li><h2><a href="projects.html">Projects</a></h2></li>
-                        <li><h2><a href="blog.html">Blog</a></h2></li>
                     </ul>
                 </nav>
                 <button id="theme-toggle">
@@ -47,46 +46,54 @@
             </div>
         </header>
 
-        <main class="content">
+        <main>
             <div class="card">
                 <h2>Professional Experience</h2>
-                <p>Explore my professional work experience I have taken on in various aerospace dynamics and control engineering roles.</p>
-                <div class="sub-card">
-                    <div class="img-card">
-                        <img src="../images/picture.jpg" alt="Description of the image">
-                        <div class="img-card-content">
-                            <h3><a href="work/rocket-trajectory-engineer.html">Rocket Trajectory Engineer</a></h3>
-                            <h4>Aero2Astro Space, Chennai, India</h4>
-                            <p>Developing 6-DOF rocket model, focusing on GNC design. Enhancing fidelity through convex trajectory optimization.</p>
+                <p>Discover my professional journey through diverse roles in aerospace engineering, specializing in dynamics and control systems.</p>
+                <div class="masonry-grid">
+                    <div class="masonry-item">
+                        <a href="work/rocket-trajectory-engineer.html">
+                        <div class="masonry-img-wrapper">
+                            <img src="../images/rocket trajectory.jpg" alt="Rocket Trajectory">
+                            <div class="text-overlay">
+                                <h3>Rocket Trajectory Engineer</h3>
+                                <h4>Aero2Astro Space, Chennai, India</h4>
+                                <p>Developing 6-DOF rocket model, GNC, and convex trajectory optimization</p>
+                            </div>
                         </div>
+                        </a>
                     </div>
-                    <div class="img-card">
-                        <img src="../images/picture.jpg" alt="Description of the image">
-                        <div class="img-card-content">
-                            <h3><a href="work/engineering-lead-assistant.html">Engineering Lead Assistant</a></h3>
-                            <h4>Eagle Flight Research Center, Daytona Beach, USA</h4>
-                            <p>Modeled and simulated a 4-DOF powered parachute. Improved model accuracy using Lagrangian methods and parachute aerodynamic flight data.</p>
+                    <div class="masonry-item">
+                        <a href="work/engineering-lead-assistant.html">
+                        <div class="masonry-img-wrapper">
+                            <img src="../images/powered parachute.jpg" alt="Powered Parachute">
+                            <div class="text-overlay">
+                                <h3>Engineering Lead Assistant</h3>
+                                <h4>Eagle Flight Research Center, Daytona Beach, USA</h4>
+                                <p>4-DOF powered parachute Lagrangian model and simulation</p>
+                            </div>
                         </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </main>
 
-        <footer class="content">
+        <footer>
             <div class="footer-content">
                 <div class="footer-left">
                     <div class="contact-links">
-                        <a href="mailto:prof21yuvan@gmail.com" target="_blank" class="contact-button no-link-style">
+                        <a href="mailto:prof21yuvan@gmail.com" target="_blank" class="contact-button">
                             <svg>
                                 <use href="../svg/contact-icons.svg#icon-email"></use>
                             </svg>
                         </a>
-                        <a href="https://www.linkedin.com/in/yuvannithi-thirumaran-66034393/" target="_blank" class="contact-button no-link-style">
+                        <a href="https://www.linkedin.com/in/yuvannithi-thirumaran-66034393/" target="_blank" class="contact-button">
                             <svg>
                                 <use href="../svg/contact-icons.svg#icon-linkedin"></use>
                             </svg>
                         </a>
-                        <a href="https://github.com/YuvannithiT" target="_blank" class="contact-button no-link-style">
+                        <a href="https://github.com/YuvannithiT" target="_blank" class="contact-button">
                             <svg>
                                 <use href="../svg/contact-icons.svg#icon-github"></use>
                             </svg>
@@ -103,5 +110,8 @@
     <script src="../js/themeToggle.js"></script>
     <script src="../js/backgroundPattern.js"></script>
     <script src="../js/transitions.js"></script>
+    <script src="https://unpkg.com/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="../js/masonryInit.js"></script>
 </body>
 </html>
