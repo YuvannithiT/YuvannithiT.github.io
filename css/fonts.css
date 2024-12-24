@@ -1,41 +1,24 @@
 @font-face {
-    font-family: 'eml';
-    src: url('../emirates-sans/Emirates-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
+    font-family: 'rceb';
+    src: url('../roboto-condensed/RobotoCondensed-ExtraBold.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'emm';
-    src: url('../emirates-sans/Emirates-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
+    font-family: 'rcb';
+    src: url('../roboto-condensed/RobotoCondensed-Bold.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'emb';
-    src: url('../emirates-sans/Emirates-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+    font-family: 'rcsb';
+    src: url('../roboto-condensed/RobotoCondensed-SemiBold.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'emli';
-    src: url('../emirates-sans/Emirates-LightItalic.ttf') format('truetype');
-    font-weight: 300;
-    font-style: italic;
+    font-family: 'rcm';
+    src: url('../roboto-condensed/RobotoCondensed-Medium.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'emmi';
-    src: url('../emirates-sans/Emirates-MediumItalic.ttf') format('truetype');
-    font-weight: 500;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'embi';
-    src: url('../emirates-sans/Emirates-BoldItalic.ttf') format('truetype');
-    font-weight: bold;
-    font-style: italic;
+    font-family: 'rcr';
+    src: url('../roboto-condensed/RobotoCondensed-Regular.ttf') format('truetype');
 }
