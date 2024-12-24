@@ -20,13 +20,12 @@ header h2 {
 }
 
 .header-content {
-    /* max-width: var(--max-width); */
     padding: var(--spacing-sm) var(--spacing-lg);
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .left-align {

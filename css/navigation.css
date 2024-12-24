@@ -33,7 +33,7 @@ nav ul li a::after {
     height: 1.75px;
     background-color: var(--theme);
     left: 0;
-    bottom: 5px;
+    bottom: -1px;
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.3s ease;

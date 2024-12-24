@@ -5,7 +5,7 @@
     cursor: pointer;
     padding: var(--spacing-sm) var(--spacing-md);
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: center;
     border-radius: 50px;
     fill: currentColor;
