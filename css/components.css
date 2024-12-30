@@ -79,15 +79,15 @@ a {
 }
 
 .image-gallery {
-    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     position: relative;
     z-index: 1;
 }
 
 .image-gallery img {
-    display: inline-block;
-    margin: 0 5px;
-    width: 150px;
+    width: 125px;
     height: auto;
     border-radius: var(--border-radius);
 }

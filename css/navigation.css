@@ -14,7 +14,7 @@ nav ul li h2 {
 }
 
 nav ul li {
-    padding: var(--spacing-sm);
+    padding: 0 var(--spacing-sm);
 }
 
 nav ul li a {
