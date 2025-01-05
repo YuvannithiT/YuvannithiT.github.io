@@ -6,8 +6,13 @@ a {
     transition: color 0.3s ease;
 }
 
-.no-link-style:hover {
-    opacity: 1;
+ul {
+    list-style-type: square;
+}
+
+li {
+    font-family: 'rcr';
+    font-size: 18px;
 }
 
 .card {
