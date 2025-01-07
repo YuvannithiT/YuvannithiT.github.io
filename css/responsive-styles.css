@@ -48,10 +48,16 @@
     .left-align, .right-align {
         margin: 0;
     }
+    h1 {
+        font-size: clamp(24px, 2.5vw, 26px);
+    }
     h2 {
         font-size: clamp(18px, 2.5vw, 20px);
     }
     p {
+        font-size: clamp(14px, 2vw, 16px);
+    }
+    li {
         font-size: clamp(14px, 2vw, 16px);
     }
     .image-gallery img {

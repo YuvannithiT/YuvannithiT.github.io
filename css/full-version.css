@@ -170,11 +170,11 @@ nav ul {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
 }
 
 nav ul li h2 {
-    margin: var(--spacing-sm);
+    padding: 0 var(--spacing-sm);
 }
 
 nav ul li a {
@@ -518,10 +518,16 @@ svg {
     .left-align, .right-align {
         margin: 0;
     }
+    h1 {
+        font-size: clamp(24px, 2.5vw, 26px);
+    }
     h2 {
         font-size: clamp(18px, 2.5vw, 20px);
     }
     p {
+        font-size: clamp(14px, 2vw, 16px);
+    }
+    li {
         font-size: clamp(14px, 2vw, 16px);
     }
     .image-gallery img {

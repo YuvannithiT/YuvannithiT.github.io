@@ -6,11 +6,11 @@ nav ul {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
 }
 
-nav ul li h3 {
-    margin: var(--spacing-sm);
+nav ul li h2 {
+    padding: 0 var(--spacing-sm);
 }
 
 nav ul li a {
