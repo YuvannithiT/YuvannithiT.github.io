@@ -9,7 +9,7 @@ nav ul {
     gap: var(--spacing-lg);
 }
 
-nav ul li h2 {
+nav ul li h3 {
     margin: var(--spacing-sm);
 }
 
