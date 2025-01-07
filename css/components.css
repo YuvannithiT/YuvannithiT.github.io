@@ -40,8 +40,8 @@ li {
 .masonry-img-wrapper {
     position: relative;
     overflow: hidden;
-    border: 1px solid var(--theme);
     border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .masonry-item img {
@@ -85,14 +85,20 @@ li {
 
 .image-gallery {
     display: flex;
+    width: fit-content;
     align-items: center;
-    gap: 10px;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
     position: relative;
     z-index: 1;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .image-gallery img {
-    width: 125px;
+    width: 100px;
     height: auto;
     border-radius: var(--border-radius);
 }

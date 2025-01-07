@@ -1,20 +1,16 @@
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin: 0;
+    gap: var(--spacing-lg);
 }
 
 nav ul li h2 {
     margin: var(--spacing-sm);
-    font-variant: small-caps;
-}
-
-nav ul li {
-    padding: 0 var(--spacing-sm);
 }
 
 nav ul li a {
@@ -30,7 +26,7 @@ nav ul li a::after {
     content: '';
     position: absolute;
     width: 100%;
-    height: 1.75px;
+    height: 1.475px;
     background-color: var(--theme);
     left: 0;
     bottom: -1px;
