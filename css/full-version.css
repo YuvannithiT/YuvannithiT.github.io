@@ -350,6 +350,14 @@ li {
     border-radius: var(--border-radius);
 }
 
+.MathJax[display = "true"] {
+    font-size: 120% !important;
+}
+
+.MathJax:not([display = "true"]) {
+    font-size: 110% !important;
+}
+
 /* Contents of footer.css */
 footer {
     z-index: 1;
