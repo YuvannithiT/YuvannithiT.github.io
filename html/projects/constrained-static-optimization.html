@@ -10,6 +10,7 @@
 
     gtag('config', 'G-333871CLRK');
     </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Constrained Static Optimization - Yuvannithi Thirumaran</title>
@@ -62,46 +63,119 @@
         <main class="content">
             <div class="card">
                 <h1>Constrained Static Optimization for Airliner</h1>
-                <h3>Objective</h3>
-                <p>Coming soon!</p>
-                <h3>Methodology</h3>
-                <ul>
-                    <li>Built a 6-DOF nonlinear model in MATLAB and Simulink to compute trim values within flight constraints.</li>
-                    <li>Optimized climb performance using a steepest descent gradient algorithm for optimal flight configurations.</li>
-                    <li>Validated optimizations results via fmincon function, achieving a 98% convergence rate.</li>
-                </ul>
-                <h3>Experience Breakdown</h3>
-                <p>
-                    Over a four-month period, I spearheaded a project focused on maximizing an airliner's performance within strict operational constraints. The objective was to optimize the aircraft's climb performance while adhering to specific flight envelope limitations using advanced optimization techniques.
-                </p>
-                <p>
-                    Below are the key contributions and highlights of the project:
-                </p>
-                <ul>
-                    <li>Developed a comprehensive 6-DOF nonlinear flight dynamics model in Simulink to capture essential aircraft dynamics across all axes and movements.</li>
-                    <li>Calculated trim settings to maintain steady, level flight at varying speeds and altitudes.</li>
-                    <li>Employed the steepest descent gradient algorithm to enhance the airliner's climb rate within designated mission and operational parameters.</li>
-                    <li>Performed simulation iterations to rigorously evaluate equilibrium flight dynamics stability and maximize climb rate across various trim values.</li>
-                    <li>Validated the optimization process by rerunning it using MATLAB's <code>fmincon</code> function, achieving 98% convergence to expected climb rates.</li>
-                    <li>Extensive simulations confirmed the optimized climb profile, ensuring stable equilibrium with the desired maximum climb rate.</li>
-                </ul>
-                <p>
-                    This project provided valuable experience and skill development in the following areas:
-                </p>
-                <ul>
-                    <li>Advanced optimization techniques, particularly in the context of aerospace engineering.</li>
-                    <li>Aircraft modeling, flight dynamics, and control theory.</li>
-                    <li>Practical applications of optimization algorithms and simulation analysis in aviation.</li>
-                </ul>
-                <p>
-                    Overall, the project reinforced my technical expertise in optimizing airliner performance and demonstrated the effectiveness of simulation and algorithmic approaches in achieving aerospace objectives.
-                </p>
-                <h3>Challenges</h3>
-                <p>Coming soon!</p>
-                <h3>Visuals</h3>
-                <p>Coming soon!</p>
-                <h3>Future Scope</h3>
-                <p>Coming soon!</p>
+                <section>
+                    <h3>Problem Statement</h3>
+                    <p>The core challenge was to develop a comprehensive 6 degrees of freedom (6-DOF) nonlinear mathematical model for the Beechcraft 99 Airliner. This model needed to accurately capture the aircraft's motion in three-dimensional space. The 6-DOF model was essential to account for the complex, nonlinear flight dynamics, particularly when assessing control inputs and flight configurations beyond steady-level flight. The trim condition study focused on finding a steady-state equilibrium where forces and moments acting on the aircraft were balanced, ensuring stable and controlled flight under specific conditions. The 6-DOF nonlinear model is governed by the Newton-Euler equations.</p>
+                </section>
+                <section>
+                    <h3>Methodology and Implementation</h3>
+                    <p>The implementation involved a multi-faceted approach:</p>
+                    <h4>Mathematical Modeling</h4>
+                    <ul>
+                        <li><b>Translational Dynamics:</b> 
+                            Derived from Newton's second law:
+                            \[ m\dot{\mathbf{v}} = \mathbf{F}_{body} \]
+                            Where \( \mathbf{v} \) is velocity, \( m \) is mass, and \( \mathbf{F}_{body} \) is the force vector in the body-fixed frame. Specifically:
+                            \begin{align}
+                                m(\dot{u} + qw - rv) &= F_{x} \\
+                                m(\dot{v} + ru - pw) &= F_{y} \\
+                                m(\dot{w} + pv - qu) &= F_{z}
+                            \end{align}
+                        </li>
+                        <li><b>Rotational Dynamics:</b>
+                            Governed by Euler's equations:
+                            \[ \mathbf{I}\dot{\boldsymbol{\omega}} + \boldsymbol{\omega} \times (\mathbf{I}\boldsymbol{\omega}) = \mathbf{M}_{body} \]
+                            where \( \mathbf{I} \) is the inertia tensor, \( \boldsymbol{\omega} \) is angular velocity, and \( \mathbf{M}_{body} \) is the moment vector. Specifically:
+                            \begin{align}
+                                I_{x}\dot{p} - I_{xz}\dot{r} + qr(I_{z} - I_{y}) - I_{xz}pq &= L \\
+                                I_{y}\dot{q} + rp(I_{x} - I_{z}) + I_{xz}(p^{2} - r^{2}) &= M \\
+                                -I_{xz}\dot{p} + I_{z}\dot{r} + pq(I_{y} - I_{x}) + I_{xz}qr &= N
+                            \end{align}
+                        </li>
+                    </ul>
+                    <p><b>Trim Calculation:</b> The goal was to find control inputs (\( u \)) and states (\( x \)) where the aircraft is in equilibrium. This implies zero acceleration (steady-state) with balanced forces and moments.
+                    \[ \dot{\mathbf{x}} = \mathbf{f}(\mathbf{x}, \mathbf{u}) = 0 \]
+                    </p>
+                    <p>Numerical methods were employed to achieve this, focusing on two key approaches:</p>
+                    <ul>
+                        <li>A steepest gradient-descent algorithm for iteratively updating trim values.</li>
+                        <li>MATLAB’s `fmincon` function for validating the results as a secondary step.</li>
+                    </ul>
+                    <p>For trim computation, the model was designed to solve for steady-state conditions (zero net forces and moments), involving combinations of: angle of attack, sideslip angle, control surface deflections, thrust setting, and aircraft attitude. Real-world flight constraints such as speed, angle of attack, control surface deflection, structural and engine performance limits, as well as operational limits like climb rate were imposed on the simulation. Validation data included sources such as the Beechcraft 99 flight manual, published aerodynamic data, and available simulation benchmark results.</p>
+                    <h4>Climb Performance Optimization</h4>
+                    <p>In the context of an aircraft, climb performance primarily refers to the rate of climb (how quickly the aircraft gains altitude) and the climb angle (the angle at which the aircraft is ascending). Generally speaking, faster climb rates and steeper climb angles are more desirable, especially for aircraft wanting to reach their cruising altitude and optimal flight profiles more efficiently. However, there are many factors affecting climb performance, including control settings, aircraft speed, engine power, weight, drag, and altitude.</p>
+                    <p>Optimization is crucial because many of these variables can influence climb performance, and these variables will change dynamically as the aircraft climbs. By optimizing the climb, the specific combination of parameters that maximizes the rate of climb, given the specific flight conditions and constraints of the aircraft can be determined. It is very difficult to predict a priori the ideal settings to optimize the climb performance, and this is where optimization algorithms come in, as they allow us to search through many combinations of parameters and simulation results quickly and algorithmically. The goal, then, is to not just have a plane that can climb, but one that climbs as efficiently as possible. The objective was to maximize the aircraft's rate of climb \( R_{c} \, \), defined as:</p>
+                    \[ R_{c} = V\sin(\gamma) \]
+                    where \( V \) is true airspeed, and \( \gamma \) is climb angle. The optimization problem can be defined as:</p>
+                    \[ \text{Maximize: } R_{c} = V \sin(\gamma) \]
+                    \[ \text{Subject to: } \mathbf{h}(\mathbf{x}, \mathbf{u}) = 0 \quad \text{(equality constraints, e.g., force equilibrium)} \]
+                    \[ \mathbf{g}(\mathbf{x}, \mathbf{u}) \leq 0 \quad \text{(inequality constraints, e.g., operational limits)} \]
+                    <p>Optimization was crucial to find the best combination of parameters to maximize either the rate of climb or the climb angle. The steepest descent algorithm was chosen for its relative simplicity to implement, especially when starting from scratch. The gradient computation at each iteration was given by:
+                    \[ \nabla f(x_{k}) = \left[\frac{\partial f}{\partial x_{1}}, \frac{\partial f}{\partial x_{2}}, ..., \frac{\partial f}{\partial x_{n}}\right]^{T} \]
+                    And the update step by:
+                    \[ x_{k+1} = x_{k} - \alpha_{k}\nabla f(x_{k}) \]
+                    where \( \alpha_{k} \) is the step size. The constraints included structural limits on load factor and dynamic pressure, propulsion limits on thrust and thrust rate, and stability margins. The steps of the steepest descent algorithm were:</p>
+                    <ol>
+                        <li><b>Initialization:</b> Design variables \( (\mathbf{u}_{0} = [T_{0}, \alpha_{0}, \theta_{0}]) \) were selected and initial objective function value \( J_{0} = -R_{c} \) was calculated.</li>
+                        <li><b>Gradient Calculation:</b> Gradients were computed numerically using finite differences:
+                        \[ \frac{\partial J}{\partial u_{i}} \approx \frac{J(\mathbf{u} + \Delta \mathbf{u}_{i}) - J(\mathbf{u})}{\Delta u_{i}} \]
+                        where \( \Delta\mathbf{u}_{i} \) represents a small perturbation in the \( i \)-th variable.</li>
+                        <li><b>Update Step:</b> The design variables were updated iteratively:
+                        \[ \mathbf{u}_{k+1} = \mathbf{u}_k - \eta\mathbf{\nabla}J \]
+                        where \( \eta \) is the step size.</li>
+                        <li><b>Convergence:</b> Iterations continued until
+                        \[ \|\mathbf{\nabla}J\| < \epsilon \]
+                        where \( \epsilon \) was a small threshold for convergence.</li>
+                    </ol>
+                    <p>The optimization was integrated within the 6-DOF flight dynamics model, where each iteration included a simulation of the 6-DOF model, and recalculation of the trim conditions to ensure force and moment equilibrium. The optimal flight configuration was validated using MATLAB’s '<code>fmincon</code>' function.</p>
+                    <p>The steepest descent gradient algorithm is a first-order optimization algorithm. An objective function was defined such that the lower the value, the higher the climb rate. An initial guess was made for the control inputs, and using simulations, the gradient of the objective function was computed. The simulation was rerun until a minimum is found, and the corresponding control inputs were the optimized values. Convergence was checked during each iteration. This algorithm was chosen for its simplicity, good performance when starting from scratch, and efficiency, while acknowledging its limitations in potentially finding a global minimum and its sensitivity to the initial guesses.</p>
+                    <p>To address the constraints, penalty functions were introduced, by returning a high objective function when constraints were violated, and bounds were enforced on control parameters using physically determined limits of the aircraft. Additionally, the simulation would be terminated if constraints were violated. The model was evaluated via its convergence rate, benchmark simulations, and by checking for constraint adherence.</p>
+                    <p>Limitations included the potential for getting trapped in local minima, slower convergence at times, and difficulty in fine-tuning the penalty functions for different constraint conditions.</p>
+                    <h4>Validation with <code>fmincon</code></h4>
+                    <p>Optimization algorithms, like the steepest descent method, may converge to a local minimum. Therefore, validation was crucial to verify results, benchmark performance against a more robust optimizer like <code>fmincon</code>, and to enhance confidence in the proposed optimal configurations. <code>fmincon</code>, MATLAB's built-in function for constrained nonlinear minimization, was used as the validation tool because of its robust implementation, ability to handle constraints, and efficient performance compared to our first order steepest descent algorithm.</p>
+                    <p>For validation, <code>fmincon</code> was validated with the following approach:</p>
+                    <ol>
+                        <li><b>Objective Function:</b> A custom MATLAB function was written to compute the negative climb rate as the objective function to be minimized, with simulation of the flight dynamics based on the input variables.</li>
+                        <li><b>Constraints:</b> Equality constraints were implemented via a function that computed the forces and moments acting on the aircraft, and equality constraints were set to 0 to achieve equilibrium. Similarly, inequality constraints were also implemented, and were related to the physical limits of the aircraft and its control surfaces.</li>
+                        <li><b>Bounds:</b> Design variables such as throttle, angle of attack and pitch were bounded using physical limits.</li>
+                    </ol>
+                    <p>The problem was then solved via fmincon using the interior-point algorithm. The 98% convergence rate was achieved by running <code>fmincon</code> under a multitude of initial conditions, and was calculated by determining how many runs of it met all of the success criteria (stable minimum, all constraints satisfied, no errors, and within iteration limit). The convergence rate was then calculated as:</p>
+                    \[ \text{Convergence Rate} = \frac{\text{Number of Successful Runs}}{\text{Total Number of Runs}} \times 100 % \]
+                    <p>This way, the robustness and reliability of the <code>fmincon</code> algorithm was across various initial conditions and scenarios were measured and quantified. The root causes of the 2% of `fmincon` runs that failed to converge were studied and investigated. Some of the causes were: Infeasible Initial Conditions, Poorly Conditioned Objective Functions, Constraint Conflicts, Numerical Issues and the default Solver Settings. These issues were systematically addressed by fine-tuning our models, the solver settings, and by using more robust constraint handling methods.</p>
+                    <p>There were however trade-offs with using <code>fmicon</code>: It had a longer computation time, was more of a black box, required a specific setup and at times required tuning, compared to the steepest descent.  However, it was certainly more robust and more reliable.</p>
+                </section>
+                <section>
+                    <h3>Results and Achievements</h3>
+                    <p>This project led to the following accomplishments:</p>
+                    <ul>
+                        <li>Development of a 6-DOF nonlinear model of the Beechcraft 99 airliner in MATLAB and Simulink.</li>
+                        <li>Implementation a steepest descent gradient algorithm to optimize the aircraft's climb performance by adjusting control parameters and trim settings.</li>
+                        <li>Achievement of a 98% convergence rate when validating the optimization results using MATLAB's <code>fmincon</code> function under many initial condition trials, confirming the reliability and accuracy of the implemented optimization model.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Challenges and Lessons Learned</h3>
+                    <p>Key challenges and takeaways included:</p>
+                        <ul>
+                            <li><b>Understanding the interplay between numerical optimization and modeling:</b> The sensitivity of optimization outcomes to model design emphasized the need for a thorough comprehension of modeling techniques and their impact on optimization procedures.</li>
+                            <li><b>Constraint Handling:</b> Effectively handling constraints required careful design of penalty functions and robust constraint checking methods.</li>
+                            <li><b>Algorithm Limitations:</b> The potential for the steepest descent method to converge to a local minimum, and its sensitivity to the initial guess highlighted the importance of validation.</li>
+                        </ul>
+                </section>
+                <section>
+                    <h3>Future Scope and Next Steps</h3>
+                    <p>Possible interesting areas of future work includes:
+                        <ul>
+                            <li><b>Higher-order Optimization:</b> Exploring the use of higher order or global optimization methods such as convex optimization to improve performance and convergence.</li>
+                            <li><b>Flight Envelope Expansion:</b> Testing the optimization model across a wider range of flight conditions and configurations.</li>
+                            <li><b>Model Refinement:</b> Upgrading the 6-DOF model's fidelity and accuracy to further enhance the simulation's fidelity.</li>
+                        </ul>
+                    </p>
+                </section>
+                <section>
+                    <h3>Multimedia and Links</h3>
+                    <p>Coming soon!</p>
+                </section>
             </div>
         </main>
 
