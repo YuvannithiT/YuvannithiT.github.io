@@ -10,6 +10,7 @@
 
     gtag('config', 'G-333871CLRK');
     </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engineering Lead Assistant - Yuvannithi Thirumaran</title>
@@ -65,23 +66,127 @@
                 <h2>Eagle Flight Research Center | May 2020 - August 2020</h2>
                 <section>
                     <h3>Role Overview</h3>
-                    <p>Coming soon!</p>
+                    <p>As an Engineering Lead Assistant at Eagle Flight Research Center (EFRC), my primary responsibility was to develop a robust and accurate simulation model of a powered parachute (PPC) using MATLAB and Simulink. PPC is a hybrid system with two key components: Canopy (parachute) that generates lift and drag based on airflow and flight speed and the chassic (aircraft frame) that houses the propulsion system and payload, influencing mass distribution and thrust vectoring. This involved several key areas of focus, from the theoretical derivation of the equations of motion to practical application and validation. I took the lead in applying Lagrangian dynamics, integrating real-world flight data, and performing rigorous failure mode analysis to enhance the system's design and overall safety. This role demanded a blend of theoretical understanding and practical engineering expertise.</p>
                 </section>
                 <section>
                     <h3>Key Responsibilities</h3>
-                    <p>Coming soon!</p>
+                    <p>In my role, I undertook a variety of tasks that were crucial to the project's success. These included:</p>
+                    <ul>
+                        <li>Developing a 4-DOF Lagrangian dynamics model of a PPC using MATLAB and Simulink to capture its behavior in flight.</li>
+                        <li>Symbolically computing Lagrangian equations of motion and other key equations in MATLAB to facilitate model implementation.</li>
+                        <li>Creating a function block in Simulink that simulated the time-dependent behavior of the system under various conditions. This allowed for visualization and analysis of the PPC's dynamics.</li>
+                        <li>Validating the simulation model against known steady-state flight conditions, simple maneuvers, and actual flight test data to ensure its accuracy and reliability.</li>
+                        <li>Iteratively tuning and adjusting model parameters, such as drag coefficients and thrust profiles, based on real-world flight data to improve simulation accuracy and fidelity.</li>
+                        <li>Conducting failure mode analysis using FMEA templates, risk assessment, and root cause analysis to identify and mitigate potential risks in the PPC system.</li>
+                        <li>Proposing specific design solutions to address the risks identified during the failure mode analysis, aiming to improve the safety and reliability of the system.</li>
+                        <li>Ensuring that all design changes met the necessary aerospace industry standards, including FAA FAR Part 23, RTCA DO-178C, and MIL-STD-810G.</li>
+                    </ul>
                 </section>
                 <section>
                     <h3>Notable Projects and Contributions</h3>
-                    <p>Coming soon!</p> 
+                    <p>This project was driven by the need to create a detailed dynamic model of a PPC to understand and accurately predict its behavior under various flight conditions. The complexity of the PPC system, with its interconnected components and forces, rendered traditional Newtonian mechanics cumbersome. This led to the adoption of a Lagrangian mechanics approach, which offered a more elegant method for deriving the equations of motion by focusing on the system's energy rather than individual forces.</p>
+                    <p><b>Key challenges included:</b></p>
+                    <ul>
+                        <li>Modeling the highly nonlinear dynamics of the PPC, arising from factors like complex aerodynamics, gravitational influences, and the intricate behavior of the suspension lines.</li>
+                        <li>Balancing the model’s accuracy with computational efficiency, ensuring that the simulation could run effectively without sacrificing the fidelity of the results.</li>
+                        <li> Identifying accurate parameter values, such as the drag coefficients, which are crucial for the model's precision and are not always readily available.</li>
+                        <li>Validating the simulation outputs against real-world flight data to ensure that the model correctly represents the physical system.</li>
+                    </ul>
+                    <p>My contributions to the project were centered around three key areas, each contributing to the overall success of the simulation and analysis.</p>
+                    <h4>Lagrangian Dynamics Model Development</h4>
+                    <p>The core focus of this project was the development of a detailed Lagrangian PPC longitudinal dynamics model. This involved choosing a method that simplified the system modeling process by focusing on energy rather than forces, and selecting the appropriate degrees of freedom. The key elements of this phase were as follows:</p>
+                    <p><b>Lagrangian Formulation:</b> Lagrangian mechanics was chosen over traditional Newtonian mechanics for its use of scalar energy quantities rather than vector forces, its coordinate independence that allowed us to use variables best suited to describe the motion, and the elegant handling of constraints. This enabled a more streamlined process, focusing on the system’s energy and making the derivation process simpler. Lagrangian formulation of mechanics derives the equations of motion from the difference between kinetic and potential energies.</p>
+                    <p><b>Equations of Motion through Lagrangian:</b></p>
+                    <ul>
+                        <li>Choosing a set of variables referred to as <i>Generalized coordinates</i> (e.g., position, velocity, pitch angle) to describe the system's state at any moment</li>
+                        <li>Calculating the kinetic energy \( T \) of the PPC by summing the translational and rotational energies.</li>
+                        <li>Determining the potential energy \( V \) from gravitational forces acting on the system.</li>
+                        <li>Deriving the Lagrangian and applying the Euler-Lagrange equations</li>
+                    </ul>
+                    \begin{align}
+                        L &= T - V \\
+                        \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}_{i}}\right) - \frac{\partial L}{\partial q_{i}} &= Q_{i}
+                    \end{align}
+                    <p>where, \( q_{i} \) are the generalized coordinates, \( \dot{q}_{i} \) are their time derivatives, and \( Q_{i} \) are the generalized forces acting on the system.</p>
+                    <p><b>Degrees of Freedom (DOF):</b> To capture the primary motions of the PPC in a longitudinal plane, the model was developed with four degrees of freedom:</p>
+                    <ul>
+                        <li>Forward Translation \( (x) \): Representing the PPC's horizontal position along the ground plane, which was crucial for understanding its forward motion and range.</li>
+                        <li>Vertical Translation \( (z) \): Representing the PPC's altitude or vertical position, vital for modeling climbs, descents, and overall vertical performance.</li>
+                        <li>Pitch Angle \( (\theta) \): Representing the PPC's rotation around its lateral axis (nose-up or nose-down angle), important for controlling pitch stability.</li>
+                        <li>Parachute Drag Angle \( (\delta) \): The angle between the relative wind direction and the parachute's projected horizontal surface, which directly influences the system's performance through drag forces.</li>
+                    </ul>
+                    <p>These four DOFs were chosen to capture the fundamental movements of the aircraft in a two-dimensional plane, while accounting for the critical drag effect of the parachute. Yaw and roll rotations were excluded from this initial model to keep it manageable for the primary focus of longitudinal dynamic analysis.</p>
+                    <p><b>Model Validation and Refinement:</b> The model's accuracy was ensured through validation using:</p>
+                    <ul>
+                        <li>Known steady-state flight conditions, which provided a baseline for assessing the model's accuracy.</li>
+                        <li>Simple maneuvers with predictable outcomes, which helped in understanding the model's response to control inputs.</li>
+                        <li>Actual flight test data, which allowed for the calibration of parameters and ensured the model aligned with real-world performance.</li>
+                    </ul>
+                    <p>The model was iteratively refined by feeding real-world flight data to adjust the parameters (such as drag coefficients and thrust profiles) until it showed similar performance to actual flight data, resulting in a 25% reduction in the error margin.</p>
+                    <h4>Integration of Flight Test Data</h4>
+                    <p>The integration of real-world flight test data was essential for making the model more accurate and reliable. This involved several steps designed to bridge the gap between theoretical predictions and actual system behavior. The overall process was to improve the model reliability and applicability by:</p>
+                    <ul>
+                        <li><b>Data Acquisition:</b> Collecting data from actual powered parachute flights using sensors including IMU, GPS, and sensors related to the control surfaces.</li>
+                        <li><b>Data Preprocessing:</b> Implementing noise filtering, time synchronization, and unit conversions to ensure data consistency.</li>
+                        <li><b>Data Transformation:</b> Preparing data for use by converting flight data into formats such as lookup tables or parameterized functions.</li>
+                        <li><b>Model Calibration:</b> Using numerical optimization algorithms (e.g. least squares fitting) to adjust the model parameters so simulation outputs align closely with real-world data.</li>
+                        <li><b>Error Analysis:</b> Identifying deviations between simulated and real-world results, and minimizing the error margins through iterative cycles of validation and refinement.</li>
+                    </ul>
+                    <p>Key parameters from flight tests included:</p>
+                    \begin{align}
+                        \text{Position: }& (x, y, z)\\
+                        \text{Velocities: }& (v_{x}, v_{y}, v_{z})\\
+                        \text{Angles: }& (\theta_\text{canopy}, \theta_\text{payload})\\
+                        \text{Forces: }& (F_\text{lift}, F_\text{drag}, F_\text{thrust})
+                    \end{align}
+                    <p>The data processing involved:</p>
+                    <ul>
+                        <li>Signal filtering to remove sensor noise, ensuring cleaner and more reliable data.</li>
+                        <li>Time synchronization across different data streams to properly align measurements from various sensors.</li>
+                        <li>State estimation (such as Moving averages or Kalman filtering) for unmeasured variables to fill in missing data and provide a complete picture of the system’s state.</li>
+                        <li>Units Conversion to ensure all data was in consistent units and formats for use in MATLAB</li>
+                        <li>Data Alignment to align the flight data to a consistent coordinate reference system that aligned with our simulation model.</li>
+                    </ul>
+                    <p>The 25% error reduction was achieved by ensuring the model outputs closely aligned with the actual flight data, quantified by root mean square error (RMSE). RMSE gave the square root of the average of the squared differences between the simulation outputs and the flight data for each degree of freedom.</p>
+                    \[ \text{RMSE} = \sqrt{\frac{1}{N}} \times \sum{\left(\text{Simulated Value} - \text{Actual Value}\right)^{2}} \]
+                    <p>where, \( N \) is the number of data points compared, simulated value is the output from our simulation, actual value is the real world sensor value from the flight. These calculations were performed for each degree of freedom: \( \text{RMSE}_{x} \), \( \text{RMSE}_{z} \), \( \text{RMSE}_{\theta} \), and \( \text{RMSE}_{\delta} \). And finally, visual checks were also performed by plotting the simulation outputs against the real flight data. This helped identify patterns and specific areas where the model needed improvement.</p> 
+                    <h4>Failure Mode Analysis</h4>
+                    <p>A comprehensive failure mode analysis was performed using a systematic approach based on Failure Mode and Effects Analysis (FMEA) to identify potential system weaknesses and enhance safety. This process involved several key steps:</p>
+                    <ul>
+                        <li><b>System Understanding:</b> A comprehensive understanding of the PPC system, including its components, operational environment, and their interactions, was developed.</li>
+                        <li><b>Failure Mode Identification:</b> Brainstorming sessions were conducted with engineers, technicians, and flight test specialists to identify potential failure modes. Tools such as FMEA templates were used to document these failures.</li>
+                        <li><b>Risk Assessment:</b> Each failure mode was assessed based on its severity, the likelihood of its occurrence, and the likelihood of detecting the failure before it occurred. A Risk Priority Number (RPN) was calculated to prioritize failures that needed immediate attention. The RPN was calculated using
+                        \[ \text{Risk Priority Number (RPN)} = \text{Severity} \times \text{Occurrence} \times \text{Detection} \]</li>
+                        <li><b>Root Cause Analysis:</b> Detailed investigations were performed for high-priority failure modes. Methods such as Fishbone diagrams and Fault Tree Analysis (FTA) were used to pinpoint the root causes and visualize how failures could propagate.</li>
+                        <li><b>Design Proposals:</b> Design solutions aimed at mitigating the identified risks of control system enhancements were proposed.</li>
+                    </ul>
+                    <p>Examples of investigated failure modes included parachute failures, engine failures, control system malfunctions, and payload-related issues. This comprehensive process aimed to minimize risks and ensure the reliable operation of the PPC system.</p>
                 </section>
                 <section>
                     <h3>Achievements and Impact</h3>
-                    <p>Coming soon!</p>
+                    <p>Through my contributions, several significant achievements were made that enhanced the project's overall outcomes and value. These include:</p>
+                    <ul>
+                        <li>A reduction in the computational error margin by 25% through iterative model validation and parameter tuning with real flight data. This significantly improved the accuracy of the simulation model.</li>
+                        <li>Development of a robust and reliable simulation model that could predict the PPC's behavior under various conditions. This model now provides a crucial tool for performance optimization, safety evaluation, and system design improvements.</li>
+                        <li>Provision of valuable design insights, such as optimized weight distribution and better tuning of control inputs, that directly translated to design and performance improvements.</li>
+                        <li>Identification and mitigation of potential risks through a comprehensive failure mode analysis, which significantly enhanced the safety and reliability of the PPC system.</li>
+                        <li>Ensuring compliance with aerospace standards, streamlining future certification processes and setting a standard for industry best practices.</li>
+                    </ul>
                 </section>
                 <section>
                     <h3>Challenges and Lessons Learned</h3>
-                    <p>Coming soon!</p>
+                    <p>Throughout the project, several challenges were encountered which required creative and persistent solutions. These challenges, and the valuable lessons learned from them, included:</p>
+                    <ul>
+                        <li><b>Model Complexity:</b> Balancing the model’s accuracy with computational cost was a persistent challenge. Simplifying the model while retaining the key dynamic behaviors required iterative testing and validation, and was a crucial lesson in how to effectively manage complexity.</li>
+                        <li><b>Parameter Identification:</b> Finding accurate values for parameters, such as aerodynamic coefficients, was complex and required combining theoretical knowledge, literature reviews, and data fitting techniques from real flight data.</li>
+                        <li><b>Data Quality:</b> Handling inconsistencies in real-world flight test data required robust statistical methods and averaging multiple runs. This highlighted the importance of data preprocessing for reliable model inputs.</li>
+                        <li><b>Nonlinear Aerodynamics:</b> Accurately modeling nonlinear lift and drag coefficients required dynamic use of empirical data and lookup tables. This approach underscored the importance of empirical data for modeling complex real world systems.</li>
+                        <li><b>Dynamic Stability:</b> Ensuring the model's stability under various conditions required validating against flight test data and iteratively fine-tuning model parameters.</li>
+                        <li><b>Complex Interdependencies:</b> Addressing the cascading effects of failures in one component to other components required extensive use of Fault Tree Analysis and dependency matrices.</li>
+                        <li><b>Balancing Design Trade-offs:</b> Strengthening components without compromising weight and performance required careful optimization. This was a key lesson in managing conflicting design goals.</li>
+                        <li><b>Standard Adherence:</b> Interpreting and applying broad aerospace standards to the specific needs of the PPC system required collaborating with aerospace engineers and careful study of regulatory guidelines.</li>
+                    </ul>
+                    <p>Through these challenges, key learnings were obtained including the critical role of data-driven model refinement, the value of systematic risk analysis, and the need for collaborative and interdisciplinary approaches to complex engineering challenges. These lessons will undoubtedly be valuable in future projects and endeavors.</p>
                 </section>
                 <section>
                     <h3>Multimedia and Links</h3>
