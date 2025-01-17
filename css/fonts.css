@@ -1,24 +1,29 @@
 @font-face {
-    font-family: 'rceb';
-    src: url('../roboto-condensed/RobotoCondensed-ExtraBold.ttf') format('truetype');
+    font-family: 'eml';
+    src: url('../emirates/Emirates-Light.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'rcb';
-    src: url('../roboto-condensed/RobotoCondensed-Bold.ttf') format('truetype');
+    font-family: 'emli';
+    src: url('../emirates/Emirates-LightItalic.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'rcsb';
-    src: url('../roboto-condensed/RobotoCondensed-SemiBold.ttf') format('truetype');
+    font-family: 'emm';
+    src: url('../emirates/Emirates-Medium.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'rcm';
-    src: url('../roboto-condensed/RobotoCondensed-Medium.ttf') format('truetype');
+    font-family: 'emmi';
+    src: url('../emirates/Emirates-MediumItalic.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'rcr';
-    src: url('../roboto-condensed/RobotoCondensed-Regular.ttf') format('truetype');
+    font-family: 'emb';
+    src: url('../emirates/Emirates-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'embi';
+    src: url('../emirates/Emirates-BoldItalic.ttf') format('truetype');
 }
