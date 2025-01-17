@@ -63,61 +63,78 @@ main.center-content {
 
 /* Contents of fonts.css */
 @font-face {
-    font-family: 'rceb';
-    src: url('../roboto-condensed/RobotoCondensed-ExtraBold.ttf') format('truetype');
+    font-family: 'eml';
+    src: url('../emirates/Emirates-Light.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'rcb';
-    src: url('../roboto-condensed/RobotoCondensed-Bold.ttf') format('truetype');
+    font-family: 'emli';
+    src: url('../emirates/Emirates-LightItalic.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'rcsb';
-    src: url('../roboto-condensed/RobotoCondensed-SemiBold.ttf') format('truetype');
+    font-family: 'emm';
+    src: url('../emirates/Emirates-Medium.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'rcm';
-    src: url('../roboto-condensed/RobotoCondensed-Medium.ttf') format('truetype');
+    font-family: 'emmi';
+    src: url('../emirates/Emirates-MediumItalic.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'rcr';
-    src: url('../roboto-condensed/RobotoCondensed-Regular.ttf') format('truetype');
+    font-family: 'emb';
+    src: url('../emirates/Emirates-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'embi';
+    src: url('../emirates/Emirates-BoldItalic.ttf') format('truetype');
 }
 
 /* Contents of typography.css */
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
     margin-bottom: var(--spacing-sm);
 }
 
 h1 {
     color: var(--theme);
-    font-family: 'rceb';
-    font-size: 32px;
+    font-family: 'emb';
+    font-size: 46px;
 }
 
 h2 {
     color: var(--theme);
-    font-family: 'rcb';
-    font-size: 26px;
+    font-family: 'emm';
+    font-size: 32px;
 }
 
 h3 {
     color: var(--theme);
-    font-family: 'rcsb';
-    font-size: 22px;
+    font-family: 'eml';
+    font-size: 30px;
 }
 
 h4 {
     color: var(--theme);
-    font-family: 'rcm';
-    font-size: 18px;
+    font-family: 'embi';
+    font-size: 28px;
+}
+
+h5 {
+    color: var(--theme);
+    font-family: 'emmi';
+    font-size: 24px;
+}
+
+h6 {
+    color: var(--theme);
+    font-family: 'emli';
+    font-size: 22px;
 }
 
 p {
-    font-family: 'rcr';
+    font-family: 'eml';
     font-size: 18px;
 }
 
@@ -258,7 +275,7 @@ ul {
 }
 
 li {
-    font-family: 'rcr';
+    font-family: 'eml';
     font-size: 18px;
 }
 
