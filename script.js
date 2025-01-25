@@ -31,8 +31,7 @@ function setTheme(theme) {
     const actualTheme = theme === 'system' ? getSystemTheme() : theme;
     
     const themePrefix = actualTheme === 'dark' ? '--dark-' : '--light-';
-    const cssVars = ['background', 'background-rgb', 'background-secondary', 'accent', 
-                    'text', 'text-rgb', 'text-secondary', 'overlay-bg', 'hover-bg', 'border-color'];
+    const cssVars = ['background', 'background-rgb', 'background-secondary', 'accent', 'text', 'text-rgb', 'text-secondary', 'overlay-bg', 'hover-bg', 'border-color'];
     
     cssVars.forEach(variable => {
         const value = getComputedStyle(root).getPropertyValue(`${themePrefix}${variable}`);
