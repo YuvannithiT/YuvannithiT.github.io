@@ -99,10 +99,13 @@ body {
 .nav-brand {
     font-size: 24px;
     font-weight: 500;
-    color: var(--text);
     text-decoration: none;
     letter-spacing: 1px;
     margin-right: auto;
+    background: linear-gradient(45deg, #4BC0F3, #4A98E5, #4287D6, #5D4CBF, #7A3BA3, #962A67, #B8255A, #D43545, #E55A38, #F15A29, #F9A356);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .nav-links {
@@ -523,7 +526,6 @@ body {
     flex-direction: column;
     gap: 8px;
     width: 35px;
-    backdrop-filter: blur(10px);
 }
 
 .theme-dropdown.show {
