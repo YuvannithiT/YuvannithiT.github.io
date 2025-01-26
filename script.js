@@ -1,7 +1,41 @@
 const hamburger = document.querySelector('.hamburger');
+const header = document.querySelector('.header');
 const mobileMenu = document.querySelector('.mobile-menu');
 const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+let lastScrollTop = 0;
+let isHeaderVisible = true;
 
+// Header scroll behavior
+window.addEventListener('scroll', () => {
+    const currentScrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    // Determine scroll direction
+    const isScrollingDown = currentScrollTop > lastScrollTop;
+    const isScrollingUp = currentScrollTop < lastScrollTop;
+
+    // Check if we're not at the top of the page
+    const isNotAtTop = currentScrollTop > 0;
+
+    if (isScrollingDown && isNotAtTop) {
+        // Scrolling down - hide header
+        header.style.transform = 'translateY(-100%)';
+        header.style.opacity = '0';
+        isHeaderVisible = false;
+    } else if (isScrollingUp) {
+        // Scrolling up - show header with background
+        header.style.transform = 'translateY(0)';
+        header.style.opacity = '1';
+        header.style.backgroundColor = 'var(--background)';
+        isHeaderVisible = true;
+    }
+
+    // If back to top, remove background
+    if (currentScrollTop === 0) {
+        header.style.backgroundColor = 'transparent';
+    }
+
+    lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+});
 hamburger.addEventListener('click', () => {
     mobileMenu.classList.toggle('active');
 });
@@ -17,7 +51,6 @@ mobileMenu.addEventListener('click', (event) => {
         mobileMenu.classList.remove('active');
     }
 });
-
 const themeToggle = document.getElementById('theme-toggle');
 const themeDropdown = document.querySelector('.theme-dropdown');
 const themeOptions = document.querySelectorAll('.theme-option');
@@ -29,10 +62,10 @@ function getSystemTheme() {
 
 function setTheme(theme) {
     const actualTheme = theme === 'system' ? getSystemTheme() : theme;
-    
+
     const themePrefix = actualTheme === 'dark' ? '--dark-' : '--light-';
     const cssVars = ['background', 'background-rgb', 'background-secondary', 'accent', 'text', 'text-rgb', 'text-secondary', 'overlay-bg', 'hover-bg', 'border-color'];
-    
+
     cssVars.forEach(variable => {
         const value = getComputedStyle(root).getPropertyValue(`${themePrefix}${variable}`);
         root.style.setProperty(`--${variable}`, value);
@@ -43,10 +76,10 @@ function setTheme(theme) {
         'dark': 'fa-moon',
         'system': 'fa-desktop'
     };
-    
+
     const toggleIcon = themeToggle.querySelector('i');
     toggleIcon.className = `fas ${icons[theme]}`;
-    
+
     localStorage.setItem('theme', theme);
 }
 
@@ -77,8 +110,7 @@ window.matchMedia('(prefers-color-scheme: dark)')
             setTheme('system');
         }
     });
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contact-form');
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
@@ -88,13 +120,13 @@ document.addEventListener('DOMContentLoaded', function() {
     function validateName() {
         const name = nameInput.value.trim();
         const nameError = document.getElementById('name-error');
-        
+
         if (name.length < 2) {
             nameInput.parentElement.classList.add('error');
             nameError.textContent = 'Name must be at least 2 characters long';
             return false;
         }
-        
+
         nameInput.parentElement.classList.remove('error');
         nameError.textContent = '';
         return true;
@@ -104,13 +136,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const email = emailInput.value.trim();
         const emailError = document.getElementById('email-error');
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        
+
         if (!emailRegex.test(email)) {
             emailInput.parentElement.classList.add('error');
             emailError.textContent = 'Please enter a valid email address';
             return false;
         }
-        
+
         emailInput.parentElement.classList.remove('error');
         emailError.textContent = '';
         return true;
@@ -119,19 +151,19 @@ document.addEventListener('DOMContentLoaded', function() {
     function validateSubject() {
         const subject = subjectInput.value.trim();
         const subjectError = document.getElementById('subject-error');
-        
+
         if (subject.length < 3) {
             subjectInput.parentElement.classList.add('error');
             subjectError.textContent = 'Subject must be at least 3 characters long';
             return false;
         }
-        
+
         if (subject.length > 100) {
             subjectInput.parentElement.classList.add('error');
             subjectError.textContent = 'Subject cannot exceed 100 characters';
             return false;
         }
-        
+
         subjectInput.parentElement.classList.remove('error');
         subjectError.textContent = '';
         return true;
@@ -140,19 +172,19 @@ document.addEventListener('DOMContentLoaded', function() {
     function validateMessage() {
         const message = messageInput.value.trim();
         const messageError = document.getElementById('message-error');
-        
+
         if (message.length < 10) {
             messageInput.parentElement.classList.add('error');
             messageError.textContent = 'Message must be at least 10 characters long';
             return false;
         }
-        
+
         if (message.length > 1000) {
             messageInput.parentElement.classList.add('error');
             messageError.textContent = 'Message cannot exceed 1000 characters';
             return false;
         }
-        
+
         messageInput.parentElement.classList.remove('error');
         messageError.textContent = '';
         return true;
@@ -163,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
     subjectInput.addEventListener('input', validateSubject);
     messageInput.addEventListener('input', validateMessage);
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function (e) {
         const isNameValid = validateName();
         const isEmailValid = validateEmail();
         const isSubjectValid = validateSubject();
@@ -177,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.section');
-    
+
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -188,14 +220,8 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                const content = entry.target.querySelector('.content');
-                content.style.transform = 'translateY(0)';
-                content.style.opacity = '1';
             } else {
                 entry.target.classList.remove('active');
-                const content = entry.target.querySelector('.content');
-                content.style.transform = 'translateY(30px)';
-                content.style.opacity = '0';
             }
         });
     }, observerOptions);
@@ -207,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            
+
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'
             });
