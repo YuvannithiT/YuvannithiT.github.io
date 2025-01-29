@@ -1,19 +1,49 @@
-const hamburger = document.querySelector('.hamburger');
+//const header = document.querySelector('.header');
+//let lastScrollTop = 0;
+//let isHeaderVisible = true;
+//
+//// Header scroll behavior
+//window.addEventListener('scroll', () => {
+//    const currentScrollTop = window.scrollY || document.documentElement.scrollTop;
+//
+//    // Determine scroll direction
+//    const isScrollingDown = currentScrollTop > lastScrollTop;
+//    const isScrollingUp = currentScrollTop < lastScrollTop;
+//
+//    // Check if we're not at the top of the page
+//    const isNotAtTop = currentScrollTop > 0;
+//
+//    if (isScrollingDown && isNotAtTop) {
+//        // Scrolling down - hide header
+//        header.style.transform = 'translateY(-100%)';
+//        header.style.opacity = '0';
+//        isHeaderVisible = false;
+//    } else if (isScrollingUp) {
+//        // Scrolling up - show header with background
+//        header.style.transform = 'translateY(0)';
+//        header.style.opacity = '1';
+//        header.style.backgroundColor = 'rgba(var(--background-rgb), 0.75)';
+//        isHeaderVisible = true;
+//    }
+//
+//    // If back to top, remove background
+//    if (currentScrollTop === 0) {
+//        header.style.backgroundColor = 'transparent';
+//    }
+//
+//    lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+//});
+
 const header = document.querySelector('.header');
-const mobileMenu = document.querySelector('.mobile-menu');
-const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
 let lastScrollTop = 0;
 let isHeaderVisible = true;
 
-// Header scroll behavior
 window.addEventListener('scroll', () => {
     const currentScrollTop = window.scrollY || document.documentElement.scrollTop;
 
     // Determine scroll direction
     const isScrollingDown = currentScrollTop > lastScrollTop;
     const isScrollingUp = currentScrollTop < lastScrollTop;
-
-    // Check if we're not at the top of the page
     const isNotAtTop = currentScrollTop > 0;
 
     if (isScrollingDown && isNotAtTop) {
@@ -22,35 +52,21 @@ window.addEventListener('scroll', () => {
         header.style.opacity = '0';
         isHeaderVisible = false;
     } else if (isScrollingUp) {
-        // Scrolling up - show header with background
+        // Scrolling up - show header with blur effect
         header.style.transform = 'translateY(0)';
         header.style.opacity = '1';
-        header.style.backgroundColor = 'var(--background)';
+        header.classList.add('scrolled');
         isHeaderVisible = true;
     }
 
-    // If back to top, remove background
+    // If back to top, remove background and blur
     if (currentScrollTop === 0) {
-        header.style.backgroundColor = 'transparent';
+        header.classList.remove('scrolled');
     }
 
     lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
 });
-hamburger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-});
 
-mobileMenuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-    });
-});
-
-mobileMenu.addEventListener('click', (event) => {
-    if (event.target === mobileMenu) {
-        mobileMenu.classList.remove('active');
-    }
-});
 const themeToggle = document.getElementById('theme-toggle');
 const themeDropdown = document.querySelector('.theme-dropdown');
 const themeOptions = document.querySelectorAll('.theme-option');
@@ -111,6 +127,7 @@ window.matchMedia('(prefers-color-scheme: dark)')
             setTheme('system');
         }
     });
+
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contact-form');
     const nameInput = document.getElementById('name');
@@ -231,13 +248,121 @@ document.addEventListener('DOMContentLoaded', () => {
         sectionObserver.observe(section);
     });
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+    //document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    //    anchor.addEventListener('click', function (e) {
+    //        e.preventDefault();
+//
+    //        document.querySelector(this.getAttribute('href')).scrollIntoView({
+    //            behavior: 'smooth'
+    //        });
+    //    });
+    //});
+});
 
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.section');
+    const dots = document.querySelectorAll('.indicator-dot');
+    const goToTop = document.getElementById('goToTop');
+    const prevSection = document.getElementById('prevSection');
+    const nextSection = document.getElementById('nextSection');
+    const goToBottom = document.getElementById('goToBottom');
+    
+    // Helper function to get current section index
+    function getCurrentSectionIndex() {
+        const scrollPosition = window.scrollY;
+        let currentIndex = 0;
+        
+        sections.forEach((section, index) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            
+            if (scrollPosition >= sectionTop - sectionHeight / 3) {
+                currentIndex = index;
+            }
+        });
+        
+        return currentIndex;
+    }
+    
+    // Update active dot
+    function updateActiveDot() {
+        const currentIndex = getCurrentSectionIndex();
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+    
+    // Scroll to section
+    function scrollToSection(index) {
+        if (index >= 0 && index < sections.length) {
+            sections[index].scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+    
+    // Button click handlers
+    goToTop.addEventListener('click', () => {
+        scrollToSection(0);
+    });
+    
+    goToBottom.addEventListener('click', () => {
+        scrollToSection(sections.length - 1);
+    });
+    
+    prevSection.addEventListener('click', () => {
+        const currentIndex = getCurrentSectionIndex();
+        scrollToSection(currentIndex - 1);
+    });
+    
+    nextSection.addEventListener('click', () => {
+        const currentIndex = getCurrentSectionIndex();
+        scrollToSection(currentIndex + 1);
+    });
+    
+    // Dot click handlers
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            scrollToSection(index);
         });
     });
+    
+    // Update active dot on scroll
+    window.addEventListener('scroll', () => {
+        updateActiveDot();
+    });
+    
+    // Initial update
+    updateActiveDot();
+});
+
+// Add these new event listeners
+const hamburger = document.querySelector('.hamburger');
+const mobileMenuContainer = document.querySelector('.mobile-menu-container');
+const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+
+// Toggle menu on hamburger click
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenuContainer.classList.toggle('active');
+    // Prevent body scrolling when menu is open
+    document.body.style.overflow = mobileMenuContainer.classList.contains('active') ? 'hidden' : '';
+});
+
+// Close menu when a link is clicked
+mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenuContainer.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (event) => {
+    if (!hamburger.contains(event.target) && 
+        !mobileMenuContainer.contains(event.target) && 
+        mobileMenuContainer.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        mobileMenuContainer.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 });
