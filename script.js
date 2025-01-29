@@ -62,6 +62,7 @@ function getSystemTheme() {
 
 function setTheme(theme) {
     const actualTheme = theme === 'system' ? getSystemTheme() : theme;
+    root.setAttribute('data-theme', actualTheme); // Set data-theme
 
     const themePrefix = actualTheme === 'dark' ? '--dark-' : '--light-';
     const cssVars = ['background', 'background-rgb', 'background-secondary', 'accent', 'text', 'text-rgb', 'text-secondary', 'overlay-bg', 'hover-bg', 'border-color'];
