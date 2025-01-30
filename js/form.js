@@ -1,7 +1,7 @@
 export class ContactFormValidator {
     constructor() {
         this.form = document.getElementById('contact-form');
-        if (!this.form) return; // Exit if form doesn't exist
+        if (!this.form) return;
 
         this.nameInput = document.getElementById('name');
         this.emailInput = document.getElementById('email');
@@ -12,13 +12,11 @@ export class ContactFormValidator {
     }
 
     initializeValidation() {
-        // Add input listeners
         this.nameInput.addEventListener('input', () => this.validateName());
         this.emailInput.addEventListener('input', () => this.validateEmail());
         this.subjectInput.addEventListener('input', () => this.validateSubject());
         this.messageInput.addEventListener('input', () => this.validateMessage());
 
-        // Add form submit listener
         this.form.addEventListener('submit', (e) => this.handleSubmit(e));
     }
 

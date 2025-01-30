@@ -35,7 +35,6 @@ export function initializeNavigation() {
         }
     }
     
-    // Initialize event listeners
     goToTop?.addEventListener('click', () => scrollToSection(0));
     goToBottom?.addEventListener('click', () => scrollToSection(sections.length - 1));
     prevSection?.addEventListener('click', () => {
@@ -53,6 +52,5 @@ export function initializeNavigation() {
     
     window.addEventListener('scroll', updateActiveDot);
     
-    // Initial update
     updateActiveDot();
 }
