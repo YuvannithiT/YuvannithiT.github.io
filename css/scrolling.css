@@ -14,7 +14,7 @@
     height: 40px;
     border-radius: 50%;
     border: 1px solid var(--border-color);
-    background: var(--overlay-bg);
+    background: none;
     color: var(--text);
     display: flex;
     align-items: center;
@@ -49,7 +49,7 @@
     height: 12px;
     border-radius: 50%;
     border: 1px solid var(--border-color);
-    background: var(--overlay-bg);
+    background: none;
     cursor: pointer;
     transition: all 0.3s ease;
 }
