@@ -291,6 +291,16 @@
         font-size: 13px;
     }
 
+    .quote-text {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+    
+    .quote-text::before,
+    .quote-text::after {
+        font-size: 28px;
+    }
+    
     .section-nav {
         right: 1rem;
     }
