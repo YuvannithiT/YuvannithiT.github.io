@@ -58,6 +58,16 @@
         font-size: 12px;
     }
 
+    .quote-text {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+    
+    .quote-text::before,
+    .quote-text::after {
+        font-size: 20px;
+    }
+
     .section-nav {
         right: 1rem;
     }
@@ -176,6 +186,16 @@
         width: 60%;
         padding: 4px 8px;
         font-size: 12px;
+    }
+
+    .quote-text {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+    
+    .quote-text::before,
+    .quote-text::after {
+        font-size: 24px;
     }
 
     .section-nav {
@@ -300,7 +320,7 @@
     .quote-text::after {
         font-size: 28px;
     }
-    
+
     .section-nav {
         right: 1rem;
     }
