@@ -73,16 +73,11 @@
     }
     
     .scroll-indicator {
-        left: 1rem;
+        display: none;
     }
     
     .nav-button {
-        width: 25px;
-        height: 25px;
-    }
-    
-    .nav-button i {
-        font-size: 0.6rem;
+        display: none;
     }
     
     .footer {
@@ -203,16 +198,11 @@
     }
     
     .scroll-indicator {
-        left: 1rem;
+        display: none;
     }
     
     .nav-button {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .nav-button i {
-        font-size: 0.8rem;
+        display: none;
     }
     
     .footer {
@@ -326,16 +316,11 @@
     }
     
     .scroll-indicator {
-        left: 1rem;
+        display: none;
     }
     
     .nav-button {
-        width: 35px;
-        height: 35px;
-    }
-    
-    .nav-button i {
-        font-size: 1rem;
+        display: none
     }
 
     .footer {
@@ -374,7 +359,7 @@
     }
 
     .section-title {
-        font-size: 52px;
+        font-size: 46px;
     }
 
     .section-subtitle {
@@ -387,7 +372,7 @@
     }
 
     .content {
-        max-width: 800px;
+        max-width: 700px;
         margin: 0 auto;
     }
 
@@ -397,8 +382,27 @@
 }
 
 @media screen and (min-width: 1055px) and (max-width: 1440px) {
+    .section-title {
+        font-size: 52px;
+    }
+
+    .section-subtitle {
+        font-size: 16px;
+    }
+    
+    .section-text {
+        font-size: 15px;
+    }
+
     .content {
-        max-width: 1000px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 2000px) {
+    .content {
+        max-width: 900px;
         margin: 0 auto;
     }
 }
