@@ -4,13 +4,13 @@
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: clamp(15px, 1.2vw, 20px);
 }
 
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    font-size: 14px;
+    font-size: clamp(14px, 1.2vw, 14px);
     color: var(--text-primary);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -19,11 +19,11 @@
 .form-group input, 
 .form-group textarea {
     width: 100%;
-    padding: 12px 16px;
+    padding: clamp(10px, 1.2vw, 12px) clamp(12px, 1.5vw, 16px);
     border: 1px solid var(--border-color);
     background: transparent;
     color: var(--text);
-    font-size: 16px;
+    font-size: clamp(14px, 1vw, 16px);
     transition: border-color 0.3s ease;
 }
 
@@ -33,14 +33,25 @@
     border-color: var(--text);
 }
 
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    font-family: "Play", "Segoe UI", sans-serif;
+}
+
 .form-group textarea {
-    min-height: 150px;
+    min-height: clamp(50px, 1.2vw, 150px);
     resize: vertical;
+}
+
+.button-wrapper {
+    width: clamp(200px, 50%, 400px);
+    margin: clamp(15px, 2vw, 30px) auto;
 }
 
 .submit-button {
     width: 100%;
-    margin-top: 20px;
+    font-family: "Play", "Segoe UI", sans-serif;
+    padding: clamp(8px, 1.5vw, 16px) clamp(16px, 3vw, 32px);
 }
 
 .error-message {
