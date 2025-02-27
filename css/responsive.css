@@ -44,10 +44,6 @@
         right: 1rem;
     }
     
-    .scroll-indicator {
-        display: none;
-    }
-    
     .nav-button {
         display: none;
     }
@@ -133,10 +129,6 @@
         right: 1rem;
     }
     
-    .scroll-indicator {
-        display: none;
-    }
-    
     .nav-button {
         display: none;
     }
@@ -211,10 +203,6 @@
 
     .section-nav {
         right: 1rem;
-    }
-    
-    .scroll-indicator {
-        display: none;
     }
     
     .nav-button {
