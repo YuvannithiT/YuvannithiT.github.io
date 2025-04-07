@@ -14,12 +14,12 @@
     --light-text-secondary: rgba(27, 31, 36, 0.75);
     --light-overlay-bg: rgba(245, 248, 250, 0.9);
     --light-hover-bg: rgba(27, 31, 36, 0.05);
-    --light-border-color: rgba(27, 31, 36, 0.75);
+    --light-border-color: rgba(27, 31, 36, 0.5);
     --light-image-blur: 0px;
-    --light-image-opacity: 0.5;
+    --light-image-opacity: 1;
     --light-image-brightness: 1;
-    --light-image-contrast: 1.1;
-    --light-image-saturation: 0.95;
+    --light-image-contrast: 1;
+    --light-image-saturation: 1;
     --light-gradients: #21B0A8, #1BA3B0, #1596B8, #1089C0, #0F7DBF, #0F6EC1, #145EC0, #1C4DBE, #2737BD, #3621BB, #450ABB;
 
     --dark-background: #121212;
@@ -31,12 +31,12 @@
     --dark-text-secondary: rgba(229, 229, 229, 0.75);
     --dark-overlay-bg: rgba(18, 18, 18, 0.95);
     --dark-hover-bg: rgba(229, 229, 229, 0.05);
-    --dark-border-color: rgba(229, 229, 229, 0.15);
+    --dark-border-color: rgba(229, 229, 229, 0.5);
     --dark-image-blur: 0px;
-    --dark-image-opacity: 0.7;
-    --dark-image-brightness: 0.9;
-    --dark-image-contrast: 1.2;
-    --dark-image-saturation: 0.85;
+    --dark-image-opacity: 1;
+    --dark-image-brightness: 1;
+    --dark-image-contrast: 1;
+    --dark-image-saturation: 1;
     --dark-gradients: #FF5500, #FF6600, #FF7700, #FF8800, #FF9900, #FFAA00, #FFBB00, #FFCC00, #FFD000, #FFD500, #FFDA00;
 }
 
