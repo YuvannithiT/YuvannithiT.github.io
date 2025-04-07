@@ -82,71 +82,73 @@
             <img src="../images/dark_mode/distant_aircraft.jpg" alt="" class="section-bg-image dark-theme-image">
         </div>
         <div class="content contact-form-container">
-            <form id="contact-form" 
-                action="https://formsubmit.co/7311b7194f262e7484632ce72f1df590" 
-                method="POST" 
-                enctype="multipart/form-data" 
-                novalidate>
-                
-                <input type="hidden" name="_next" value="https://yuvannithit.github.io/html/thank-you.html">
-                <input type="hidden" name="_subject" value="New Message!">
-                <input type="text" name="_honey" style="display:none">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_captcha" value="false">
-    
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="Name" required 
-                        minlength="2" maxlength="100"
-                        placeholder="Enter your full name">
-                    <span class="error-message" id="name-error"></span>
-                </div>
-    
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="Email" required
-                        placeholder="your.email@example.com">
-                    <span class="error-message" id="email-error"></span>
-                </div>
-    
-                <div class="form-group">
-                    <label for="organization">Organization</label>
-                    <input type="text" id="organization" name="Organization" 
-                        maxlength="100"
-                        placeholder="Company / Institution (If applicable)">
-                </div>
-    
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="Subject" required
-                        minlength="3" maxlength="100"
-                        placeholder="Purpose of your message">
-                    <span class="error-message" id="subject-error"></span>
-                </div>
-    
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="Message" required 
-                        minlength="10" maxlength="1000"
-                        placeholder="Your message (10-1000 characters)"></textarea>
-                    <span class="error-message" id="message-error"></span>
-                </div>
-    
-                <div class="button-wrapper">
-                    <button type="submit" class="cta-button submit-button">
-                        Send Message
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </div>
-    
-                <div id="form-success" class="form-feedback success-message">
-                    Thank you for your message! I'll get back to you soon.
-                </div>
-    
-                <div id="form-error" class="form-feedback error-message">
-                    Oops! There was a problem submitting your form. Please try again.
-                </div>
-            </form>
+            <div class="glass-container">
+                <form id="contact-form" 
+                    action="https://formsubmit.co/7311b7194f262e7484632ce72f1df590" 
+                    method="POST" 
+                    enctype="multipart/form-data" 
+                    novalidate>
+                    
+                    <input type="hidden" name="_next" value="https://yuvannithit.github.io/html/thank-you.html">
+                    <input type="hidden" name="_subject" value="New Message!">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+        
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="Name" required 
+                            minlength="2" maxlength="100"
+                            placeholder="Enter your full name">
+                        <span class="error-message" id="name-error"></span>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="Email" required
+                            placeholder="your.email@example.com">
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="organization">Organization</label>
+                        <input type="text" id="organization" name="Organization" 
+                            maxlength="100"
+                            placeholder="Company / Institution (If applicable)">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="Subject" required
+                            minlength="3" maxlength="100"
+                            placeholder="Purpose of your message">
+                        <span class="error-message" id="subject-error"></span>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="Message" required 
+                            minlength="10" maxlength="1000"
+                            placeholder="Your message (10-1000 characters)"></textarea>
+                        <span class="error-message" id="message-error"></span>
+                    </div>
+        
+                    <div class="button-wrapper">
+                        <button type="submit" class="cta-button submit-button">
+                            Send Message
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+        
+                    <div id="form-success" class="form-feedback success-message">
+                        Thank you for your message! I'll get back to you soon.
+                    </div>
+        
+                    <div id="form-error" class="form-feedback error-message">
+                        Oops! There was a problem submitting your form. Please try again.
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
     
