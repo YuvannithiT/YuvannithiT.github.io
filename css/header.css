@@ -21,7 +21,7 @@
 }
 
 .header.scrolled::before {
-    background-color: rgba(var(--background-rgb), 0.75);
+    background-color: rgba(var(--background-rgb), 0.5);
     backdrop-filter: blur(10px);
 }
 
