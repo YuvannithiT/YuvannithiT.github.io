@@ -21,20 +21,28 @@
 }
 
 .header.scrolled::before {
-    background-color: rgba(var(--background-rgb), 0.5);
+    background-color: rgba(var(--background-rgb), 0.75);
     backdrop-filter: blur(10px);
+}
+
+@keyframes brandShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .nav-brand {
     font-size: clamp(20px, 2vw, 24px);
     font-weight: 600;
+    letter-spacing: 1.5px;
     text-decoration: none;
-    letter-spacing: 1px;
     margin-right: auto;
     background: linear-gradient(45deg, var(--gradients));
+    background-size: 1500% 1500%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    animation: brandShift 25s ease-in-out infinite;
 }
 
 .nav-links {
