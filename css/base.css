@@ -20,7 +20,7 @@
     --light-image-brightness: 1;
     --light-image-contrast: 1;
     --light-image-saturation: 1;
-    --light-gradients: #21B0A8, #1BA3B0, #1596B8, #1089C0, #0F7DBF, #0F6EC1, #145EC0, #1C4DBE, #2737BD, #3621BB, #450ABB;
+    --light-gradients: #2267F0, #0076CE, #008C72, #006400, #FFB300, #E65C00, #D1462F, #E91E63, #6D00A8, #351F99;
 
     --dark-background: #121212;
     --dark-background-rgb: 18, 18, 18;
@@ -37,7 +37,7 @@
     --dark-image-brightness: 1;
     --dark-image-contrast: 1;
     --dark-image-saturation: 1;
-    --dark-gradients: #FF5500, #FF6600, #FF7700, #FF8800, #FF9900, #FFAA00, #FFBB00, #FFCC00, #FFD000, #FFD500, #FFDA00;
+    --dark-gradients: #42F2F7, #00FFD9, #00FF66, #FFFB00, #FF9910, #FF5800, #FF2D95, #C200FB, #8F00FF, #00B7FF;
 }
 
 :root {
