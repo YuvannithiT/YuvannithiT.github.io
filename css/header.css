@@ -42,7 +42,7 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: brandShift 25s ease-in-out infinite;
+    animation: brandShift 60s ease-in-out infinite;
 }
 
 .nav-links {
@@ -53,9 +53,9 @@
 .nav-link {
     color: var(--text);
     text-decoration: none;
-    font-size: clamp(16px, 1.5vw, 20px);
-    font-variant: small-caps;
-    letter-spacing: 2px;
+    font-size: clamp(12px, 1.5vw, 16px);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
     position: relative;
     padding: 8px 0;
     transition: transform 0.2s ease;
@@ -64,7 +64,7 @@
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: 5px;
+    bottom: 7.5px;
     left: 0;
     width: 100%;
     height: 1px;
