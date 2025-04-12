@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{/* --- Page Title (Simple Version for Now) --- */}}
+    <title>{{ .Title }} | My Hugo Site</title> {{/* We'll improve this later */}}
+
+    {{/* --- Favicons --- */}}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "favicons/apple-touch-icon.png" | relURL }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicons/favicon-32x32.png" | relURL }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicons/favicon-16x16.png" | relURL }}">
+    <link rel="manifest" href="{{ "favicons/site.webmanifest" | relURL }}">
+    <link rel="shortcut icon" href="{{ "favicons/favicon.ico" | relURL }}"> {{/* Add this line for the .ico file */}}
+
+    {{/* --- Link to your CSS --- */}}
+    {{/* 'relURL' makes the path correct relative to the site base */}}
+    <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+
+    {{/* --- Your Fonts & FontAwesome (keep these) --- */}}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    {{/* --- Theme Initializer Script (keep this high in <head>) --- */}}
+    <script>
+        (function() {
+            function getSystemTheme() {
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            const savedTheme = localStorage.getItem('theme') || 'system';
+            const actualTheme = savedTheme === 'system' ? getSystemTheme() : savedTheme;
+            document.documentElement.setAttribute('data-theme', actualTheme);
+        })();
+    </script>
+
+</head>
+<body>
+
+    {{/* --- Placeholder for Header --- */}}
+    {{/* This tells Hugo to look for a 'header.html' file in 'layouts/partials/' */}}
+    {{ block "header" . }}
+        {{ partial "header.html" . }}
+    {{ end }}
+
+    {{/* --- Placeholder for Main Content --- */}}
+    {{/* Specific page layouts will fill this 'main' block */}}
+    <main id="main-content">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    {{/* --- Placeholder for Footer --- */}}
+    {{/* This tells Hugo to look for a 'footer.html' file in 'layouts/partials/' */}}
+    {{ block "footer" . }}
+        {{ partial "footer.html" . }}
+    {{ end }}
+
+    {{/* --- Link to your JS --- */}}
+    {{/* IMPORTANT: We load JS at the end. We'll clean up main.js later */}}
+    <script type="module" src="{{ "js/main.js" | relURL }}"></script>
+
+</body>
+</html>

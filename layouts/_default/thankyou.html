@@ -1,0 +1,30 @@
+{{/* Use the baseof.html skeleton */}}
+{{ define "main" }}
+
+{{/* Use the structure from your original thank-you.html */}}
+<div class="thank-you-container section"> {{/* Added 'section' class for consistency */}}
+    <div class="section-background">
+        <img src="{{ "/images/light_mode/wing.jpg" | relURL }}" alt="" class="section-bg-image light-theme-image">
+        <img src="{{ "/images/dark_mode/landing.jpg" | relURL }}" alt="" class="section-bg-image dark-theme-image">
+    </div>
+    <div class="glass-container">
+        <i class="fas fa-paper-plane thank-you-icon"></i>
+        <h1 class="thank-you-title">Message Sent Successfully</h1>
+        <p class="thank-you-message">
+            Thank you for reaching out! I appreciate your time and will review your message shortly. Expect a response soon.
+        </p>
+        <a href="{{ "/" | relURL }}" class="cta-button"> {{/* Link back to homepage */}}
+            Return to Home
+            <i class="fas fa-home"></i>
+        </a>
+    </div>
+</div>
+
+{{ end }} {{/* End define "main" */}}
+
+{{/* Optional: Hide header/footer on this page if desired */}}
+{{/* Uncomment these lines to remove header/footer */}}
+{{/*
+{{ define "header" }}{{ end }}
+{{ define "footer" }}{{ end }}
+*/}}

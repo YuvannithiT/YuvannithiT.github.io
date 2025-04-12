@@ -1,0 +1,40 @@
+{
+    "entries": [
+        {
+            "id": "project-3",
+            "subtitle": "Unmanned Aerial Vehicle (UAV)",
+            "title": "Vision-Guided UAV Navigation & Control",
+            "description": "Developing an Autonomous Navigation System with Advanced Path Planning & State Estimation",
+            "ctaLink": "#",
+            "ctaText": "View Project",
+            "images": {
+                "light": "../images/light_mode/dji_phantom.jpg",
+                "dark": "../images/dark_mode/dji_mavic_mini.jpg"
+            }
+        },
+        {
+            "id": "project-2",
+            "subtitle": "Spacecraft",
+            "title": "Satellite Attitude & Orbit Control",
+            "description": "Designing & Simulating a Closed-Loop AOCS with Pyramidal Reaction Wheels",
+            "ctaLink": "#",
+            "ctaText": "View Project",
+            "images": {
+                "light": "../images/light_mode/satellite.jpg",
+                "dark": "../images/dark_mode/iss_docking.jpg"
+            }
+        },
+        {
+            "id": "project-1",
+            "subtitle": "eVTOL",
+            "title": "Hybrid eVTOL Flight Control & HIL Testing",
+            "description": "Integrated Flight Control System Design & Hardware-in-the-Loop Validation for Urban Air Mobility",
+            "ctaLink": "#",
+            "ctaText": "View Project",
+            "images": {
+                "light": "../images/light_mode/archer_aviation.jpg",
+                "dark": "../images/dark_mode/joby_aviation.jpg"
+            }
+        }
+    ]
+}

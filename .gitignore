@@ -1,0 +1,13 @@
+# Hugo build output
+/public/
+/resources/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Optional: Node modules if you ever use npm/yarn
+# node_modules/
+
+# Optional: Hugo server lock file
+.hugo_build.lock

@@ -1,0 +1,86 @@
+.contact-form-container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.form-group {
+    margin-bottom: clamp(15px, 1.2vw, 20px);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: clamp(14px, 1.2vw, 14px);
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: clamp(10px, 1.2vw, 12px) clamp(12px, 1.5vw, 16px);
+    border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--text);
+    font-size: clamp(14px, 1vw, 16px);
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--text);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    font-family: "Play", "Segoe UI", sans-serif;
+}
+
+.form-group textarea {
+    min-height: clamp(50px, 1.2vw, 150px);
+    resize: vertical;
+}
+
+.button-wrapper {
+    width: clamp(200px, 50%, 400px);
+    margin: clamp(15px, 2vw, 30px) auto;
+}
+
+.submit-button {
+    width: 100%;
+    font-family: "Play", "Segoe UI", sans-serif;
+    padding: clamp(8px, 1.5vw, 16px) clamp(16px, 3vw, 32px);
+}
+
+.error-message {
+    color: #ff4136;
+    font-size: 14px;
+    margin-top: 8px;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.form-group.error .error-message {
+    opacity: 1;
+}
+
+.form-feedback {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 16px;
+}
+
+.success-message {
+    color: #2ecc40;
+    background: rgba(46, 204, 64, 0.1);
+}
+
+.error-message {
+    color: #ff4136;
+    background: rgba(255, 65, 54, 0.1);
+}

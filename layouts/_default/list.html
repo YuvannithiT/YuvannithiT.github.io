@@ -1,0 +1,65 @@
+{{/* Use the baseof.html skeleton */}}
+{{ define "main" }}
+
+    {{/* Optional: Display the page title */}}
+    {{/* <h1 style="text-align: center; margin-top: 100px;">{{ .Title }} Page</h1> */}}
+    {{/* We usually let the sections define the visual content */}}
+
+    <div id="sections-container">
+
+        {{/* --- Determine which data file to load based on the current page --- */}}
+        {{ $data := "" }} {{/* Initialize variable */}}
+        {{ $sectionName := lower .Section }} {{/* Get section name (e.g., "experience") */}}
+
+        {{ if eq $sectionName "experience" }}
+            {{ $data = site.Data.experience }}
+        {{ else if eq $sectionName "projects" }}
+            {{ $data = site.Data.projects }}
+        {{ else if eq $sectionName "blog" }}
+            {{ $data = site.Data.blog }}
+        {{ end }}
+        {{/* --- End of data file selection logic --- */}}
+
+
+        {{/* --- Loop through the entries in the selected data file --- */}}
+        {{ if $data }}
+            {{ if $data.entries }}
+                {{ range $data.entries }}
+                    {{/* This section rendering code is IDENTICAL to layouts/index.html */}}
+                    <section id="{{ .id }}" class="section">
+                        <div class="section-background">
+                            <img src="{{ .images.light | relURL }}" alt="" class="section-bg-image light-theme-image">
+                            <img src="{{ .images.dark | relURL }}" alt="" class="section-bg-image dark-theme-image">
+                        </div>
+                        <div class="content">
+                            <div class="glass-container">
+                                <p class="section-subtitle">{{ .subtitle }}</p>
+                                <h2 class="section-title">{{ .title }}</h2>
+                                {{ if .quote }}
+                                    <div class="quote-wrapper">
+                                        <blockquote><p class="quote-text">{{ .quote }}</p></blockquote>
+                                    </div>
+                                {{ else }}
+                                    <p class="section-text">{{ .description | default "" | markdownify }}</p>
+                                {{ end }}
+                                <a href="{{ .ctaLink | relURL }}" class="cta-button">
+                                    {{ .ctaText }}
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                {{ end }} {{/* End range */}}
+            {{ else }}
+                <p>Warning: No 'entries' found in data file for section '{{ $sectionName }}'.</p>
+            {{ end }}
+        {{ else }}
+            <p>Warning: Could not load data file for section '{{ $sectionName }}'. Check data folder.</p>
+            {{/* Optionally, display any markdown content from the page's .md file */}}
+            {{/* {{ .Content }} */}}
+        {{ end }}
+         {{/* --- End of loop --- */}}
+
+    </div> {{/* End sections-container */}}
+
+{{ end }} {{/* End define "main" */}}

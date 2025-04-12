@@ -1,0 +1,40 @@
+{
+    "entries": [
+        {
+            "id": "blog-post-3",
+            "subtitle": "Mathematics in Flight Dynamics",
+            "title": "Quaternion-Based Rotations in Aerospace Engineering",
+            "description": "Demystifying Quaternion Rotations for Precision Attitude Control",
+            "ctaLink": "#",
+            "ctaText": "Read More",
+            "images": {
+                "light": "../images/light_mode/blue_angels.jpg",
+                "dark": "../images/dark_mode/eurofighter_typhoon_silhouette.jpg"
+            }
+        },
+        {
+            "id": "blog-post-2",
+            "subtitle": "Astrodynamics & Orbital Mechanics",
+            "title": "Optimizing Rocket Trajectories",
+            "description": "Overcoming Challenges in Rocket Trajectory Optimization",
+            "ctaLink": "#",
+            "ctaText": "Read More",
+            "images": {
+                "light": "../images/light_mode/space_x_falcon_heavy.jpg",
+                "dark": "../images/dark_mode/rocket_trajectory_2.jpg"
+            }
+        },
+        {
+            "id": "blog-post-1",
+            "subtitle": "State Estimation & Sensor Fusion",
+            "title": "Kalman Filters in Aerospace Navigation",
+            "description": "Evolution from Linear to Particle Kalman Filters in Aerospace Systems",
+            "ctaLink": "#",
+            "ctaText": "Read More",
+            "images": {
+                "light": "../images/light_mode/space_x_dragon.jpg",
+                "dark": "../images/dark_mode/iss_cupola.jpg"
+            }
+        }
+    ]
+}
