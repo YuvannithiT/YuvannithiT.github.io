@@ -5,18 +5,18 @@
 <section id="contact-form-section" class="section">
     <div class="section-background">
         {{/* Using hardcoded images for now, could move to front matter later */}}
-        <img src="{{ "/images/light_mode/sailplane.jpg" | relURL }}" alt="" class="section-bg-image light-theme-image">
-        <img src="{{ "/images/dark_mode/distant_aircraft.jpg" | relURL }}" alt="" class="section-bg-image dark-theme-image">
+        <img src="{{ "/images/light_mode/sailplane.webp" | relURL }}" alt="" class="section-bg-image light-theme-image" loading="lazy">
+        <img src="{{ "/images/dark_mode/distant_aircraft.webp" | relURL }}" alt="" class="section-bg-image dark-theme-image" loading="lazy">
     </div>
     <div class="content contact-form-container">
         <div class="glass-container">
 
             {{/* === Paste your original form HTML here === */}}
             <form id="contact-form"
-                  action="https://formsubmit.co/7311b7194f262e7484632ce72f1df590"
-                  method="POST"
-                  enctype="multipart/form-data"
-                  novalidate>
+                action="https://formsubmit.co/7311b7194f262e7484632ce72f1df590"
+                method="POST"
+                enctype="multipart/form-data"
+                novalidate>
 
                 {{/* IMPORTANT: Use absURL for the thank you page redirect */}}
                 <input type="hidden" name="_next" value="{{ "/thank-you/" | absURL }}">

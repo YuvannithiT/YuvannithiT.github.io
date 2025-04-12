@@ -28,8 +28,13 @@
                     {{/* This section rendering code is IDENTICAL to layouts/index.html */}}
                     <section id="{{ .id }}" class="section">
                         <div class="section-background">
-                            <img src="{{ .images.light | relURL }}" alt="" class="section-bg-image light-theme-image">
-                            <img src="{{ .images.dark | relURL }}" alt="" class="section-bg-image dark-theme-image">
+                            {{/* Replace .jpg/.jpeg with .webp and add lazy loading */}}
+                            {{ $lightSrc := replace (replace .images.light ".jpg" ".webp") ".jpeg" ".webp" }}
+                            {{ $darkSrc := replace (replace .images.dark ".jpg" ".webp") ".jpeg" ".webp" }}
+
+                            {{/* Add width/height later if known, helps prevent layout shift */}}
+                            <img src="{{ $lightSrc | relURL }}" alt="" class="section-bg-image light-theme-image" loading="lazy" >
+                            <img src="{{ $darkSrc | relURL }}" alt="" class="section-bg-image dark-theme-image" loading="lazy" >
                         </div>
                         <div class="content">
                             <div class="glass-container">
