@@ -9,7 +9,7 @@
 
     {{/* --- Google Analytics --- */}}
     {{/* Only include GA in production builds, not when running 'hugo server' */}}
-    {{ if not hugo.IsServer }}
+    {{ if ne hugo.Environment "development" }}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-333871CLRK"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
