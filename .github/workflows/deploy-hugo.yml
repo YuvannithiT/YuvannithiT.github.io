@@ -52,9 +52,9 @@ jobs:
           HUGO_ENV: production
         run: |
           hugo \
-            --gc \ # Garbage collect unused cache files
-            --minify \ # Minify output
-            --baseURL "${{ steps.pages.outputs.base_url }}/" # Use the base URL configured for Pages
+            --gc \
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3 # Uploads the built site ('public' folder)
         with:
