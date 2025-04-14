@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {{/* --- Page Title (Simple Version for Now) --- */}}
-    <title>{{ .Title }} | My Hugo Site</title> {{/* We'll improve this later */}}
+    <title>{{ if .IsHome }}{{ site.Title }} - Aerospace Dynamics & Control Engineer Portfolio{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
 
     {{/* --- Google Analytics --- */}}
     {{/* Only include GA in production builds, not when running 'hugo server' */}}
