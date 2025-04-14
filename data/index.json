@@ -4,12 +4,12 @@
             "id": "featured",
             "subtitle": "Aerospace Dynamics & Control",
             "title": "Advancing the Future of Flight Control",
-            "quote": "The goal in aerospace dynamics and control is to develop a minimal yet robust set of control laws that effectively balance simplicity, performance, and adaptability, ensuring stability across a wide range of operating conditions while accounting for uncertainties within practical constraints.",
+            "quote": "The essence of aerospace dynamics and control lies in designing minimal, robust control laws that integrate simplicity, performance, and adaptability—maintaining stability under a variety of conditions while accommodating uncertainties, practical limitations, and design constraints.",
             "ctaLink": "#",
-            "ctaText": "Explore My Featured Work",
+            "ctaText": "Featured Works",
             "images": {
                 "light": "images/light_mode/boeing_767.jpg",
-                "dark": "images/dark_mode/throttle.jpg"
+                "dark": "images/dark_mode/concorde.jpg"
             }
         },
         {
@@ -17,8 +17,8 @@
             "subtitle": "Professional Experience",
             "title": "Shaping the Future of Aerospace Systems",
             "description": "",
-            "ctaLink": "html/experience.html",
-            "ctaText": "Explore My Journey",
+            "ctaLink": "/experience/",
+            "ctaText": "My Journey",
             "images": {
                 "light": "images/light_mode/airbus_a380.jpg",
                 "dark": "images/dark_mode/sidestick.jpg"
@@ -29,8 +29,8 @@
             "subtitle": "Project Highlights",
             "title": "Pushing the Boundaries of Aerospace Innovation",
             "description": "",
-            "ctaLink": "html/projects.html",
-            "ctaText": "See My Work",
+            "ctaLink": "/projects/",
+            "ctaText": "See Projects",
             "images": {
                 "light": "images/light_mode/space_shuttle.jpg",
                 "dark": "images/dark_mode/hubble.jpg"
@@ -41,11 +41,11 @@
             "subtitle": "Insights & Reflections",
             "title": "Exploring the Science of Flight",
             "description": "",
-            "ctaLink": "html/blog.html",
-            "ctaText": "Read My Articles",
+            "ctaLink": "/blog/",
+            "ctaText": "Read Blog",
             "images": {
                 "light": "images/light_mode/contrail.jpg",
-                "dark": "images/dark_mode/space_x_falcon_heavy.jpg"
+                "dark": "images/dark_mode/iss.jpg"
             }
         },
         {
@@ -53,7 +53,7 @@
             "subtitle": "Let's Connect",
             "title": "Collaborate on Cutting-Edge Aerospace Solutions",
             "description": "",
-            "ctaLink": "html/contact.html",
+            "ctaLink": "/contact/",
             "ctaText": "Get in Touch",
             "images": {
                 "light": "images/light_mode/space_walk.jpg",
