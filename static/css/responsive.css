@@ -19,7 +19,7 @@
 
     .nav-brand {
         margin-right: auto;
-        max-width: 50%;
+        max-width: 55%;
         line-height: 1;
     }
 
@@ -239,4 +239,17 @@
 }
 
 @media screen and (min-width: 1441px) and (max-width: 2000px) {
+}
+
+@media screen and (min-width: 0px) and (max-width: 1440px) {
+    .section {
+        justify-content: center;
+        align-items: flex-end;
+    }
+    
+    .content {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 5vw;
+    }
 }
