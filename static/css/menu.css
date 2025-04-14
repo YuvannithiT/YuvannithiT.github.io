@@ -32,10 +32,11 @@
     top: 0;
     right: 0;
     width: 100%;
-    max-width: 50vw;
+    max-width: 45vw;
     height: 100vh;
     background-color: rgba(var(--background-rgb), 0.75);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     z-index: 1500;
