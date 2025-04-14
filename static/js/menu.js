@@ -2,11 +2,16 @@ export function initializeMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const mobileMenuContainer = document.querySelector('.mobile-menu-container');
     const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+    const dimmableElements = document.querySelectorAll('.section, .center-section');
 
     function toggleMenu(show) {
         hamburger.classList.toggle('active', show);
         mobileMenuContainer.classList.toggle('active', show);
         document.body.style.overflow = show ? 'hidden' : '';
+
+        dimmableElements.forEach(background => {
+            background.classList.toggle('dimmed', show);
+        });
     }
 
     hamburger.addEventListener('click', () => {
