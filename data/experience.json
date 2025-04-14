@@ -6,7 +6,7 @@
             "title": "Rocket Trajectory Engineer",
             "description": "Optimizing Rocket Trajectories for Precision and Performance",
             "ctaLink": "#",
-            "ctaText": "Explore My Work",
+            "ctaText": "Learn More",
             "images": {
                 "light": "../images/light_mode/space_x_landing.jpg",
                 "dark": "../images/dark_mode/rocket_trajectory.jpg"
@@ -18,7 +18,7 @@
             "title": "Engineering Lead Assistant",
             "description": "Modeling and Simulation of a Powered Parachute (PPC)",
             "ctaLink": "#",
-            "ctaText": "Explore My Work",
+            "ctaText": "Learn More",
             "images": {
                 "light": "../images/light_mode/ppc.jpg",
                 "dark": "../images/dark_mode/powered_parachute.jpg"
