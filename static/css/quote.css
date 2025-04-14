@@ -1,0 +1,64 @@
+.quote-wrapper {
+    max-width: 1200px;
+    margin: clamp(20px, 1.5vw, 36px) 0;
+    position: relative;
+    font-family: "Exo 2", "Segoe UI", sans-serif;
+    border-left: 4px solid var(--accent);
+    padding-left: 24px;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+.quote-wrapper:hover {
+    transform: translateX(5px);
+}
+
+.quote-text {
+    font-size: clamp(12px, 1.3vw, 22px);
+    line-height: 1.8;
+    font-style: italic;
+    color: var(--text);
+    margin: 0;
+    position: relative;
+    padding: 16px clamp(4px, 3vw, 32px);
+    border-radius: 0 8px 8px 0;
+}
+
+.quote-text::before,
+.quote-text::after {
+    font-family: Georgia, serif;
+    font-size: 60px;
+    position: absolute;
+    color: var(--accent);
+    opacity: 0.25;
+    line-height: 0;
+}
+
+.quote-text::before {
+    content: '"';
+    left: 0;
+    top: 24px;
+}
+
+.quote-text::after {
+    content: '"';
+    right: 12px;
+    bottom: 8px;
+}
+
+.quote-attribution {
+    display: block;
+    text-align: right;
+    font-style: normal;
+    font-size: clamp(10px, 1vw, 16px);
+    color: var(--text-secondary);
+    margin-top: 12px;
+    margin-right: 24px;
+    font-weight: 500;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.quote-wrapper:hover .quote-attribution {
+    opacity: 1;
+}
