@@ -1,4 +1,19 @@
 .section {
+    min-height: 100vh;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    transition: filter 0.3s ease;
+}
+
+.center-section {
     min-height: 100vh; 
     height: 100vh;
     width: 100vw;
@@ -10,6 +25,15 @@
     margin: 0;
     padding: 0;
     z-index: 1;
+    transition: filter 0.3s ease;
+}
+
+.section.dimmed {
+    filter: brightness(0.3);
+}
+
+.center-section.dimmed {
+    filter: brightness(0.3);
 }
 
 .section-background {
@@ -27,7 +51,6 @@
     height: 100%;
     object-fit: cover;
     transition: filter 0.3s ease;
-    filter: var(--filter);
 }
 
 .light-theme-image {
@@ -52,52 +75,40 @@ html[data-theme='dark'] .dark-theme-image {
 
 .glass-container {
     padding: 2rem;
-    border-radius: 10px;
-    background: rgba(var(--background-rgb), 0.5);
+    background: rgba(var(--background-rgb), 0.1);
     box-shadow: 0 1px 2px rgba(var(--light-background-rgb), 0.05), 0 4px 12px rgba(var(--dark-background-rgb), 0.5);
-    backdrop-filter: blur(10px) saturate(200%);
-    -webkit-backdrop-filter: blur(10px) saturate(200%);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
     transition: all 0.3s ease;
 }
 
 .content {
-    max-width: clamp(400px, 80vw, 1200px);
+    max-width: clamp(300px, 80vw, 1200px);
     width: 100%;
-    padding: 0 clamp(16px, 4vw, 48px);
+    /*padding: 0 clamp(16px, 4vw, 48px);*/
+    margin: 0 auto 5vh 5vw;
+    transform: none; 
+    opacity: 1;
+}
+
+.center-content {
+    max-width: clamp(300px, 80vw, 1000px);
+    width: 100%;
+    /*padding: 0 clamp(16px, 4vw, 48px);*/
     margin: 0 auto;
-    opacity: 1;
-    transform: translateY(200px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.section.active .content {
+.stagger-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: transform, opacity;
+}
+
+.stagger-item.visible {
+    opacity: 1;
     transform: translateY(0);
-    opacity: 1;
-    transition: transform 1s cubic-bezier(0.4, 0.0, 0.2, 1), 
-                opacity 1s ease;
-}
-
-.section-title {
-    font-size: clamp(32px, 5vw, 64px);
-    font-weight: 300;
-    margin-bottom: 24px;
-    line-height: 1.2;
-}
-
-.section-subtitle {
-    font-size: clamp(14px, 1vw, 18px);
-    color: var(--text);
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    margin-bottom: 16px;
-}
-
-.section-text {
-    font-size: clamp(16px, 1.2vw, 20px);
-    line-height: 1.8;
-    color: var(--text);
-    max-width: clamp(300px, 80vw, 600px);
-    margin-bottom: 40px;
 }
 
 .cta-button {
@@ -105,8 +116,7 @@ html[data-theme='dark'] .dark-theme-image {
     align-items: center;
     justify-content: center;
     padding: clamp(8px, 1.5vw, 16px) clamp(16px, 3vw, 32px);
-    border-radius: 10px;
-    width: clamp(200px, 50%, 400px);
+    width: clamp(200px, 50%, 250px);
     background: transparent;
     border: 1px solid var(--border-color);
     color: var(--text);
@@ -119,7 +129,6 @@ html[data-theme='dark'] .dark-theme-image {
     gap: 12px;
     transition: color 0.2s ease, border-color 0.2s ease;
     z-index: 1;
-    will-change: transform, height;
 }
 
 .cta-button::before {
@@ -152,38 +161,25 @@ html[data-theme='dark'] .dark-theme-image {
     transform-origin: right;
 }
 
-.quote-wrapper {
-    max-width: 800px;
-    margin: 24px 0;
-    position: relative;
-    font-family: "Exo 2", "Segoe UI", sans-serif;
+.section-title {
+    font-size: clamp(28px, 5vw, 64px);
+    font-weight: 300;
+    margin-bottom: 24px;
+    line-height: 1.2;
 }
 
-.quote-text {
-    font-size: clamp(16px, 1.2vw, 20px);
+.section-subtitle {
+    font-size: clamp(10px, 1vw, 18px);
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 16px;
+}
+
+.section-text {
+    font-size: clamp(12px, 1.2vw, 20px);
     line-height: 1.8;
-    font-style: italic;
     color: var(--text);
-    margin: 0;
-    position: relative;
-    padding: 0 clamp(20px, 2vw, 24px);
-}
-
-.quote-text::before,
-.quote-text::after {
-    content: '"';
-    font-size: 36px;
-    position: absolute;
-    color: var(--text);
-    opacity: 0.5;
-}
-
-.quote-text::before {
-    left: 0;
-    top: -8px;
-}
-
-.quote-text::after {
-    right: 0;
-    bottom: -24px;
+    max-width: clamp(300px, 80vw, 600px);
+    margin-bottom: 40px;
 }
