@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    {{/* --- Meta Description --- */}}
+    {{- $description := "" -}}
+    {{- if .Description -}}
+        {{/* 1. Use page's explicit Description */}}
+        {{- $description = .Description -}}
+    {{- else if .IsPage -}}
+        {{/* 2. For content pages, use Summary as fallback */}}
+        {{- $description = .Summary -}}
+    {{- else if .IsHome -}}
+        {{/* 3. For homepage (if no .Description), use site param */}}
+        {{- $description = site.Params.description -}}
+    {{- end -}}
+    {{/* 4. Final fallback to site title if still empty */}}
+    {{- $description = $description | default site.Title -}}
+    <meta name="description" content="{{ $description }}">
+
     {{/* --- Page Title (Simple Version for Now) --- */}}
     <title>{{ if .IsHome }}{{ site.Title }} - Aerospace Dynamics & Control Engineer Portfolio{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
 

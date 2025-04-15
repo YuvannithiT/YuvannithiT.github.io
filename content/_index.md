@@ -1,5 +1,6 @@
 ---
-title: "Yuvannithi Thirumaran"
+title: "Home" 
+description: "Explore the Aerospace Dynamics and Control Engineering portfolio of Yuvannithi Thirumaran. Discover projects, experience, and insights into flight systems."
 ---
 
-This is the homepage content area! We will replace this later.
+{{/* Rest of the file (if any markdown content exists) */}}
