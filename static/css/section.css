@@ -162,7 +162,7 @@ html[data-theme='dark'] .dark-theme-image {
 }
 
 .section-title {
-    font-size: clamp(28px, 5vw, 64px);
+    font-size: clamp(24px, 5vw, 64px);
     font-weight: 300;
     margin-bottom: 24px;
     line-height: 1.2;
