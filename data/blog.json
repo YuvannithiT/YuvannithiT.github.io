@@ -8,8 +8,8 @@
             "ctaLink": "#",
             "ctaText": "Read More",
             "images": {
-                "light": "../images/light_mode/blue_angels.jpg",
-                "dark": "../images/dark_mode/eurofighter_typhoon_silhouette.jpg"
+                "light": "../images/light_mode/blue_angels.webp",
+                "dark": "../images/dark_mode/eurofighter_typhoon_silhouette.webp"
             }
         },
         {
@@ -20,8 +20,8 @@
             "ctaLink": "#",
             "ctaText": "Read More",
             "images": {
-                "light": "../images/light_mode/space_x_falcon_heavy.jpg",
-                "dark": "../images/dark_mode/rocket_trajectory_2.jpg"
+                "light": "../images/light_mode/space_x_falcon_heavy.webp",
+                "dark": "../images/dark_mode/rocket_trajectory_2.webp"
             }
         },
         {
@@ -32,8 +32,8 @@
             "ctaLink": "#",
             "ctaText": "Read More",
             "images": {
-                "light": "../images/light_mode/space_x_dragon.jpg",
-                "dark": "../images/dark_mode/iss_cupola.jpg"
+                "light": "../images/light_mode/space_x_dragon.webp",
+                "dark": "../images/dark_mode/iss_cupola.webp"
             }
         }
     ]

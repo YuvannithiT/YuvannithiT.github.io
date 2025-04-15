@@ -8,8 +8,8 @@
             "ctaLink": "#",
             "ctaText": "View Project",
             "images": {
-                "light": "../images/light_mode/dji_phantom.jpg",
-                "dark": "../images/dark_mode/dji_mavic_mini.jpg"
+                "light": "../images/light_mode/dji_phantom.webp",
+                "dark": "../images/dark_mode/dji_mavic_mini.webp"
             }
         },
         {
@@ -20,8 +20,8 @@
             "ctaLink": "#",
             "ctaText": "View Project",
             "images": {
-                "light": "../images/light_mode/satellite.jpg",
-                "dark": "../images/dark_mode/iss_docking.jpg"
+                "light": "../images/light_mode/satellite.webp",
+                "dark": "../images/dark_mode/iss_docking.webp"
             }
         },
         {
@@ -32,8 +32,8 @@
             "ctaLink": "#",
             "ctaText": "View Project",
             "images": {
-                "light": "../images/light_mode/archer_aviation.jpg",
-                "dark": "../images/dark_mode/joby_aviation.jpg"
+                "light": "../images/light_mode/archer_aviation.webp",
+                "dark": "../images/dark_mode/joby_aviation.webp"
             }
         }
     ]
