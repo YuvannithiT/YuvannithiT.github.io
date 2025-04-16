@@ -1,6 +1,7 @@
 baseURL = 'https://yuvannithit.github.io/'
 languageCode = 'en-us'
 title = 'Yuvannithi Thirumaran'
+timeout = 600000
 
 [params]
   # Add this line:
