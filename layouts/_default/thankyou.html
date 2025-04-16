@@ -3,10 +3,10 @@
 
 {{/* Use the structure from your original thank-you.html */}}
 <div class="thank-you-container section"> {{/* Added 'section' class for consistency */}}
-    <div class="section-background">
-        <img src="{{ "/images/light_mode/wing.webp" | relURL }}" alt="" class="section-bg-image light-theme-image">
-        <img src="{{ "/images/dark_mode/landing.webp" | relURL }}" alt="" class="section-bg-image dark-theme-image">
-    </div>
+<div class="section-background">
+    {{ partial "responsive-bg-image.html" (dict "ImagePath" "images/light_mode/wing.jpg" "Theme" "light") }}
+    {{ partial "responsive-bg-image.html" (dict "ImagePath" "images/dark_mode/landing.jpg" "Theme" "dark") }}
+</div>
     <div class="glass-container">
         <i class="fas fa-paper-plane thank-you-icon"></i>
         <h1 class="thank-you-title">Message Sent Successfully</h1>

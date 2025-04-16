@@ -4,9 +4,8 @@
 {{/* Use the 'section' structure like your original contact.html */}}
 <section id="contact-form-section" class="center-section">
     <div class="section-background">
-        {{/* Using hardcoded images for now, could move to front matter later */}}
-        <img src="{{ "/images/light_mode/sailplane.webp" | relURL }}" alt="" class="section-bg-image light-theme-image">
-        <img src="{{ "/images/dark_mode/distant_aircraft.webp" | relURL }}" alt="" class="section-bg-image dark-theme-image">
+        {{ partial "responsive-bg-image.html" (dict "ImagePath" "images/light_mode/sailplane.jpg" "Theme" "light") }}
+        {{ partial "responsive-bg-image.html" (dict "ImagePath" "images/dark_mode/distant_aircraft.jpg" "Theme" "dark") }}
     </div>
     <div class="center-content">
         <div class="glass-container">

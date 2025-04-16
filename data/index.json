@@ -8,8 +8,8 @@
             "ctaLink": "#",
             "ctaText": "Featured Works",
             "images": {
-                "light": "images/light_mode/boeing_767.webp",
-                "dark": "images/dark_mode/concorde.webp"
+                "light": "images/light_mode/boeing_767.jpg",
+                "dark": "images/dark_mode/concorde.jpg"
             }
         },
         {
@@ -20,8 +20,8 @@
             "ctaLink": "/experience/",
             "ctaText": "My Journey",
             "images": {
-                "light": "images/light_mode/airbus_a380.webp",
-                "dark": "images/dark_mode/sidestick.webp"
+                "light": "images/light_mode/airbus_a380.jpg",
+                "dark": "images/dark_mode/sidestick.jpg"
             }
         },
         {
@@ -32,8 +32,8 @@
             "ctaLink": "/projects/",
             "ctaText": "See Projects",
             "images": {
-                "light": "images/light_mode/space_shuttle.webp",
-                "dark": "images/dark_mode/hubble.webp"
+                "light": "images/light_mode/space_walk.jpg",
+                "dark": "images/dark_mode/iss.jpg"
             }
         },
         {
@@ -44,8 +44,8 @@
             "ctaLink": "/blog/",
             "ctaText": "Read Blog",
             "images": {
-                "light": "images/light_mode/contrail.webp",
-                "dark": "images/dark_mode/iss.webp"
+                "light": "images/light_mode/contrail.jpg",
+                "dark": "images/dark_mode/boeing_787.jpg"
             }
         },
         {
@@ -56,8 +56,8 @@
             "ctaLink": "/contact/",
             "ctaText": "Get in Touch",
             "images": {
-                "light": "images/light_mode/space_walk.webp",
-                "dark": "images/dark_mode/cessna_172_wing.webp"
+                "light": "images/light_mode/cessna_citation_longitude.jpg",
+                "dark": "images/dark_mode/cessna_172_wing.jpg"
             }
         }
     ]
