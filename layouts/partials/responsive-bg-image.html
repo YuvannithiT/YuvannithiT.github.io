@@ -1,0 +1,53 @@
+{{/* Partial Template: layouts/partials/responsive-bg-image.html */}}
+{{/* Expects context (.) with: .ImagePath (string), .Theme (string "light" or "dark") */}}
+
+{{ $originalPath := .ImagePath }}
+{{ $themeClass := printf "%s-theme-image" .Theme }} {{/* e.g., light-theme-image */}}
+
+{{ $imageResource := "" }}
+{{ with resources.Get $originalPath }}
+    {{ $imageResource = . }}
+{{ else }}
+    {{ warnf "Image resource not found in assets: %s" $originalPath }}
+{{ end }}
+
+{{ if $imageResource }}
+    {{ $widths := slice 320 375 425 768 1024 1440 2560 3840 }}
+    {{ $srcsetWebp := slice }} 
+    {{ $largestImage := "" }} 
+
+    {{ range $widths }}
+        {{ $width := . }}
+        {{ if ge $imageResource.Width $width }} 
+            {{ $resized := $imageResource.Resize (printf "%dx webp q100" $width) }}
+            {{ $srcsetWebp = $srcsetWebp | append (printf "%s %dw" $resized.RelPermalink $width) }}
+            {{ $largestImage = $resized }} 
+        {{ else }}
+        {{ if not $largestImage }} 
+            {{ $convertedOriginal := $imageResource.Resize (printf "%dx webp q100" $imageResource.Width) }}
+            {{ $srcsetWebp = $srcsetWebp | append (printf "%s %dw" $convertedOriginal.RelPermalink $imageResource.Width) }}
+            {{ $largestImage = $convertedOriginal }}
+        {{ end }}
+        {{ break }} 
+        {{ end }}
+    {{ end }}
+
+    {{ if not $largestImage }} 
+        {{ $largestImage = $imageResource.Resize (printf "%dx webp q100" $imageResource.Width) }}
+    {{ end }}
+
+    {{ $srcsetString := delimit $srcsetWebp ", " }} 
+    {{ $fallbackSrc := $largestImage.RelPermalink }} 
+    {{ $imgSizes := "100vw" }} 
+
+    <img 
+        class="section-bg-image {{ $themeClass }}"
+        src="{{ $fallbackSrc }}" 
+        srcset="{{ $srcsetString }}"
+        sizes="{{ $imgSizes }}"
+        alt="" 
+        loading="lazy" 
+        width="{{ $largestImage.Width }}" 
+        height="{{ $largestImage.Height }}"
+        >
+{{ end }}
