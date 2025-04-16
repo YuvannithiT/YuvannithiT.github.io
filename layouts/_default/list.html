@@ -28,8 +28,8 @@
                     {{/* This section rendering code is IDENTICAL to layouts/index.html */}}
                     <section id="{{ .id }}" class="section">
                         <div class="section-background">
-                            <img src="{{ .images.light | relURL }}" alt="" class="section-bg-image light-theme-image">
-                            <img src="{{ .images.dark | relURL }}" alt="" class="section-bg-image dark-theme-image">
+                            {{ partial "responsive-bg-image.html" (dict "ImagePath" .images.light "Theme" "light") }}
+                            {{ partial "responsive-bg-image.html" (dict "ImagePath" .images.dark "Theme" "dark") }}
                         </div>
                         <div class="content">
                             <div class="glass-container">
