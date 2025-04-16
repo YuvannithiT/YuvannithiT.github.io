@@ -241,7 +241,46 @@
 @media screen and (min-width: 1441px) and (max-width: 2000px) {
 }
 
-@media screen and (min-width: 0px) and (max-width: 1440px) {
+@media screen and (min-width: 0px) and (max-width: 425px) {
+    .section {
+        justify-content: center;
+        align-items: flex-end;
+    }
+    
+    .content {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 50vw;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    .section {
+        justify-content: center;
+        align-items: flex-end;
+    }
+    
+    .content {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 35vw;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .section {
+        justify-content: center;
+        align-items: flex-end;
+    }
+    
+    .content {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 20vw;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
     .section {
         justify-content: center;
         align-items: flex-end;
