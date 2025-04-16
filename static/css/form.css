@@ -39,7 +39,7 @@
 }
 
 .button-wrapper {
-    width: clamp(200px, 50%, 400px);
+    width: clamp(200px, 50%, 250px);
     margin: clamp(15px, 2vw, 30px) auto;
 }
 
@@ -47,6 +47,10 @@
     width: 100%;
     font-family: "Play", "Segoe UI", sans-serif;
     padding: clamp(8px, 1.5vw, 16px) clamp(16px, 3vw, 32px);
+}
+
+.submit-button:hover {
+    cursor: pointer;
 }
 
 .error-message {
