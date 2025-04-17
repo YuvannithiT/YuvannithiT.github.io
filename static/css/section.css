@@ -29,11 +29,11 @@
 }
 
 .section.dimmed {
-    filter: brightness(0.1);
+    filter: brightness(0.3);
 }
 
 .center-section.dimmed {
-    filter: brightness(0.1);
+    filter: brightness(0.3);
 }
 
 .section-background {
@@ -116,13 +116,13 @@ html[data-theme='dark'] .dark-theme-image {
     align-items: center;
     justify-content: center;
     padding: clamp(8px, 1.5vw, 16px) clamp(16px, 3vw, 32px);
-    width: clamp(200px, 50%, 250px);
+    width: clamp(100px, 50%, 250px);
     background: transparent;
     border: 1px solid var(--border-color);
     color: var(--text);
     text-decoration: none;
     text-transform: uppercase;
-    font-size: clamp(12px, 1vw, 14px);
+    font-size: clamp(10px, 1vw, 14px);
     letter-spacing: 2px;
     position: relative;
     overflow: hidden;
