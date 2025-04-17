@@ -22,9 +22,7 @@
 }
 
 .header.scrolled::before {
-    background-color: var(--background-secondary);
-    /*background-color: rgba(var(--background-rgb), 1);*/
-    /*backdrop-filter: blur(10px);*/
+    background-color: var(--background);
 }
 
 @keyframes brandShift {
@@ -34,7 +32,7 @@
 }
 
 .nav-brand {
-    font-size: clamp(20px, 2vw, 24px);
+    font-size: clamp(18px, 2vw, 24px);
     font-weight: 600;
     letter-spacing: 1.5px;
     text-decoration: none;
