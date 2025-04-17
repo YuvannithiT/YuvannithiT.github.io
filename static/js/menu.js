@@ -2,15 +2,21 @@ export function initializeMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const mobileMenuContainer = document.querySelector('.mobile-menu-container');
     const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
-    const dimmableElements = document.querySelectorAll('.section, .center-section');
-
+    
+    const headerChildren = document.querySelectorAll('.header > *:not(.mobile-menu-container):not(.hamburger)');
+    const otherDimmable = document.querySelectorAll('.section, .center-section, .footer');
+    
     function toggleMenu(show) {
         hamburger.classList.toggle('active', show);
         mobileMenuContainer.classList.toggle('active', show);
         document.body.style.overflow = show ? 'hidden' : '';
 
-        dimmableElements.forEach(background => {
-            background.classList.toggle('dimmed', show);
+        headerChildren.forEach(element => {
+            element.classList.toggle('dimmed', show);
+        });
+        
+        otherDimmable.forEach(element => {
+            element.classList.toggle('dimmed', show);
         });
     }
 
