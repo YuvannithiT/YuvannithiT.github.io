@@ -1,5 +1,5 @@
 .form-group {
-    margin-bottom: clamp(15px, 1.2vw, 20px);
+    margin-bottom: clamp(0px, 1.2vw, 20px);
 }
 
 .form-group label {
@@ -39,8 +39,8 @@
 }
 
 .button-wrapper {
-    width: clamp(200px, 50%, 250px);
-    margin: clamp(15px, 2vw, 30px) auto;
+    width: clamp(100px, 50%, 250px);
+    margin: clamp(0px, 2vw, 30px) auto;
 }
 
 .submit-button {
