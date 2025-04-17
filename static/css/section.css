@@ -104,12 +104,9 @@
     margin-bottom: clamp(24px, 4vw, 40px);
 }
 
-.section.dimmed {
+.dimmed {
     filter: brightness(0.3);
-}
-
-.center-section.dimmed {
-    filter: brightness(0.3);
+    transition: filter 0.3s ease;
 }
 
 .light-theme-image {
