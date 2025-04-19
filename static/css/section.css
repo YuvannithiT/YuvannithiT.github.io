@@ -99,7 +99,6 @@
     font-size: clamp(12px, 1.2vw, 20px);
     line-height: 1.8;
     color: var(--text);
-    max-width: clamp(300px, 80vw, 600px);
     margin-bottom: clamp(24px, 4vw, 40px);
 }
 
