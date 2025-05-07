@@ -1,0 +1,200 @@
+.hero {
+    position: relative;
+    min-height: 100vh;
+    padding: 6rem 2rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 1440px;
+        width: 100%;
+        gap: 1rem;
+        z-index: 1;
+
+        @media (min-width: 481px) {
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 1025px) {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+    }
+
+    .hero-intro {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: center;
+
+        @media (min-width: 769px) {
+            text-align: left;
+        }
+        
+        @media (min-width: 1025px) {
+            margin-bottom: 0;
+        }
+    }
+
+    .hero-greeting {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+        opacity: 0;
+        transform: translateX(-30px);
+        position: relative;
+
+        @media (min-width: 481px) {
+            font-size: 1.5rem;
+        }
+    }
+
+    .hero-name {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 2rem;
+        font-weight: 900;
+        margin-bottom: 1rem;
+        line-height: 1.25;
+        opacity: 0;
+        transform: translateY(40px);
+        background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+
+        @media (min-width: 481px) {
+            font-size: 2.5rem;
+        }
+
+        @media (min-width: 1501px) {
+            font-size: 4rem;
+        }
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: var(--text-color);
+        margin-bottom: 1rem;
+        max-width: 85%;
+        opacity: 0;
+        transform: translateY(20px);
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+
+        strong {
+            color: var(--text-color);
+            font-style: italic;
+        }
+
+        @media (min-width: 481px) {
+            font-size: 1.125rem;
+            max-width: 75%;
+        }
+        
+        @media (min-width: 769px) {
+            text-align: left;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        
+        @media (min-width: 1025px) {
+            max-width: 940px;
+            font-size: 1.25rem;
+        }
+        
+        @media (min-width: 1501px) {
+            font-size: 1.375rem;
+        }
+    }
+
+    .quote-container {
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 1rem;
+        transform: translateX(30px);
+        opacity: 0;
+        position: relative;
+        overflow: hidden;
+        align-self: center;
+        min-height: 50px;
+        max-width: 75%;
+
+        @media (min-width: 481px) {
+            max-width: 60%;
+        }
+        
+        @media (min-width: 769px) {
+            align-self: flex-start;
+            max-width: 50%;
+            padding: 1.5rem;
+        }
+        
+        @media (min-width: 1025px) {
+            flex: 0 0 500px;
+            align-self: center;
+        }
+        
+        @media (min-width: 1501px) {
+            padding: 2rem;
+        }
+    }
+
+    .hero-quote {
+        font-family: 'Exo 2', sans-serif;
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 1.5;
+        position: relative;
+        display: block;
+        width: 100%;
+        word-wrap: break-word;
+        color: var(--text-color);
+        
+        @media (min-width: 1025px) {
+            font-size: 1.125rem;
+        }
+        
+        @media (min-width: 1501px) {
+            font-size: 1.25rem;
+        }
+    }
+
+    .hero-quote-author {
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--primary-color);
+        display: block;
+        margin-top: 1rem;
+        align-self: flex-end;
+        position: relative;
+    }
+
+    .cursor {
+        display: inline-block;
+        width: 2px;
+        height: 1.2em;
+        margin-left: 2px;
+        background-color: var(--primary-color);
+        animation: blink 1s infinite;
+        vertical-align: middle;
+        position: relative;
+    }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}

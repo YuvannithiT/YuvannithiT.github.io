@@ -1,0 +1,166 @@
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 80%;
+    background-color: var(--bg-color);
+    padding: 5rem 2rem 2rem;
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+    z-index: 1200;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &.active {
+        transform: translateX(0);
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        list-style: none;
+        margin: 0 0 2rem 0;
+        padding: 0;
+        width: 100%;
+
+        li {
+            width: 100%;
+
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 0.5rem;
+                text-decoration: none;
+                color: var(--text-color);
+                font-family: 'Play', sans-serif;
+                font-weight: 600;
+                font-size: 1rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                padding: 0.5rem 0;
+                width: 100%;
+                transition: background-color 0.3s ease;
+
+                span {
+                    display: inline-block;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -7.5px;
+                        left: 0;
+                        width: 100%;
+                        height: 1.75px;
+                        background-color: var(--primary-color);
+                        transform: scaleX(0);
+                        transform-origin: right;
+                        transition: transform 0.2s ease;
+                    }
+                }
+
+                &:hover {
+                    span::after {
+                        transform: scaleX(1);
+                        transform-origin: left;
+                    }
+                }
+
+                .nav-icon {
+                    font-size: 1rem;
+                    margin-right: 0.5rem;
+                    color: var(--primary-color);
+                }
+            }
+        }
+    }
+
+    .theme-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        background-color: transparent;
+        color: var(--text-color);
+        border: none;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        margin-top: auto;
+        align-self: flex-end;
+        padding: 0.5rem 0; 
+
+        &:hover {
+            color: var(--primary-color);
+        }
+    }
+
+    @media (min-width: 541px) {
+        width: 50%;
+    }
+
+    @media (min-width: 993px) {
+        width: 25%;
+    }
+
+    @media (min-width: 1400px) {
+        position: static;
+        height: auto;
+        width: auto;
+        background-color: transparent;
+        padding: 0;
+        transform: none;
+        flex-direction: row;
+        align-items: center;
+        overflow-y: visible;
+        -webkit-overflow-scrolling: auto;
+
+        .nav-links {
+            flex-direction: row;
+            gap: 1rem;
+            margin: 0 1.5rem 0 0; 
+            width: auto;
+
+            li {
+                width: auto;
+
+                a {
+                    padding: 0.5rem 0.75rem;
+                    width: auto;
+                    justify-content: center;
+                    font-size: 0.85rem;
+                }
+            }
+        }
+
+        .theme-toggle {
+            margin-top: 0;
+            padding: 0.5rem 0.75rem;
+            font-size: 1rem;
+        }
+    }
+
+    @media (min-width: 1681px) {
+        .nav-links {
+            gap: 1.5rem;
+            margin-right: 1.5rem;
+
+            li a {
+                font-size: 1rem;
+
+                .nav-icon {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .theme-toggle {
+            font-size: 1.25rem;
+        }
+    }
+}

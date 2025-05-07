@@ -1,0 +1,25 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Project YT-ADCE"
+
+[build.buildStats]
+  enable = true
+
+# [markup.goldmark.renderer]
+#   unsafe = true # Keep this commented unless specifically needed for raw HTML in Markdown
+
+[params]
+  author = "Yuvannithi Thirumaran"
+  description = "Dynamics. Control. Flight."
+  linkedin = "https://www.linkedin.com/in/yuvannithi-thirumaran-66034393"
+  github = "https://github.com/YuvannithiT"
+  email = "prof21yuvan@gmail.com"
+
+# [[menu.main]]
+#   name = "Launchpad"
+#   pageRef = "/"
+#   weight = 10
+# [[menu.main]]
+#   name = "Mission Brief"
+#   pageRef = "/mission-brief/"
+#   weight = 20

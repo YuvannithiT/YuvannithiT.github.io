@@ -1,0 +1,27 @@
+# Hugo directories
+/public/
+/resources/
+.hugo_build.lock
+hugo_stats.json
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Optional: Ignore log files or temp files if any are generated
+# *.log
+# /tmp/
+
+# If using node_modules (unlikely for your setup)
+# node_modules/

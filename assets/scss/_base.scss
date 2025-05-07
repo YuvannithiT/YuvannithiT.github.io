@@ -1,0 +1,94 @@
+:root {
+    --light-bg: #FFFFFF;
+    --light-text: #1D1D1D;
+    --light-primary: #0B3D91;
+    --light-secondary: #CF142B;
+    --light-tertiary: #E8EDF5;
+    --light-vanderpol-opacity: 0.0375;
+
+    --dark-bg: #000000;
+    --dark-text: #E1E1E1;
+    --dark-primary: #4074F7;
+    --dark-secondary: #EF5350;
+    --dark-tertiary: #1F1F2E;
+    --dark-vanderpol-opacity: 0.125;
+
+    --bg-color: var(--light-bg);
+    --text-color: var(--light-text);
+    --primary-color: var(--light-primary);
+    --secondary-color: var(--light-secondary);
+    --tertiary-color: var(--light-tertiary);
+    --vanderpol-opacity: var(--light-vanderpol-opacity);
+}
+
+.dark-theme {
+    --bg-color: var(--dark-bg);
+    --text-color: var(--dark-text);
+    --primary-color: var(--dark-primary);
+    --secondary-color: var(--dark-secondary);
+    --tertiary-color: var(--dark-tertiary);
+    --vanderpol-opacity: var(--dark-vanderpol-opacity);
+}
+
+html {
+    visibility: visible;
+    opacity: 1;
+
+    &.theme-transition {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s 0.5s, opacity 0.5s;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Play', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    position: relative;
+    &.menu-open {
+        overflow: hidden;
+    }
+}
+
+#vanderpol {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity 3s ease;
+    z-index: 0;
+
+    &.vanderpol-visible {
+        opacity: var(--vanderpol-opacity);
+    }
+}
+
+#page-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+    z-index: 500;
+}
+
+#page-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s 0s;
+}
