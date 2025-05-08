@@ -9,32 +9,28 @@
             duration: 1
         }, 0);
 
-        tl.to(".hero-greeting", {
-            opacity: 1,
-            x: 0,
-            duration: 0.8
-        })
-        .to(".hero-greeting:before", {
-            width: "60px",
-            duration: 0.6
-        }, "-=0.4")
-
         if (typeof SplitText !== 'undefined') {
             const nameSplit = new SplitText(".hero-name", {type: "chars"});
             tl.to(nameSplit.chars, {
                 opacity: 1,
                 y: 0,
-                duration: 0.6,
+                duration: 0.8,
                 stagger: 0.03
-            }, "-=0.3");
+            });
         } else {
             tl.to(".hero-name", {
                 opacity: 1,
                 y: 0,
-                duration: 0.8
-            }, "-=0.3");
+                duration: 1
+            });
         }
 
+        tl.to(".hero-greeting", {
+            opacity: 1,
+            x: 0,
+            duration: 0.8
+        }, "-=0.3")
+        
         tl.to(".hero-description", {
             opacity: 1,
             y: 0,
