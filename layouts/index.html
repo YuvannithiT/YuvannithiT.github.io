@@ -1,16 +1,18 @@
 {{ define "main" }}
     <section class="hero">
         <div class="hero-container">
-            <div class="hero-intro">
-                <div class="hero-greeting">Hello and welcome! I'm</div>
-                <h1 class="hero-name">{{ .Title }}</h1>
-                <div class="hero-description">
-                    {{ .Content }}
+            <h1 class="hero-name">{{ .Title }}</h1>
+            <div class="content-row">
+                <div class="hero-intro">
+                    <div class="hero-greeting">Hello and welcome! I'm</div>
+                    <div class="hero-description">
+                        {{ .Content }}
+                    </div>
                 </div>
-            </div>
-            <div class="quote-container">
-                <p id="typed-quote" class="hero-quote"></p>
-                <span id="quote-author" class="hero-quote-author"></span>
+                <div class="quote-container">
+                    <p id="typed-quote" class="hero-quote"></p>
+                    <span id="quote-author" class="hero-quote-author"></span>
+                </div>
             </div>
         </div>
     </section>
