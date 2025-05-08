@@ -74,7 +74,7 @@
         }
     });
 
-    nav.addEventListener('click', function(e) {nu
+    nav.addEventListener('click', function(e) {
         if (e.target.tagName === 'A' && e.target.closest('nav')) {
             toggleMenu(false);
         } else {
