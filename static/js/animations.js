@@ -43,6 +43,33 @@
             duration: 1.2
         }, "-=0.4");
 
+        setupPosterScrollAnimation();
+        
+        loadAndAnimateQuote();
+    });
+    
+    function setupPosterScrollAnimation() {
+        gsap.registerPlugin(ScrollTrigger);
+        
+        const posterTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".poster-section",
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none none reverse",
+                markers: false
+            }
+        });
+        
+        posterTl.to(".poster-wrapper", {
+            opacity: 1,
+            y: 0,
+            duration: 1.2,
+            ease: "power3.out"
+        });
+    }
+    
+    function loadAndAnimateQuote() {
         fetch('/data/quotes.json')
             .then(response => {
                 if (!response.ok) {
@@ -119,5 +146,5 @@
                     typedQuote.textContent = "Sorry, could not load a quote right now.";
                 }
             });
-    });
+    }
 })();
