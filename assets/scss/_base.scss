@@ -59,21 +59,6 @@ body {
     }
 }
 
-#vanderpol {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    opacity: 0;
-    transition: opacity 3s ease;
-    z-index: 0;
-
-    &.vanderpol-visible {
-        opacity: var(--vanderpol-opacity);
-    }
-}
-
 #page-overlay {
     position: fixed;
     top: 0;
