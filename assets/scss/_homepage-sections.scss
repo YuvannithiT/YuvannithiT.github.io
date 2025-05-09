@@ -1,6 +1,7 @@
 .homepage-section {
     padding: 3rem 1.5rem;
     overflow: hidden;
+    position: relative;
     
     @media (min-width: 768px) {
         padding: 5rem 2rem;
@@ -38,8 +39,7 @@
 
 .homepage-image-wrapper {
     margin-bottom: 0rem;
-    opacity: 0;
-    transform: translateY(30px);
+    will-change: transform, opacity;
     
     @media (min-width: 1024px) {
         flex: 1;
@@ -59,8 +59,7 @@
 }
 
 .homepage-content {
-    opacity: 0;
-    transform: translateY(30px);
+    will-change: transform, opacity;
     
     @media (min-width: 1024px) {
         flex: 1;
@@ -131,9 +130,4 @@
     &:active {
         transform: translateY(0);
     }
-}
-
-.homepage-animated {
-    opacity: 1;
-    transform: translateY(0);
 }
