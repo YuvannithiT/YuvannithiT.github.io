@@ -15,6 +15,12 @@
             console.warn('createGlitchAnimation function not found.');
         }
 
+        tl.to(".hero-name", {
+            opacity: 1,
+            y: 0,
+            duration: 0.8
+        });
+
         tl.to(".hero-greeting", {
             opacity: 1,
             x: 0,
@@ -32,34 +38,19 @@
             x: 0,
             duration: 1.2
         }, "-=0.4");
-
-        setupPosterScrollAnimation();
+        
+        tl.to(".poster-wrapper", {
+            opacity: 1,
+            y: 0,
+            duration: 1.2,
+            ease: "power3.out"
+        }, "-=0.7");
         
         if (window.AppAnimations && typeof window.AppAnimations.loadAndAnimateQuote === 'function') {
             window.AppAnimations.loadAndAnimateQuote();
         } else {
             console.warn('loadAndAnimateQuote function not found.');
         }
+        
     });
-    
-    function setupPosterScrollAnimation() {
-        gsap.registerPlugin(ScrollTrigger);
-        
-        const posterTl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".poster-section",
-                start: "top 80%",
-                end: "bottom 20%",
-                toggleActions: "play none none reverse",
-                markers: false
-            }
-        });
-        
-        posterTl.to(".poster-wrapper", {
-            opacity: 1,
-            y: 0,
-            duration: 1.2,
-            ease: "power3.out"
-        });
-    }
 })();
