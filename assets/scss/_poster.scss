@@ -16,7 +16,7 @@
             position: relative;
             width: 100%;
             max-width: 800px;
-            border-radius: 0;
+            border-radius: var(--radius);
             overflow: hidden;
             box-shadow: var(--glow);
             opacity: 0;
