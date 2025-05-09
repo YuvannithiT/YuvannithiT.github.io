@@ -47,13 +47,12 @@
         glitchContainer.className = 'glitch-container';
         heroNameElement.appendChild(glitchContainer);
         
-        const glitchChars = '!@#$%^&*()_+-=[]{}|;:,./<>?`~\\\'\"¥£€¢§±×÷¡¿';
-        const specialGlitchChars = '█▓▒░▄▀■□▪▫▬▲►▼◄◊○●◘◙♠♣♥♦';
+        const glitchChars = `!@#$%^&*()_+-=[]{}|;:,./<>?\\'"¥£€¢§±×÷¡¿─━│┃┄┅┈┉◯◎◉○●◆◈░▒▓★✦✧←↑→↓↔↕↖↗↘↙▴▵▾▿▖▗▘▙▚▛▜▝▞▟≠≈∞∑∏√∂∇∈∉∪∩⊂⊃⠁⠂⠄⡀⣀⣄⣆⣇⣿ｱｲｳｴｵｯｼᚠᚢᚦᚨᚱᚲᚷᚹ`;
+        const specialGlitchChars = `█▓▒░▄▀■□▪▫▬▲►▼◄◢◣◤◥◆◇◈⟦⟧⟨⟩▖▗▘▝▞▟✠✡✦✧✩✪ｱｲｳｴｵｯｼᚠᚢᚦᚨᚱᚲᚷᚹ∑∏∂∇`;
         const allGlitchChars = glitchChars + specialGlitchChars;
         
-        const charDelay = 100;
-        const glitchDuration = 1500;
-        const glitchSpeed = 100;
+        const charDelay = 50;
+        const glitchSpeed = 50;
         
         let currentIndex = 0;
         
@@ -68,7 +67,7 @@
             
             let glitchTime = 0;
             let glitchCycles = 0;
-            const maxGlitchCycles = 8 + Math.floor(Math.random() * 7);
+            const maxGlitchCycles = 5 + Math.floor(Math.random() * 5);
             
             const finalChar = originalText[currentIndex];
             
