@@ -53,7 +53,7 @@
         
         const charDelay = 100;
         const glitchDuration = 1500;
-        const glitchSpeed = 50;
+        const glitchSpeed = 100;
         
         let currentIndex = 0;
         
