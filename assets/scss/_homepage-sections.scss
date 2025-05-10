@@ -1,11 +1,7 @@
 .homepage-section {
-    padding: 3rem 1.5rem;
+    padding: clamp(3rem, 1vw, 5rem) clamp(1.5rem, 1vw, 2rem);
     overflow: hidden;
     position: relative;
-    
-    @media (min-width: 768px) {
-        padding: 5rem 2rem;
-    }
 
     @media (min-width: 1024px) {
         min-height: 75vmin;
@@ -25,7 +21,6 @@
 .homepage-container {
     max-width: 1440px;
     margin: 0 auto;
-    
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -68,9 +63,9 @@
 
 .homepage-subtitle {
     display: inline-block;
-    font-size: 0.9rem;
+    font-size: clamp(0.9rem, 1vw, 1rem);
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 0.125rem;
     color: var(--secondary-color);
     margin-bottom: 0.5rem;
     position: relative;
@@ -82,30 +77,22 @@
         left: 0;
         top: 50%;
         width: 2rem;
-        height: 1px;
+        height: 0.0625rem;
         background-color: var(--secondary-color);
     }
 }
 
 .homepage-title {
-    font-size: 2rem;
+    font-size: clamp(1.75rem, 1.5vw, 2.25rem);;
     margin-bottom: 1rem;
     position: relative;
     color: var(--primary-color);
-    
-    @media (min-width: 768px) {
-        font-size: 2.5rem;
-    }
 }
 
 .homepage-description {
-    font-size: 1rem;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
     line-height: 1.625;
     margin-bottom: 1.5rem;
-    
-    @media (min-width: 768px) {
-        font-size: 1.25rem;
-    }
 }
 
 .cta-button {
@@ -116,14 +103,14 @@
     text-decoration: none;
     border-radius: var(--radius);
     font-weight: 600;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.03125rem;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
     
     &:hover {
         background-color: var(--secondary-color);
-        transform: translateY(-2px);
+        transform: translateY(-0.125rem);
         box-shadow: var(--glow);
     }
     
