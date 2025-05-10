@@ -4,7 +4,7 @@
             <h1 class="hero-name">{{ .Title }}</h1>
             <div class="content-row">
                 <div class="hero-intro">
-                    <div class="hero-greeting">Hello and welcome! I'm</div>
+                    <div class="hero-greeting">{{ .Params.hero.greeting }}</div>
                     <div class="hero-description">
                         {{ .Content }}
                     </div>
@@ -15,78 +15,25 @@
                 </div>
             </div>
             <div class="poster-wrapper">
-                <img src="/images/yt-adce.png" alt="PROJECT YT - Aerospace Dynamics and Control Engineering" class="poster-image">
+                <img src="{{ .Params.hero.poster_image_src }}" alt="{{ .Params.hero.poster_alt }}" class="poster-image">
             </div>
         </div>
     </section>
 
+    {{ range .Params.sections }}
     <section class="homepage-section">
         <div class="homepage-container">
             <div class="homepage-image-wrapper">
-                <img src="/images/sidestick.jpg" alt="About Me" class="homepage-image">
+                <img src="{{ .image }}" alt="{{ .image_alt }}" class="homepage-image">
             </div>
             <div class="homepage-content">
-                <span class="homepage-subtitle">Discover My Journey</span>
-                <h2 class="homepage-title">My Engineering Story</h2>
-                <p class="homepage-description">From first principles to flight-worthy control algorithms, learn how I blend deep theory with hands-on experimentation to push aerospace innovation.</p>
-                <a href="/about" class="cta-button">Explore My Story</a>
+                <span class="homepage-subtitle">{{ .subtitle }}</span>
+                <h2 class="homepage-title">{{ .title }}</h2>
+                <p class="homepage-description">{{ .description | markdownify }}</p>
+                <a href="{{ .cta_link }}" class="cta-button">{{ .cta_text }}</a>
             </div>
         </div>
     </section>
+    {{ end }}
 
-    <section class="homepage-section">
-        <div class="homepage-container">
-            <div class="homepage-image-wrapper">
-                <img src="/images/ppc.jpg" alt="Professional Experience" class="homepage-image">
-            </div>
-            <div class="homepage-content">
-                <span class="homepage-subtitle">Career Highlights</span>
-                <h2 class="homepage-title">Driving Systemic Innovation</h2>
-                <p class="homepage-description">Overseeing multidisciplinary teams, I’ve delivered next-gen guidance, navigation & control solutions—bridging research and real-world missions.</p>
-                <a href="/projects" class="cta-button">See My Impact</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="homepage-section">
-        <div class="homepage-container">
-            <div class="homepage-image-wrapper">
-                <img src="/images/iss_docking.jpg" alt="My Projects" class="homepage-image">
-            </div>
-            <div class="homepage-content">
-                <span class="homepage-subtitle">Featured Portfolio</span>
-                <h2 class="homepage-title">Selected Aerospace Solutions</h2>
-                <p class="homepage-description">A curated showcase: from conceptual designs in spacecraft dynamics to implemented autopilot systems, each project exemplifies precision and reliability.</p>
-                <a href="/projects" class="cta-button">View Showcase</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="homepage-section">
-        <div class="homepage-container">
-            <div class="homepage-image-wrapper">
-                <img src="/images/concorde.jpg" alt="My Articles" class="homepage-image">
-            </div>
-            <div class="homepage-content">
-                <span class="homepage-subtitle">Insights & Analysis</span>
-                <h2 class="homepage-title">Technical Deep-Dives</h2>
-                <p class="homepage-description">In-depth explorations of flight science, control theory breakthroughs, and emerging aerospace trends—packed with charts, code snippets, and case studies.</p>
-                <a href="/projects" class="cta-button">Read Insights</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="homepage-section">
-        <div class="homepage-container">
-            <div class="homepage-image-wrapper">
-                <img src="/images/space_walk.jpg" alt="Contact Me" class="homepage-image">
-            </div>
-            <div class="homepage-content">
-                <span class="homepage-subtitle">Let’s Collaborate</span>
-                <h2 class="homepage-title">Connect & Innovate</h2>
-                <p class="homepage-description">I’m always open to pioneering partnerships in dynamics & control. Let’s discuss how we can engineer the next frontier of aerospace together.</p>
-                <a href="/contact" class="cta-button">Get in Touch</a>
-            </div>
-        </div>
-    </section>
 {{ end }}
