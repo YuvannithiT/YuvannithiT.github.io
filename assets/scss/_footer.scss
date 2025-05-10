@@ -54,10 +54,10 @@ footer {
         .social-icon {
             font-size: 1.25rem;
             vertical-align: middle;
-        }
 
-        @media (min-width: 601px) {
-            gap: 1.5rem;
+            @media (min-width: 601px) {
+                gap: 1.5rem;
+            }
         }
     }
 }
