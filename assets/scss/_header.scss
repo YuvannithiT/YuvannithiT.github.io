@@ -32,8 +32,8 @@ header {
         
         .site-logo {
             display: block;
-            width: clamp(2.5rem, 2vw, 3.5rem);
-            height: clamp(2.5rem, 2vw, 3.5rem);
+            width: clamp(2.75rem, 2.75vw, 4rem);
+            height: clamp(2.75rem, 2.75vw, 4rem);
             
             svg {
                 width: 100%;
@@ -55,7 +55,7 @@ header {
     .site-name {
         font-family: 'Orbitron', sans-serif;
         font-weight: 900;
-        font-size: clamp(1rem, 1vw, 1.75rem);
+        font-size: clamp(1rem, 1.25vw, 2rem);
         background: var(--primary-color);
         -webkit-background-clip: text;
         background-clip: text;
@@ -73,7 +73,7 @@ header {
 
     .site-tagline {
         font-family: 'Play', sans-serif;
-        font-size: clamp(0.65rem, 0.5vw, 0.85rem);
+        font-size: clamp(0.5rem, 0.75vw, 1rem);
         font-weight: 400;
         letter-spacing: clamp(0.078125rem, 0.1vw, 0.09375rem);
         color: var(--text-color);
