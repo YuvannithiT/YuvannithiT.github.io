@@ -21,19 +21,19 @@
     </section>
 
     {{ range .Params.sections }}
-    <section class="homepage-section">
-        <div class="homepage-container">
-            <div class="homepage-image-wrapper">
-                <img src="{{ .image }}" alt="{{ .image_alt }}" class="homepage-image">
+        <section class="homepage-section">
+            <div class="homepage-container">
+                <div class="homepage-image-wrapper">
+                    <img src="{{ .image }}" alt="{{ .image_alt }}" class="homepage-image">
+                </div>
+                <div class="homepage-content">
+                    <span class="homepage-subtitle">{{ .subtitle }}</span>
+                    <h2 class="homepage-title">{{ .title }}</h2>
+                    <p class="homepage-description">{{ .description | markdownify }}</p>
+                    <a href="{{ .cta_link }}" class="cta-button">{{ .cta_text }}</a>
+                </div>
             </div>
-            <div class="homepage-content">
-                <span class="homepage-subtitle">{{ .subtitle }}</span>
-                <h2 class="homepage-title">{{ .title }}</h2>
-                <p class="homepage-description">{{ .description | markdownify }}</p>
-                <a href="{{ .cta_link }}" class="cta-button">{{ .cta_text }}</a>
-            </div>
-        </div>
-    </section>
+        </section>
     {{ end }}
 
 {{ end }}
