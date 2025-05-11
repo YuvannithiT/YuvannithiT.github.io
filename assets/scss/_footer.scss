@@ -22,38 +22,38 @@ footer {
             text-align: left;
             gap: 0;
         }
-    }
 
-    .footer-copyright {
-        font-size: clamp(0.85rem, 1.5vw, 1rem);
-    }
-
-    .social-links {
-        display: flex;
-        justify-content: center;
-        gap: 1.75em;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-
-        @media (min-width: 601px) {
-            gap: 1.5rem;
+        .footer-copyright {
+            font-size: clamp(0.85rem, 1.5vw, 1rem);
         }
 
-        a {
-            color: var(--text-color);
-            text-decoration: none;
-            display: inline-block;
-            transition: color 0.3s ease;
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.75em;
+            list-style: none;
+            padding: 0;
+            margin: 0;
 
-            &:hover {
-                color: var(--primary-color);
+            @media (min-width: 601px) {
+                gap: 1.5rem;
             }
-        }
 
-        .social-icon {
-            font-size: 1.25rem;
-            vertical-align: middle;
+            a {
+                color: var(--text-color);
+                text-decoration: none;
+                display: inline-block;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: var(--primary-color);
+                }
+            }
+
+            .social-icon {
+                font-size: 1.25rem;
+                vertical-align: middle;
+            }
         }
     }
 }
