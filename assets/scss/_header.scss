@@ -26,10 +26,6 @@ header {
         display: flex;
         align-items: center;
         
-        .site-text {
-            display: none;
-        }
-        
         .site-logo {
             display: block;
             width: clamp(2.75rem, 2.75vw, 3.75rem);
@@ -41,44 +37,45 @@ header {
                 color: var(--text-color);
             }
         }
-        
-        @media (min-width: 1500px) {
-            .site-text {
+
+        .site-text {
+            display: none;
+
+            @media (min-width: 1500px) {
                 display: block;
                 margin-left: 0.75rem;
+                flex-direction: row;
             }
-            
-            flex-direction: row;
+
+            .site-name {
+                font-family: 'Orbitron', sans-serif;
+                font-weight: 900;
+                font-size: clamp(1rem, 1.25vw, 1.75rem);
+                background: var(--primary-color);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-transform: uppercase;
+                letter-spacing: 0.09375rem;
+                font-style: italic;
+                margin-bottom: 0rem;
+
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
+
+            .site-tagline {
+                font-family: 'Play', sans-serif;
+                font-size: clamp(0.5rem, 0.75vw, 0.875rem);
+                font-weight: 400;
+                letter-spacing: clamp(0.078125rem, 0.1vw, 0.09375rem);
+                color: var(--text-color);
+                text-transform: uppercase;
+                margin-top: 0;
+                margin-left: 0.125rem;
+            }
         }
-    }
-
-    .site-name {
-        font-family: 'Orbitron', sans-serif;
-        font-weight: 900;
-        font-size: clamp(1rem, 1.25vw, 1.75rem);
-        background: var(--primary-color);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-transform: uppercase;
-        letter-spacing: 0.09375rem;
-        font-style: italic;
-        margin-bottom: 0rem;
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-    }
-
-    .site-tagline {
-        font-family: 'Play', sans-serif;
-        font-size: clamp(0.5rem, 0.75vw, 0.875rem);
-        font-weight: 400;
-        letter-spacing: clamp(0.078125rem, 0.1vw, 0.09375rem);
-        color: var(--text-color);
-        text-transform: uppercase;
-        margin-top: 0;
-        margin-left: 0.125rem;
     }
 }
