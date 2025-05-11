@@ -1,0 +1,46 @@
+{{ $originalPath := .ImagePath }}
+{{ $altText := .AltText | default "" }}
+{{ $imgClass := .ImgClass | default "" }}
+{{ $loading := .Loading | default "lazy" }}
+{{ $sizes := .Sizes | default "" }}
+
+{{ $imageResource := resources.Get $originalPath }}
+
+{{ if $imageResource }}
+    {{ $widths := slice 320 375 425 768 1024 1440 1920 2560 3840 }}
+    {{ $srcsetWebp := slice }}
+    {{ $largestImage := "" }}
+
+    {{ range $widths }}
+        {{ $width := . }}
+        {{ if ge $imageResource.Width $width }}
+            {{ $resized := $imageResource.Resize (printf "%dx webp q100" $width) }}
+            {{ $srcsetWebp = $srcsetWebp | append (printf "%s %dw" $resized.RelPermalink $width) }}
+            
+            {{ if not $largestImage }}
+                {{ $largestImage = $resized }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    {{ if not $largestImage }}
+        {{ $largestImage = $imageResource.Resize (printf "%dx webp q100" $imageResource.Width) }}
+        {{ $srcsetWebp = $srcsetWebp | append (printf "%s %dw" $largestImage.RelPermalink $imageResource.Width) }}
+    {{ end }}
+
+    {{ $srcsetString := delimit $srcsetWebp ", " }}
+    {{ $fallbackSrc := $largestImage.RelPermalink }}
+
+    <img 
+        class="{{ $imgClass }}"
+        src="{{ $fallbackSrc }}"
+        srcset="{{ $srcsetString }}"
+        sizes="{{ $sizes }}"
+        alt="{{ $altText }}"
+        loading="{{ $loading }}"
+        width="{{ $largestImage.Width }}"
+        height="{{ $largestImage.Height }}"
+    >
+{{ else }}
+    <div class="image-error">Image not found: {{ $originalPath }}</div>
+{{ end }}
