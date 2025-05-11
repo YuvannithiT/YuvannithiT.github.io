@@ -15,7 +15,12 @@
                 </div>
             </div>
             <div class="poster-wrapper">
-                <img src="{{ .Params.hero.poster_image_src }}" alt="{{ .Params.hero.poster_alt }}" class="poster-image">
+                {{ partial "responsive_image.html" (dict 
+                "ImagePath" .Params.hero.poster_image_src 
+                "AltText" .Params.hero.poster_alt 
+                "ImgClass" "poster-image" 
+                "Loading" "eager"
+                "Sizes" "(max-width: 863px) calc(100vw - 64px), 800px") }}
             </div>
         </div>
     </section>
@@ -24,7 +29,12 @@
         <section class="homepage-section">
             <div class="homepage-container">
                 <div class="homepage-image-wrapper">
-                    <img src="{{ .image }}" alt="{{ .image_alt }}" class="homepage-image">
+                    {{ partial "responsive_image.html" (dict 
+                    "ImagePath" .image 
+                    "AltText" .image_alt 
+                    "ImgClass" "homepage-image" 
+                    "Loading" "lazy"
+                    "Sizes" "(max-width: 1023px) calc(100vw - 48px), (max-width: 1487px) calc(60vw - 86px), 806px") }}
                 </div>
                 <div class="homepage-content">
                     <span class="homepage-subtitle">{{ .subtitle }}</span>
