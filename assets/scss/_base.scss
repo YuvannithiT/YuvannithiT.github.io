@@ -56,6 +56,7 @@ body {
     overflow-x: hidden;
     transition: background-color 0.5s ease, color 0.5s ease;
     position: relative;
+    
     &.menu-open {
         overflow: hidden;
     }
@@ -67,15 +68,15 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.85);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0s 0.3s;
     z-index: 500;
-}
 
-#page-overlay.is-visible {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.3s ease, visibility 0s 0s;
+    &.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease, visibility 0s 0s;
+    }
 }
