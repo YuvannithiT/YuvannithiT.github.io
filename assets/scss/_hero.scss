@@ -16,155 +16,155 @@
         width: 100%;
         gap: 2rem;
         z-index: 1;
-    }
 
-    .hero-name {
-        font-family: 'Orbitron', sans-serif;
-        font-size: clamp(2.5rem, 5vw, 6.25rem);;
-        font-weight: 900;
-        text-align: center;
-        width: 100%;
-        line-height: 1.25;
-        opacity: 0;
-        transform: translateY(2.5rem);
-        background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin-bottom: clamp(1rem, 2vw, 5rem);
-    }
-
-    .content-row {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 3rem;
-
-        @media (min-width: 769px) {
-            flex-direction: row;
-            align-items: flex-start;
-            justify-content: space-between;
-        }
-    }
-
-    .hero-intro {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        text-align: center;
-
-        @media (min-width: 769px) {
-            text-align: left;
-        }
-    }
-
-    .hero-greeting {
-        font-size: clamp(1.2rem, 1.5vw, 1.5rem);
-        margin-bottom: 1rem;
-        color: var(--primary-color);
-        opacity: 0;
-        transform: translateX(-1.875rem);
-        position: relative;
-    }
-
-    .hero-description {
-        font-size: clamp(1rem, 1.625vw, 1.375rem);
-        line-height: 1.5;
-        color: var(--text-color);
-        margin-bottom: 1rem;
-        opacity: 0;
-        transform: translateY(1.25rem);
-        text-align: center;
-
-        strong {
-            color: var(--text-color);
-            font-style: italic;
-        }
-        
-        @media (min-width: 769px) {
-            text-align: left;
-        }
-    }
-
-    .quote-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 1rem;
-        transform: translateX(1.875rem);
-        opacity: 0;
-        position: relative;
-        overflow: hidden;
-        min-height: 3.125rem;
-        width: 100%;
-
-        @media (min-width: 769px) {
-            width: 40%;
-        }
-        
-        @media (min-width: 1025px) {
-            width: 30rem;
-        }
-    }
-
-    .hero-quote {
-        font-family: 'Exo 2', sans-serif;
-        font-size: clamp(0.95rem, 1vw, 1.125rem);
-        font-style: italic;
-        font-weight: 300;
-        line-height: 1.5;
-        position: relative;
-        display: block;
-        width: 100%;
-        word-wrap: break-word;
-        color: var(--text-color);
-    }
-
-    .hero-quote-author {
-        font-size: clamp(0.9rem, 1vw, 1rem);
-        color: var(--primary-color);
-        display: block;
-        margin-top: 1rem;
-        align-self: flex-end;
-        position: relative;
-    }
-
-    .cursor {
-        display: inline-block;
-        width: 0.125rem;
-        height: 1.25em;
-        margin-left: 0.125rem;
-        background-color: var(--primary-color);
-        animation: blink 1s infinite;
-        vertical-align: middle;
-        position: relative;
-    }
-    
-    .poster-wrapper {
-        width: 100%;
-        max-width: 50rem;
-        border-radius: var(--radius);
-        overflow: hidden;
-        box-shadow: var(--glow);
-        opacity: 0;
-        transform: translateY(3.75rem);
-        margin-top: clamp(3rem, 5vw, 5rem);
-        
-        .poster-image {
+        .hero-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 6.25rem);;
+            font-weight: 900;
+            text-align: center;
             width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.3s ease;
+            line-height: 1.25;
+            opacity: 0;
+            transform: translateY(2.5rem);
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: clamp(1rem, 2vw, 5rem);
         }
-        
-        &:hover {
+
+        .content-row {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 3rem;
+
+            @media (min-width: 769px) {
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: space-between;
+            }
+
+            .hero-intro {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                text-align: center;
+
+                @media (min-width: 769px) {
+                    text-align: left;
+                }
+
+                .hero-greeting {
+                    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+                    margin-bottom: 1rem;
+                    color: var(--primary-color);
+                    opacity: 0;
+                    transform: translateX(-1.875rem);
+                    position: relative;
+                }
+
+                .hero-description {
+                    font-size: clamp(1rem, 1.625vw, 1.375rem);
+                    line-height: 1.5;
+                    color: var(--text-color);
+                    margin-bottom: 1rem;
+                    opacity: 0;
+                    transform: translateY(1.25rem);
+                    text-align: center;
+
+                    strong {
+                        color: var(--text-color);
+                        font-style: italic;
+                    }
+                    
+                    @media (min-width: 769px) {
+                        text-align: left;
+                    }
+                }
+            }
+
+            .quote-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 1rem;
+                transform: translateX(1.875rem);
+                opacity: 0;
+                position: relative;
+                overflow: hidden;
+                min-height: 3.125rem;
+                width: 100%;
+
+                @media (min-width: 769px) {
+                    width: 40%;
+                }
+                
+                @media (min-width: 1025px) {
+                    width: 30rem;
+                }
+
+                .hero-quote {
+                    font-family: 'Exo 2', sans-serif;
+                    font-size: clamp(0.95rem, 1vw, 1.125rem);
+                    font-style: italic;
+                    font-weight: 300;
+                    line-height: 1.5;
+                    position: relative;
+                    display: block;
+                    width: 100%;
+                    word-wrap: break-word;
+                    color: var(--text-color);
+                }
+
+                .hero-quote-author {
+                    font-size: clamp(0.9rem, 1vw, 1rem);
+                    color: var(--primary-color);
+                    display: block;
+                    margin-top: 1rem;
+                    align-self: flex-end;
+                    position: relative;
+                }
+            }
+        }
+
+        .poster-wrapper {
+            width: 100%;
+            max-width: 50rem;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--glow);
+            opacity: 0;
+            transform: translateY(3.75rem);
+            margin-top: clamp(3rem, 5vw, 5rem);
+            
             .poster-image {
-                transform: scale(1.02);
+                width: 100%;
+                height: auto;
+                display: block;
+                transition: transform 0.3s ease;
+            }
+            
+            &:hover {
+                .poster-image {
+                    transform: scale(1.02);
+                }
             }
         }
     }
+}
+
+.cursor {
+    display: inline-block;
+    width: 0.125rem;
+    height: 1.25em;
+    margin-left: 0.125rem;
+    background-color: var(--primary-color);
+    animation: blink 1s infinite;
+    vertical-align: middle;
+    position: relative;
 }
 
 @keyframes blink {
