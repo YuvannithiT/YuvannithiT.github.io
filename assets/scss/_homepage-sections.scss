@@ -4,7 +4,7 @@
     position: relative;
 
     @media (min-width: 1024px) {
-        min-height: clamp(75vmin, 50vw, 85vmin);
+        min-height: clamp(50vmin, 50vw, 75vmin);
         display: flex;
         align-items: center;
     }
@@ -18,7 +18,7 @@
     }
 
     .homepage-container {
-        max-width: clamp(1440px, 75vw, 1920px);
+        max-width: clamp(1440px, 75vw, 2560px);
         margin: 0 auto;
         display: flex;
         flex-direction: column;
