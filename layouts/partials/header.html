@@ -18,12 +18,12 @@
 
     <nav>
         <ul class="nav-links">
-            <li><a href="#"><span><i class="fa-solid fa-rocket nav-icon"></i>Launchpad</span></a></li>
-            <li><a href="#"><span><i class="fa-solid fa-file-lines nav-icon"></i>Mission Brief</span></a></li>
-            <li><a href="#"><span><i class="fa-solid fa-route nav-icon"></i>Trajectory</span></a></li>
-            <li><a href="#"><span><i class="fa-solid fa-gears nav-icon"></i>Engineering Bay</span></a></li>
-            <li><a href="#"><span><i class="fa-solid fa-book nav-icon"></i>Captain's Log</span></a></li>
-            <li><a href="#"><span><i class="fa-solid fa-satellite-dish nav-icon"></i>Uplink</span></a></li>
+            <li><a href="{{ "/" | relURL }}"><span><i class="fa-solid fa-rocket nav-icon"></i>Launchpad</span></a></li>
+            <li><a href="{{ "/about/" | relURL }}"><span><i class="fa-solid fa-file-lines nav-icon"></i>Mission Brief</span></a></li>
+            <li><a href="{{ "/experience/" | relURL }}"><span><i class="fa-solid fa-route nav-icon"></i>Trajectory</span></a></li>
+            <li><a href="{{ "/projects/" | relURL }}"><span><i class="fa-solid fa-gears nav-icon"></i>Engineering Bay</span></a></li>
+            <li><a href="{{ "/articles/" | relURL }}"><span><i class="fa-solid fa-book nav-icon"></i>Captain's Log</span></a></li>
+            <li><a href="{{ "/contact/" | relURL }}"><span><i class="fa-solid fa-satellite-dish nav-icon"></i>Uplink</span></a></li>
         </ul>
 
         <button class="theme-toggle" id="theme-toggle">
