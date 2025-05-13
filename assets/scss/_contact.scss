@@ -1,0 +1,409 @@
+.contact-hero {
+    position: relative;
+    min-height: 50vh;
+    padding: 6rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+
+    .contact-hero-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 50rem;
+        width: 100%;
+        gap: 1.5rem;
+        text-align: center;
+        
+        .contact-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 4vw, 4rem);
+            font-weight: 900;
+            line-height: 1.25;
+            opacity: 0;
+            transform: translateY(2rem);
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s forwards;
+            animation-delay: 0.2s;
+        }
+
+        .contact-subtitle {
+            font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            opacity: 0;
+            transform: translateY(1.5rem);
+            animation: fadeInUp 0.8s forwards;
+            animation-delay: 0.4s;
+        }
+
+        .contact-description {
+            font-size: clamp(1rem, 1.2vw, 1.2rem);
+            line-height: 1.6;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(1rem);
+            animation: fadeInUp 0.8s forwards;
+            animation-delay: 0.6s;
+        }
+
+        .response-time {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-color);
+            opacity: 0.8;
+            opacity: 0;
+            transform: translateY(0.5rem);
+            animation: fadeInUp 0.8s forwards;
+            animation-delay: 0.8s;
+        }
+    }
+}
+
+.contact-form-section {
+    padding: 4rem 2rem;
+    background-color: var(--tertiary-color);
+    display: flex;
+    justify-content: center;
+    
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 75rem;
+        width: 100%;
+        gap: 3rem;
+        
+        @media (min-width: 768px) {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+        
+        .contact-instructions {
+            flex: 1;
+            padding: 2rem;
+            background-color: var(--bg-color);
+            border-radius: var(--radius);
+            box-shadow: var(--glow);
+            opacity: 0;
+            transform: translateX(-1rem);
+            animation: fadeInLeft 0.8s forwards;
+            animation-delay: 1s;
+            
+            h3 {
+                font-family: 'Orbitron', sans-serif;
+                font-size: 1.5rem;
+                color: var(--primary-color);
+                margin-bottom: 1.5rem;
+            }
+            
+            p {
+                margin-bottom: 1rem;
+                font-size: 1rem;
+            }
+            
+            .contact-bullet-list {
+                list-style-type: none;
+                padding-left: 1.25rem;
+                
+                li {
+                    position: relative;
+                    padding: 0.5rem 0;
+                    
+                    &:before {
+                        content: "•";
+                        color: var(--secondary-color);
+                        position: absolute;
+                        left: -1.25rem;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+        
+        .form-container {
+            flex: 2;
+            opacity: 0;
+            transform: translateX(1rem);
+            animation: fadeInRight 0.8s forwards;
+            animation-delay: 1s;
+            
+            /* Placeholder styles for the form - to be expanded */
+            .contact-form {
+                background-color: var(--bg-color);
+                padding: 2rem;
+                border-radius: var(--radius);
+                box-shadow: var(--glow);
+                
+                .form-group {
+                    margin-bottom: 1.5rem;
+                    
+                    label {
+                        display: block;
+                        margin-bottom: 0.5rem;
+                        font-size: 0.95rem;
+                        color: var(--primary-color);
+                        font-weight: 500;
+                    }
+                    
+                    input, select, textarea {
+                        width: 100%;
+                        padding: 0.75rem;
+                        border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+                        border-radius: var(--radius);
+                        background-color: var(--bg-color);
+                        color: var(--text-color);
+                        font-family: 'Play', sans-serif;
+                        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+                        
+                        &:focus {
+                            border-color: var(--primary-color);
+                            box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2);
+                            outline: none;
+                        }
+                    }
+                    
+                    textarea {
+                        resize: vertical;
+                        min-height: 8rem;
+                    }
+                }
+                
+                .honey-pot {
+                    display: none;
+                }
+                
+                .form-submit {
+                    text-align: center;
+                    margin-top: 2rem;
+                    
+                    .submit-button {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 0.5rem;
+                        padding: 0.75rem 2rem;
+                        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+                        color: white;
+                        font-family: 'Orbitron', sans-serif;
+                        font-weight: 600;
+                        border: none;
+                        border-radius: var(--radius);
+                        cursor: pointer;
+                        transition: transform 0.3s ease, box-shadow 0.3s ease;
+                        font-size: 1rem;
+                        
+                        &:hover {
+                            transform: translateY(-2px);
+                            box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.4);
+                        }
+                        
+                        &:active {
+                            transform: translateY(0);
+                            box-shadow: 0 2px 6px rgba(var(--primary-color-rgb), 0.3);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact-extras {
+    padding: 5rem 2rem;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    
+    .extras-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        max-width: 75rem;
+        width: 100%;
+        
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        @media (min-width: 1024px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .booking-section, .faq-section {
+            padding: 2rem;
+            background-color: var(--tertiary-color);
+            border-radius: var(--radius);
+            box-shadow: var(--glow);
+            opacity: 0;
+            transform: translateY(2rem);
+            animation: fadeInUp 0.8s forwards;
+            animation-delay: 1.2s;
+            
+            h3 {
+                font-family: 'Orbitron', sans-serif;
+                font-size: 1.5rem;
+                color: var(--primary-color);
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        .booking-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            
+            .booking-description {
+                margin-bottom: 1.5rem;
+                font-size: 0.95rem;
+            }
+            
+            .booking-button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+                padding: 0.75rem 1.5rem;
+                background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+                color: white;
+                font-weight: 600;
+                text-decoration: none;
+                border-radius: var(--radius);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.4);
+                }
+            }
+        }
+        
+        .faq-section {
+            .faq-accordion {
+                .faq-item {
+                    border-bottom: 1px solid rgba(var(--text-color-rgb), 0.1);
+                    margin-bottom: 1rem;
+                    
+                    &:last-child {
+                        border-bottom: none;
+                        margin-bottom: 0;
+                    }
+                    
+                    .faq-question {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 1rem 0;
+                        cursor: pointer;
+                        
+                        h4 {
+                            font-size: 1rem;
+                            font-weight: 600;
+                            margin: 0;
+                        }
+                        
+                        .faq-toggle {
+                            color: var(--primary-color);
+                            transition: transform 0.3s ease;
+                            
+                            &.active {
+                                transform: rotate(45deg);
+                            }
+                        }
+                    }
+                    
+                    .faq-answer {
+                        max-height: 0;
+                        overflow: hidden;
+                        transition: max-height 0.3s ease;
+                        
+                        p {
+                            padding: 0 0 1rem;
+                            font-size: 0.95rem;
+                            line-height: 1.6;
+                        }
+                        
+                        &.active {
+                            max-height: 200px;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .privacy-section {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 2rem 0;
+            opacity: 0;
+            animation: fadeIn 0.8s forwards;
+            animation-delay: 1.4s;
+            
+            .privacy-notice {
+                font-size: 0.9rem;
+                color: var(--text-color);
+                opacity: 0.7;
+                
+                a {
+                    color: var(--primary-color);
+                    text-decoration: none;
+                    border-bottom: 1px dotted var(--primary-color);
+                    
+                    &:hover {
+                        border-bottom-style: solid;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-2rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(2rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
