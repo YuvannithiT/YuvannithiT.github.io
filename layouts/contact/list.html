@@ -1,0 +1,109 @@
+{{ define "main" }}
+    <section class="contact-hero">
+        <div class="contact-hero-container">
+            <h1 class="contact-title">{{ .Title }}</h1>
+            <div class="contact-subtitle">{{ .Params.subtitle | markdownify }}</div>
+            <div class="contact-description">
+                {{ .Content }}
+            </div>
+            <p class="response-time">{{ .Params.response_time }}</p>
+        </div>
+    </section>
+
+    <section class="contact-form-section">
+        <div class="contact-container">
+            <div class="contact-instructions">
+                <h3>Form Guidelines</h3>
+                <p>Please include the following information:</p>
+                <ul class="contact-bullet-list">
+                    {{ range .Params.form_guidelines }}
+                        <li>{{ . }}</li>
+                    {{ end }}
+                </ul>
+            </div>
+            
+            <div class="form-container">
+                <!-- Form Placeholder - Replace with actual form implementation -->
+                <form id="contact-form" class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject">
+                            <option value="project">Project Proposal</option>
+                            <option value="collaboration">Collaboration</option>
+                            <option value="speaking">Speaking Engagement</option>
+                            <option value="feedback">General Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="organization">Organization & Role (Optional)</label>
+                        <input type="text" id="organization" name="organization">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <!-- Honeypot field for spam protection -->
+                    <div class="honey-pot">
+                        <input type="text" name="website" id="website" tabindex="-1">
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="submit-button">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-extras">
+        <div class="extras-container">
+            <div class="booking-section">
+                <h3>Schedule a 15-min Chat</h3>
+                <p class="booking-description">Pick a slot on my calendar for a quick technical sync or project brainstorm.</p>
+                <a href="{{ .Params.calendly_link }}" class="cta-button booking-button">
+                    <i class="fas fa-calendar-plus"></i> Book a Slot
+                </a>
+            </div>
+
+            <div class="faq-section">
+                <h3>Uplink FAQ</h3>
+                <div class="faq-accordion">
+                    {{ range .Params.faq_items }}
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>{{ .question }}</h4>
+                                <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>{{ .answer | markdownify }}</p>
+                            </div>
+                        </div>
+                    {{ end }}
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <p class="privacy-notice">
+                    Your privacy is important. Your contact details and message are used solely to communicate with you and are never shared. Read our 
+                    <a href="{{ .Params.privacy_link }}">Privacy Policy</a>.
+                </p>
+            </div>
+        </div>
+    </section>
+{{ end }}
