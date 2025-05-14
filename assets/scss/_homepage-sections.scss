@@ -4,7 +4,7 @@
     position: relative;
 
     @media (min-width: 1024px) {
-        min-height: clamp(50vmin, 50vw, 75vmin);
+        min-height: clamp(50vmin, 50vw, 85vmin);
         display: flex;
         align-items: center;
     }
