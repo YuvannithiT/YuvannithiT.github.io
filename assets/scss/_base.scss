@@ -32,6 +32,15 @@
     --glow: var(--dark-glow);
 }
 
+$spacing-scale: ();
+@for $i from 0 through 64 {
+    $spacing-value: $i * 0.25rem;
+    $spacing-scale: map-merge($spacing-scale, ($i: $spacing-value));
+}
+@function space($key) {
+    @return map-get($spacing-scale, $key);
+}
+
 html {
     visibility: visible;
     opacity: 1;
