@@ -24,7 +24,7 @@ footer {
         }
 
         .footer-copyright {
-            font-size: clamp(0.85rem, 1.5vw, 1rem);
+            font-size: clamp(font(-1), 1.5vw, font(0));
         }
 
         .social-links {
@@ -51,7 +51,7 @@ footer {
             }
 
             .social-icon {
-                font-size: 1.25rem;
+                font-size: font(1);
                 vertical-align: middle;
             }
         }
