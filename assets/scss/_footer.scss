@@ -1,18 +1,18 @@
 footer {
     color: var(--text-color);
-    padding: 1rem 0;
+    padding: space(4) 0;
     text-align: center;
     width: 100%;
     opacity: 0;
     z-index: 1000;
 
     .footer-content {
-        max-width: 1200px;
+        max-width: 1440px;
         margin: 0 auto;
-        padding: 0 2rem;
+        padding: 0 space(8);
         display: flex;
         flex-direction: column-reverse;
-        gap: 1rem;
+        gap: space(4);
         text-align: center;
 
         @media (min-width: 601px) {
@@ -30,13 +30,13 @@ footer {
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1.75em;
+            gap: space(7);
             list-style: none;
             padding: 0;
             margin: 0;
 
             @media (min-width: 601px) {
-                gap: 1.5rem;
+                gap: space(6);
             }
 
             a {
