@@ -1,16 +1,17 @@
-(function() {
+(function () {
     'use strict';
 
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeToggleIcon = themeToggle.querySelector('i');
     const root = document.documentElement;
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleIcon = themeToggle.querySelector('[data-lucide]');
 
-    let currentThemeIndex = 0;
     const themes = ['light', 'dark', 'system'];
+    let currentThemeIndex = 0;
+
     const themeIcons = {
-        light: 'fa-sun',
-        dark: 'fa-moon',
-        system: 'fa-desktop'
+        light: 'sun',
+        dark: 'moon',
+        system: 'monitor'
     };
 
     const cssVariablesToUpdate = [
@@ -22,15 +23,16 @@
         'header-bg'
     ];
 
-    initializeTheme();
+    document.addEventListener('DOMContentLoaded', function () {
+        lucide.createIcons();
+        initializeTheme();
+    });
 
-    themeToggle.addEventListener('click', function() {
-
+    themeToggle.addEventListener('click', function () {
         currentThemeIndex = (currentThemeIndex + 1) % themes.length;
         const newThemeSetting = themes[currentThemeIndex];
 
         applyTheme(newThemeSetting);
-
         localStorage.setItem('preferredTheme', newThemeSetting);
 
         gsap.to(themeToggle, {
@@ -46,7 +48,6 @@
         if (currentThemeIndex === -1) currentThemeIndex = 0;
 
         applyTheme(savedThemeSetting);
-
     }
 
     function getActualTheme(themeSetting) {
@@ -58,23 +59,25 @@
 
     function applyTheme(themeSetting) {
         const actualTheme = getActualTheme(themeSetting);
-
         const needsDarkClass = actualTheme === 'dark';
         root.classList.toggle('dark-theme', needsDarkClass);
 
         const computedStyles = getComputedStyle(root);
         cssVariablesToUpdate.forEach(variable => {
-            const sourceVariableName = `--${actualTheme}-${variable}`;
-            const value = computedStyles.getPropertyValue(sourceVariableName).trim();
-
+            const sourceVar = `--${actualTheme}-${variable}`;
+            const value = computedStyles.getPropertyValue(sourceVar).trim();
             if (value) {
                 root.style.setProperty(`--${variable}`, value);
             } else {
-                console.warn(`CSS variable ${sourceVariableName} not found or empty.`);
+                console.warn(`CSS variable ${sourceVar} not found.`);
             }
         });
 
-        themeToggleIcon.className = `fa-solid ${themeIcons[themeSetting]}`;
+        const iconName = themeIcons[themeSetting];
+        if (themeToggleIcon) {
+            themeToggleIcon.setAttribute('data-lucide', iconName);
+            lucide.createIcons({ icons: [iconName], attrs: { class: 'lucide' } });
+        }
 
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
         mediaQuery.removeEventListener('change', handleSystemThemeChange);
@@ -85,9 +88,7 @@
 
     function handleSystemThemeChange(e) {
         if (localStorage.getItem('preferredTheme') === 'system') {
-            console.log("System theme changed, re-applying 'system' setting.");
             applyTheme('system');
         }
     }
-
 })();
