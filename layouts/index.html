@@ -40,7 +40,12 @@
                     <span class="homepage-subtitle">{{ .subtitle }}</span>
                     <h2 class="homepage-title">{{ .title }}</h2>
                     <p class="homepage-description">{{ .description | markdownify }}</p>
-                    <a href="{{ .cta_link }}" class="cta-button">{{ .cta_text }} <i class="fas fa-arrow-right"></i></a>
+                    <a href="{{ .cta_link }}" target="_blank" rel="noopener noreferrer" aria-label="CTA Button" class="cta-button">
+                        <span>
+                            {{ .cta_text }}
+                            <span data-lucide="arrow-right" class="icon"></span>
+                        </span>
+                    </a>
                 </div>
             </div>
         </section>
