@@ -3,13 +3,25 @@
         <p class="footer-copyright">© {{ now.Format "2006" }} {{ .Site.Params.author }}. All rights reserved.</p>
         <ul class="social-links">
             {{ with .Site.Params.linkedin }}
-                <li><a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin social-icon"></i></a></li>
+                <li>
+                    <a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <span data-lucide="linkedin" class="social-icon"></span>
+                    </a>
+                </li>
             {{ end }}
             {{ with .Site.Params.github }}
-                <li><a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github social-icon"></i></a></li>
+                <li>
+                    <a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <span data-lucide="github" class="social-icon"></span>
+                    </a>
+                </li>
             {{ end }}
             {{ with .Site.Params.email }}
-                <li><a href="mailto:{{ . }}" aria-label="Email"><i class="fa-solid fa-envelope social-icon"></i></a></li>
+                <li>
+                    <a href="mailto:{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Email">
+                        <span data-lucide="mail" class="social-icon"></span>
+                    </a>
+                </li>
             {{ end }}
         </ul>
     </div>
