@@ -40,9 +40,9 @@ footer {
             }
 
             a {
+                display: inline-block;
                 color: var(--text-color);
                 text-decoration: none;
-                display: inline-block;
                 transition: color 0.3s ease;
 
                 &:hover {
@@ -51,7 +51,8 @@ footer {
             }
 
             .social-icon {
-                font-size: font(1);
+                width: font(1);
+                height: font(1);
                 vertical-align: middle;
             }
         }
