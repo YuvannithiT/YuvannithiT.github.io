@@ -18,16 +18,58 @@
 
     <nav>
         <ul class="nav-links">
-            <li><a href="{{ "/" | relURL }}"><span><i class="fa-solid fa-rocket nav-icon"></i>Launchpad</span></a></li>
-            <li><a href="{{ "/about/" | relURL }}"><span><i class="fa-solid fa-file-lines nav-icon"></i>Mission Brief</span></a></li>
-            <li><a href="{{ "/experience/" | relURL }}"><span><i class="fa-solid fa-route nav-icon"></i>Trajectory</span></a></li>
-            <li><a href="{{ "/projects/" | relURL }}"><span><i class="fa-solid fa-gears nav-icon"></i>Engineering Bay</span></a></li>
-            <li><a href="{{ "/articles/" | relURL }}"><span><i class="fa-solid fa-book nav-icon"></i>Captain's Log</span></a></li>
-            <li><a href="{{ "/contact/" | relURL }}"><span><i class="fa-solid fa-satellite-dish nav-icon"></i>Uplink</span></a></li>
+            <li>
+                <a href="{{ "/" | relURL }}">
+                    <span>
+                        <span data-lucide="house" class="nav-icon"></span>
+                        Launchpad
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ "/about/" | relURL }}">
+                    <span>
+                        <span data-lucide="user" class="nav-icon"></span>
+                        Mission Brief
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ "/experience/" | relURL }}">
+                    <span>
+                        <span data-lucide="route" class="nav-icon"></span>
+                        Trajectory
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ "/projects/" | relURL }}">
+                    <span>
+                        <span data-lucide="lamp-desk" class="nav-icon"></span>
+                        Engineering Bay
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ "/articles/" | relURL }}">
+                    <span>
+                        <span data-lucide="notebook-pen" class="nav-icon"></span>
+                        Captain's Log
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ "/contact/" | relURL }}">
+                    <span>
+                        <span data-lucide="send" class="nav-icon"></span>
+                        Uplink
+                    </span>
+                </a>
+            </li>
         </ul>
 
         <button class="theme-toggle" id="theme-toggle">
-            <i class="fa-solid fa-sun"></i>
+            <span data-lucide="sun" class="theme-icon"></span>
         </button>
     </nav>
 </header>
