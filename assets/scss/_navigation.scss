@@ -86,13 +86,13 @@ nav {
         display: inline-flex;
         align-self: flex-end;
         background-color: transparent;
-        padding: space(2);
+        padding: space(0);
         border: none;
         cursor: pointer;
 
         .theme-icon {
-            width: font(1);
-            height: font(1);
+            width: (font(1) + font(2))/2.25;
+            height: (font(1) + font(2))/2.25;
             color: var(--text-color);
             transition: color 0.3s ease;
 
@@ -142,8 +142,8 @@ nav {
             padding: space(2) space(0) space(2) clamp(space(3), 1.5vw, space(4));
 
             .theme-icon {
-                width: (font(0) + font(1))/1.75;
-                height: (font(0) + font(1))/1.75;
+                width: (font(0) + font(1))/1.875;
+                height: (font(0) + font(1))/1.875;
             }
         }
     }
