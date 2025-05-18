@@ -60,10 +60,10 @@ nav {
                     &::after {
                         content: '';
                         position: absolute;
-                        bottom: -0.25rem;
+                        top: space(6);
                         left: 0;
                         width: 100%;
-                        height: 0.075rem;
+                        height: space(1)*0.35;
                         background-color: var(--primary-color);
                         transform: scaleX(0);
                         transform-origin: right;
