@@ -1,17 +1,18 @@
 nav {
     position: fixed;
-    top: 0;
-    right: 0;
+    top: space(0);
+    right: space(0);
     height: 100%;
     width: 80%;
     background-color: var(--bg-color);
-    padding: 5rem 2rem 2rem;
+    padding: space(20) space(8) space(8);
     transform: translateX(100%);
     transition: transform 0.4s ease;
     z-index: 1200;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-end;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
@@ -22,56 +23,56 @@ nav {
     .nav-links {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: space(6);
         list-style: none;
-        margin: 0 0 2rem 0;
-        padding: 0;
+        padding: space(0);
         width: 100%;
 
         li {
             width: 100%;
 
             a {
-                display: flex;
+                display: inline-flex;
                 align-items: center;
                 justify-content: flex-end;
                 text-decoration: none;
                 color: var(--text-color);
                 font-family: 'Play', sans-serif;
                 font-weight: 600;
-                font-size: 1rem;
+                font-size: font(0);
                 text-transform: uppercase;
-                letter-spacing: 0.0625rem;
-                padding: 0.5rem 0;
+                padding: space(2) space(0);
                 width: 100%;
-                transition: background-color 0.3s ease;
+                position: relative;
 
-                span {
-                    display: inline-block;
+                > span {
+                    display: inline-flex;
                     position: relative;
+                    align-items: center;
 
                     .nav-icon {
-                        font-size: 1rem;
-                        margin-right: 0.5rem;
+                        width: (font(0) + font(1))/2;
+                        height: (font(0) + font(1))/2;
+                        margin-right: (space(1) + space(2))/2;
                         color: var(--primary-color);
                     }
 
                     &::after {
                         content: '';
                         position: absolute;
-                        bottom: -0.46875rem;
+                        bottom: -0.25rem;
                         left: 0;
                         width: 100%;
-                        height: 0.078125rem;
+                        height: 0.075rem;
                         background-color: var(--primary-color);
                         transform: scaleX(0);
                         transform-origin: right;
-                        transition: transform 0.2s ease;
+                        transition: transform 0.3s ease;
                     }
                 }
 
                 &:hover {
-                    span::after {
+                    > span::after {
                         transform: scaleX(1);
                         transform-origin: left;
                     }
@@ -81,21 +82,23 @@ nav {
     }
 
     .theme-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.25rem;
+        margin-top: auto;
+        display: inline-flex;
+        align-self: flex-end;
         background-color: transparent;
-        color: var(--text-color);
+        padding: space(2);
         border: none;
         cursor: pointer;
-        transition: color 0.3s ease;
-        margin-top: auto;
-        align-self: flex-end;
-        padding: 0.5rem 0; 
 
-        &:hover {
-            color: var(--primary-color);
+        .theme-icon {
+            width: font(1);
+            height: font(1);
+            color: var(--text-color);
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: var(--primary-color);
+            }
         }
     }
 
@@ -112,7 +115,7 @@ nav {
         height: auto;
         width: auto;
         background-color: transparent;
-        padding: 0;
+        padding: space(0);
         transform: none;
         flex-direction: row;
         align-items: center;
@@ -121,26 +124,27 @@ nav {
 
         .nav-links {
             flex-direction: row;
-            gap: clamp(1rem, 1.5vw, 1.5rem);
-            margin: 0 clamp(1rem, 1.5vw, 1.5rem) 0 0; 
-            width: auto;
+            gap: clamp(space(2), 1.5vw, space(4));
+            margin: space(0) clamp(space(2), 1.5vw, space(4)) space(0) space(0); 
 
             li {
                 width: auto;
 
                 a {
-                    padding: 0.5rem 0.75rem;
-                    width: auto;
-                    justify-content: center;
-                    font-size: clamp(0.85rem, 1vw, 1rem);
+                    padding: space(2) clamp(space(3), 1.5vw, space(4));
                 }
             }
         }
 
         .theme-toggle {
-            margin-top: 0;
-            padding: 0.5rem 0.75rem;
-            font-size: clamp(1rem, 1.5vw, 1.25rem);
+            align-items: center;
+            margin-top: space(0);
+            padding: space(2) space(0) space(2) clamp(space(3), 1.5vw, space(4));
+
+            .theme-icon {
+                width: (font(0) + font(1))/1.75;
+                height: (font(0) + font(1))/1.75;
+            }
         }
     }
 }
