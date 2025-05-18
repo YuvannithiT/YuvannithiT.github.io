@@ -3,8 +3,7 @@
 
     const root = document.documentElement;
     const themeToggle = document.getElementById('theme-toggle');
-    const themeToggleIcon = themeToggle.querySelector('[data-lucide]');
-
+    
     const themes = ['light', 'dark', 'system'];
     let currentThemeIndex = 0;
 
@@ -23,10 +22,7 @@
         'header-bg'
     ];
 
-    document.addEventListener('DOMContentLoaded', function () {
-        lucide.createIcons();
-        initializeTheme();
-    });
+    initializeTheme();
 
     themeToggle.addEventListener('click', function () {
         currentThemeIndex = (currentThemeIndex + 1) % themes.length;
@@ -73,17 +69,28 @@
             }
         });
 
-        const iconName = themeIcons[themeSetting];
-        if (themeToggleIcon) {
-            themeToggleIcon.setAttribute('data-lucide', iconName);
-            lucide.createIcons({ icons: [iconName], attrs: { class: 'lucide' } });
-        }
+        updateThemeIcon(themeSetting);
 
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
         mediaQuery.removeEventListener('change', handleSystemThemeChange);
         if (themeSetting === 'system') {
             mediaQuery.addEventListener('change', handleSystemThemeChange);
         }
+    }
+
+    function updateThemeIcon(themeSetting) {
+        const iconName = themeIcons[themeSetting];
+        
+        while (themeToggle.firstChild) {
+            themeToggle.removeChild(themeToggle.firstChild);
+        }
+        
+        const newIconSpan = document.createElement('span');
+        newIconSpan.setAttribute('data-lucide', iconName);
+        newIconSpan.classList.add('theme-icon');
+        themeToggle.appendChild(newIconSpan);
+        
+        lucide.createIcons();
     }
 
     function handleSystemThemeChange(e) {
