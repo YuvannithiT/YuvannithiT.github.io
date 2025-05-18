@@ -31,10 +31,25 @@
         applyTheme(newThemeSetting);
         localStorage.setItem('preferredTheme', newThemeSetting);
 
-        gsap.to(themeToggle, {
+        const buttonElement = this;
+        const iconElement = buttonElement.querySelector('.theme-icon');
+
+        const buttonStyles = getComputedStyle(buttonElement);
+        const iconStyles = getComputedStyle(iconElement);
+
+        const paddingLeft = parseFloat(buttonStyles.paddingLeft);
+        const iconWidth = parseFloat(iconStyles.width);
+        const iconCenterX = paddingLeft + (iconWidth / 2);
+
+        const paddingTop = parseFloat(buttonStyles.paddingTop);
+        const iconHeight = parseFloat(iconStyles.height);
+        const iconCenterY = paddingTop + (iconHeight / 2);
+
+        gsap.to(buttonElement, {
             rotation: "+=360",
             duration: 0.5,
-            ease: "power2.out"
+            ease: "power2.out",
+            transformOrigin: `${iconCenterX}px ${iconCenterY}px`
         });
     });
 
