@@ -13,7 +13,7 @@ sections:
     description: "From first principles to flight-worthy control algorithms, learn how I blend deep theory with hands-on experimentation to push aerospace innovation."
     image: "images/sidestick.jpg"
     image_alt: "About Me"
-    cta_text: "Explore My Story"
+    cta_text: "Explore Story"
     cta_link: "/about"
 
   - subtitle: "Career Highlights"
@@ -21,7 +21,7 @@ sections:
     description: "Overseeing multidisciplinary teams, I’ve delivered next-gen guidance, navigation & control solutions—bridging research and real-world missions."
     image: "images/rocket_trajectory.jpg"
     image_alt: "Professional Experience"
-    cta_text: "See My Impact"
+    cta_text: "See Impact"
     cta_link: "/experience"
 
   - subtitle: "Featured Portfolio"
@@ -45,7 +45,7 @@ sections:
     description: "I’m always open to pioneering partnerships in dynamics & control. Let’s discuss how we can engineer the next frontier of aerospace together."
     image: "images/space_walk.jpg"
     image_alt: "Contact Me"
-    cta_text: "Get in Touch"
+    cta_text: "Contact Me"
     cta_link: "/contact"
 ---
 
