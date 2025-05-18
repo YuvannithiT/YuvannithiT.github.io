@@ -43,7 +43,7 @@ header {
 
             @media (min-width: 1500px) {
                 display: block;
-                margin-left: space(3);
+                margin-left: space(2);
                 flex-direction: row;
             }
 
@@ -57,7 +57,7 @@ header {
                 -webkit-text-fill-color: transparent;
                 text-transform: uppercase;
                 font-style: italic;
-                letter-spacing: tracking(loose);
+                letter-spacing: tracking(relaxed);
                 margin-bottom: space(0);
 
                 a {
