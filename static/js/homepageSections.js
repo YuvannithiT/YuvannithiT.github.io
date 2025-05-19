@@ -1,10 +1,10 @@
 (function() {
     'use strict';
-    
+
     window.addEventListener('load', function() {
         setupHomepageSectionsAnimation();
     });
-    
+
     function setupHomepageSectionsAnimation() {
         if (!window.gsap || !window.ScrollTrigger) {
             console.warn('GSAP or ScrollTrigger not loaded');
@@ -12,6 +12,8 @@
         }
         
         const homepageSections = document.querySelectorAll('.homepage-section');
+        
+        const animationStates = new Map();
         
         homepageSections.forEach((section, index) => {
             const imageWrapper = section.querySelector('.homepage-image-wrapper');
@@ -34,12 +36,13 @@
                     trigger: section,
                     start: "top 75%",
                     end: "bottom 20%",
-                    toggleActions: "play none none reverse",
-                    markers: false
+                    toggleActions: "play none none none",
+                    markers: false,
+                    onEnter: () => {
+                        animationStates.set(section, true);
+                    }
                 }
             });
-            
-            const direction = index % 2 === 0 ? -50 : 50;
             
             sectionTl.to(imageWrapper, {
                 opacity: 1,
@@ -57,11 +60,23 @@
                 ease: "power3.out"
             }, "-=0.8");
         });
+        
+        document.addEventListener('menu:beforeOpen', function() {
+            ScrollTrigger.getAll().forEach(trigger => {
+                trigger.disable(false);
+            });
+        });
+        
+        document.addEventListener('menu:afterClose', function() {
+            ScrollTrigger.getAll().forEach(trigger => {
+                trigger.enable(false);
+            });
+        });
     }
-    
+
     if (window.AppAnimations === undefined) {
         window.AppAnimations = {};
     }
-    
+
     window.AppAnimations.setupHomepageSectionsAnimation = setupHomepageSectionsAnimation;
 })();
