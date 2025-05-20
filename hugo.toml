@@ -5,6 +5,9 @@ title = "Project YT-ADCE"
 [build.buildStats]
   enable = true
 
+[server]
+  disableFastRender = true
+
 # [markup.goldmark.renderer]
 #   unsafe = true # Keep this commented unless specifically needed for raw HTML in Markdown
 
