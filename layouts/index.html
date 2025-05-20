@@ -1,3 +1,9 @@
+{{ define "page-styles" }}
+    {{ $options := (dict "targetPath" "css/index.css" "outputStyle" "compressed" "enableSourceMap" true) }}
+    {{ $style := resources.Get "scss/index.scss" | css.Sass $options | resources.Fingerprint "sha256" }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen">
+{{ end }}
+
 {{ define "main" }}
     <section class="hero">
         <div class="hero-container">
