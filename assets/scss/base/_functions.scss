@@ -1,0 +1,44 @@
+$spacing-scale: ();
+@for $i from 0 through 64 {
+    $spacing-value: $i * 0.25rem;
+    $spacing-scale: map-merge($spacing-scale, ($i: $spacing-value));
+}
+@function space($key) {
+    @return map-get($spacing-scale, $key);
+}
+
+$font-base-size: 1rem;
+$font-scale-ratio: 1.25;
+$font-scale: ();
+@function pow($base, $exponent) {
+    $result: 1;
+    @if $exponent > 0 {
+        @for $_ from 1 through $exponent {
+            $result: $result * $base;
+        }
+    } @else if $exponent < 0 {
+        @for $_ from 1 through abs($exponent) {
+            $result: $result / $base;
+        }
+    }
+    @return $result;
+}
+@for $i from -4 through 8 {
+    $font-size: $font-base-size * pow($font-scale-ratio, $i);
+    $font-scale: map-merge($font-scale, ($i: $font-size));
+}
+@function font($step) {
+    @return map-get($font-scale, $step);
+}
+
+$letter-spacing-scale: (
+    tight: -0.01em,
+    normal: 0em,
+    relaxed: 0.025em,
+    loose: 0.05em,
+    wide: 0.075em,
+    wider: 0.1em,
+);
+@function tracking($key) {
+    @return map-get($letter-spacing-scale, $key);
+}
