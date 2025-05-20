@@ -1,27 +1,18 @@
-{{ $jsBuildOptions := dict
-    "minify" true
-    "target" "es2018"
-    "format" "iife"
-}}
+{{ define "scripts" }}
+    {{ $jsBuildOptions := dict "minify" true "target" "es2018" "format" "iife" }}
 
-{{ if ne hugo.Environment "production" }}
-    {{ $jsBuildOptions = merge $jsBuildOptions (dict "sourcemap" "external") }}
-{{ end }}
-
-{{ $commonJS := resources.Get "js/common.js" | js.Build $jsBuildOptions | fingerprint }}
-{{ if $commonJS }}
-    <script defer src="{{ $commonJS.RelPermalink }}"></script>
-{{ else }}
-    {{ warnf "Failed to build common JS bundle." }}
-{{ end }}
-
-{{ if .IsHome }}
-    {{ $indexJS := resources.Get "js/index.js" | js.Build $jsBuildOptions | fingerprint }}
-    {{ if $indexJS }}
-        <script defer src="{{ $indexJS.RelPermalink }}"></script>
-    {{ else }}
-        {{ warnf "Failed to build index JS bundle." }}
+    {{ if ne hugo.Environment "production" }}
+        {{ $jsBuildOptions = merge $jsBuildOptions (dict "sourcemap" "external") }}
     {{ end }}
-{{ end }}
 
-{{ block "page-script-bundles" . }}{{ end }}
+    {{ $.Scratch.Set "jsBuildOptions" $jsBuildOptions }}
+
+    {{ $commonJS := resources.Get "js/common.js" | js.Build $jsBuildOptions | fingerprint }}
+    {{ if $commonJS }}
+        <script defer src="{{ $commonJS.RelPermalink }}"></script>
+    {{ else }}
+        {{ warnf "Failed to build common JS bundle (js/common.js)." }}
+    {{ end }}
+
+    {{ block "page-script-bundles" . }}{{ end }}
+{{ end }}

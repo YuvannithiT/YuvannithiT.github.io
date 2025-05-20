@@ -4,6 +4,17 @@
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen">
 {{ end }}
 
+{{ define "page-script-bundles" }}
+    {{ $retrievedJsBuildOptions := $.Scratch.Get "jsBuildOptions" }}
+
+    {{ $indexPageJS := resources.Get "js/index.js" | js.Build $retrievedJsBuildOptions | fingerprint }}
+    {{ if $indexPageJS }}
+        <script defer src="{{ $indexPageJS.RelPermalink }}"></script>
+    {{ else }}
+        {{ warnf "Failed to build page-specific JS bundle (js/index.js) for page %s." $.File.Path }}
+    {{ end }}
+{{ end }}
+
 {{ define "main" }}
     <section class="hero">
         <div class="hero-container">
