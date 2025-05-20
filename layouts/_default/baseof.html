@@ -2,6 +2,7 @@
 <html lang="{{ .Site.LanguageCode | default "en-us" }}" {{ with hugo.IsServer }}class="dev"{{ end }}>
 <head>
     {{ partial "head.html" . }}
+    {{ block "page-styles" . }}{{ end }}
 </head>
 <body {{ if .IsHome }}id="page-home"{{ end }}>
 
