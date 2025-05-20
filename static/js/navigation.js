@@ -8,8 +8,8 @@
 
     let touchStartX = 0;
     let touchEndX = 0;
+
     let lastScrollY = window.scrollY;
-    let scrollPosition = 0;
 
     window.addEventListener('scroll', function() {
         if (document.body.classList.contains('menu-open')) {
@@ -48,42 +48,15 @@
         }
         
         if (isOpen) {
-            scrollPosition = window.scrollY;
-            
-            const scrollContainer = document.createElement('div');
-            scrollContainer.id = 'scroll-container';
-            scrollContainer.style.position = 'fixed';
-            scrollContainer.style.top = `-${scrollPosition}px`;
-            scrollContainer.style.left = '0';
-            scrollContainer.style.right = '0';
-            scrollContainer.style.bottom = '0';
-            scrollContainer.style.overflow = 'hidden';
-            scrollContainer.style.zIndex = '0';
-            
-            const bodyChildren = Array.from(document.body.children);
-            bodyChildren.forEach(child => {
-                if (child !== header && child !== nav && child !== pageOverlay && child.id !== 'scroll-container') {
-                    scrollContainer.appendChild(child);
-                }
-            });
-            
-            document.body.appendChild(scrollContainer);
-            
-            document.body.style.overflow = 'hidden';
+            document.body.style.top = `-${window.scrollY}px`;
+            document.body.style.position = 'fixed';
             document.body.style.width = '100%';
         } else {
-            const scrollContainer = document.getElementById('scroll-container');
-            if (scrollContainer) {
-                while (scrollContainer.firstChild) {
-                    document.body.appendChild(scrollContainer.firstChild);
-                }
-                scrollContainer.remove();
-            }
-            
-            document.body.style.overflow = '';
+            const scrollY = document.body.style.top;
+            document.body.style.position = '';
+            document.body.style.top = '';
             document.body.style.width = '';
-            
-            window.scrollTo(0, scrollPosition);
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
         }
     }
 
@@ -112,12 +85,12 @@
     nav.addEventListener('touchstart', function(e) {
         touchStartX = e.changedTouches[0].screenX;
     }, { passive: true });
-
+    
     nav.addEventListener('touchend', function(e) {
         touchEndX = e.changedTouches[0].screenX;
         handleSwipe();
     }, { passive: true });
-
+    
     function handleSwipe() {
         const swipeThreshold = 50;
         
@@ -133,5 +106,4 @@
             }
         }
     }, { passive: false });
-
 })();
