@@ -7,6 +7,7 @@ function setupHomepageSectionsAnimation() {
     }
     
     const homepageSections = document.querySelectorAll('.homepage-section');
+    let sectionAnimations = [];
     
     homepageSections.forEach((section, index) => {
         const imageWrapper = section.querySelector('.homepage-image-wrapper');
@@ -30,7 +31,8 @@ function setupHomepageSectionsAnimation() {
                 start: "top 75%",
                 end: "bottom 20%",
                 toggleActions: "play none none reverse",
-                markers: false
+                markers: false,
+                invalidateOnRefresh: true
             }
         });
         
@@ -51,7 +53,40 @@ function setupHomepageSectionsAnimation() {
             duration: 1.2,
             ease: "power3.out"
         }, "-=0.8");
+        
+        sectionAnimations.push({
+            timeline: sectionTl,
+            trigger: sectionTl.scrollTrigger
+        });
     });
+    
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.attributeName === 'class') {
+                const menuOpen = document.body.classList.contains('menu-open');
+                
+                if (menuOpen) {
+                    sectionAnimations.forEach(animation => {
+                        if (animation.trigger) {
+                            animation.wasActive = animation.trigger.isActive;
+                            animation.trigger.disable();
+                        }
+                    });
+                } else {
+                    sectionAnimations.forEach(animation => {
+                        if (animation.trigger) {
+                            animation.trigger.enable();
+                            setTimeout(() => {
+                                ScrollTrigger.refresh();
+                            }, 100);
+                        }
+                    });
+                }
+            }
+        });
+    });
+    
+    observer.observe(document.body, { attributes: true });
 }
 
 window.addEventListener('load', function() {
