@@ -27,8 +27,8 @@
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-{{ $options := (dict "targetPath" "css/main.css" "outputStyle" "compressed" "enableSourceMap" true) }}
-{{ $style := resources.Get "scss/main.scss" | css.Sass $options | resources.Fingerprint "sha256" }}
+{{ $options := (dict "targetPath" "css/common.css" "outputStyle" "compressed" "enableSourceMap" true) }}
+{{ $style := resources.Get "scss/common.scss" | css.Sass $options | resources.Fingerprint "sha256" }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen">
 
 <link rel="apple-touch-icon" sizes="180x180" href="{{ "favicons/apple-touch-icon.png" | relURL }}">
