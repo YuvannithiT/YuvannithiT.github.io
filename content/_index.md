@@ -3,7 +3,7 @@ title: "Flight Dynamics & GNC for Aerospace Vehicles"
 description: "Welcome to the Aerospace Dynamics and Control Engineering portfolio of Yuvannithi Thirumaran."
 
 hero:
-    greeting: "I'm Yuvannithi Thirumaran -"
+    greeting: "I'm Yuvannithi \"Yuvan\" Thirumaran -"
     poster_image_src: "images/yt-adce.png"
     poster_alt: "PROJECT YT - ADCE"
 
