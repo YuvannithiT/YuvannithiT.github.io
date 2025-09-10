@@ -24,7 +24,9 @@ footer {
         }
 
         .footer-copyright {
-            font-size: clamp(font(-1), 1.5vw, font(0));
+            font-family: 'Nasalization', sans-serif;
+            font-weight: normal;
+            font-size: clamp(font(-2), 1.5vw, font(-1));
         }
 
         .social-links {
