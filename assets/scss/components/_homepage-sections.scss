@@ -68,7 +68,9 @@
 
             .homepage-subtitle {
                 display: inline-block;
-                font-size: clamp(font(-1), 1vw, font(0));
+                font-family: 'Nasalization', sans-serif;
+                font-weight: normal;
+                font-size: clamp(font(-2), 1vw, font(0));
                 text-transform: uppercase;
                 letter-spacing: tracking(wider);
                 color: var(--secondary-color);
@@ -88,14 +90,16 @@
             }
 
             .homepage-title {
-                font-size: clamp(font(2), 1.5vw, font(3));
-                margin-bottom: space(4);
+                font-family: 'Cropaso', sans-serif;
+                font-size: clamp(font(1), 1.5vw, font(3));
+                font-weight: normal;
+                margin: space(4) 0;
                 position: relative;
                 color: var(--primary-color);
             }
 
             .homepage-description {
-                font-size: clamp(font(0), 1.5vw, font(1));
+                font-size: clamp(font(-1), 1.5vw, font(1));
                 line-height: 1.625;
                 margin-bottom: space(6);
             }
@@ -109,7 +113,11 @@
                 color: #FFFFFF;
                 text-decoration: none;
                 border-radius: var(--radius);
-                font-size: clamp(font(0), 1.5vw, font(1));
+                font-family: 'Nasalization', sans-serif;
+                font-weight: normal;
+                font-size: clamp(font(-1), 1.5vw, font(1));
+                font-variant-caps: small-caps;
+                letter-spacing: tracking(wider);
                 transition: all 0.3s ease;
                 position: relative;
                 overflow: hidden;
@@ -121,8 +129,8 @@
                     gap: space(1);
 
                     .icon {
-                        width: font(1);
-                        height: font(1);
+                        width: clamp(font(-1), 1.5vw, font(1));
+                        height: clamp(font(-1), 1.5vw, font(1));
                         align-self: flex-end;
                     }
                 }
