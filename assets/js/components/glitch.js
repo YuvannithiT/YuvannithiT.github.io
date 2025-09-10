@@ -85,8 +85,8 @@ export function createGlitchAnimation() {
                     char.className = 'glitch-char final';
                 });
                 
-                heroNameElement.style.fontFamily = "'Orbitron', sans-serif";
-                heroNameElement.style.fontWeight = '900';
+                heroNameElement.style.fontFamily = "'Cropaso', sans-serif";
+                heroNameElement.style.fontWeight = 'normal';
                 heroNameElement.style.textAlign = 'center';
                 heroNameElement.style.width = '100%';
                 heroNameElement.style.lineHeight = '1.25';
