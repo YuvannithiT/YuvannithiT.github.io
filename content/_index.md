@@ -1,9 +1,9 @@
 ---
-title: "Flight Dynamics & GNC for Aerospace Vehicles"
-description: "Welcome to the Aerospace Dynamics and Control Engineering portfolio of Yuvannithi Thirumaran."
+title: "Aerospace Dynamics and Control Engineering (ADCE)"
+description: "Welcome to the professional portfolio of Yuvannithi Thirumaran."
 
 hero:
-    greeting: "I'm Yuvannithi \"Yuvan\" Thirumaran -"
+    greeting: "I'm Yuvannithi \"Yuvan\" Thirumaran"
     poster_image_src: "images/yt-adce.png"
     poster_alt: "PROJECT YT - ADCE"
 
@@ -49,4 +49,4 @@ sections:
     cta_link: "/contact"
 ---
 
-an ***Aerospace Dynamics & Control Engineer*** specializing in flight dynamics, GNC, and real-time control for aerospace vehicles. From first principles to flight-proven control — a journey through ***Dynamics. Control. Flight.***
+an Aerospace Dynamics & Control Engineer specializing in flight dynamics, GNC, and real-time control for aerospace vehicles. From first principles to flight-proven control — an exploration through Dynamics. Control. Flight.
