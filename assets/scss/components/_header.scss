@@ -28,8 +28,8 @@ header {
         
         .site-logo {
             display: block;
-            width: clamp(font(4), 2.75vw, font(5));
-            height: clamp(font(4), 2.75vw, font(5));
+            width: clamp(font(4), 2.75vw, font(6));
+            height: clamp(font(4), 2.75vw, font(6));
             
             svg {
                 width: 100%;
@@ -48,17 +48,16 @@ header {
             }
 
             .site-name {
-                font-family: 'Orbitron', sans-serif;
-                font-weight: 900;
-                font-size: clamp(font(0), 1.25vw, font(2));
+                font-family: 'Cropaso', sans-serif;
+                font-weight: normal;
+                font-size: clamp(font(0), 1.25vw, font(3));
                 background: var(--primary-color);
                 -webkit-background-clip: text;
                 background-clip: text;
                 -webkit-text-fill-color: transparent;
                 text-transform: uppercase;
-                font-style: italic;
-                letter-spacing: tracking(relaxed);
-                margin-bottom: space(0);
+                letter-spacing: tracking(tight);
+                margin-bottom: space(1);
 
                 a {
                     text-decoration: none;
@@ -67,9 +66,9 @@ header {
             }
 
             .site-tagline {
-                font-family: 'Play', sans-serif;
+                font-family: 'Nasalization', sans-serif;
                 font-size: clamp(font(-3), 0.75vw, font(-1));
-                font-weight: 400;
+                font-weight: normal;
                 letter-spacing: tracking(wider);
                 color: var(--text-color);
                 text-transform: uppercase;
