@@ -93,7 +93,7 @@
                 font-family: 'Cropaso', sans-serif;
                 font-size: clamp(font(1), 1.5vw, font(3));
                 font-weight: normal;
-                margin: space(4) 0;
+                margin: clamp(space(2), 1vh, space(4)) 0;
                 position: relative;
                 color: var(--primary-color);
             }
