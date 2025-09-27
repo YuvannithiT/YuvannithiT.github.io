@@ -49,4 +49,4 @@ sections:
     cta_link: "/contact"
 ---
 
-an Aerospace Dynamics & Control Engineer specializing in flight dynamics, GNC, and real-time control for aerospace vehicles. From first principles to flight-proven control — an exploration through Dynamics. Control. Flight.
+an ADCE specializing in flight dynamics, GNC, and real-time control for aerospace vehicles. From first principles to flight-proven control — an exploration through Dynamics. Control. Flight.
