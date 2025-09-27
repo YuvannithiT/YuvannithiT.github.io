@@ -40,7 +40,7 @@ nav {
                 font-family: 'Nasalization', sans-serif;
                 font-weight: normal;
                 letter-spacing: tracking(normal);
-                font-size: font(0);
+                font-size: clamp(font(-1), 1vw, font(0));
                 text-transform: uppercase;
                 padding: space(2) space(0);
                 width: 100%;
