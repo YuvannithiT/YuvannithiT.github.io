@@ -12,31 +12,29 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        max-width: 1680px;
+        max-width: clamp(1024px, 80vw, 1920px);
         width: 100%;
         gap: space(8);
         z-index: 1;
 
         .hero-name {
             font-family: 'Cropaso', sans-serif;
-            font-size: clamp(font(2), 3.75vw, font(7));
+            font-size: clamp(font(2), 3.75vw, font(9));
             font-weight: normal;
+            letter-spacing: tracking(normal);
             text-align: center;
             width: 100%;
             line-height: 1.25;
             opacity: 0;
             transform: translateY(2.5rem);
-            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--primary-color);
             margin-bottom: clamp(space(4), 2vw, space(20));
         }
 
         .content-row {
             display: flex;
             flex-direction: column;
-            width: 100%;
+            width: 75%;
             gap: space(12);
 
             @media (min-width: 769px) {
@@ -57,8 +55,10 @@
                 }
 
                 .hero-greeting {
-                    font-family: 'Nasalization', sans-serif;
-                    font-weight: normal;
+                    font-family: 'Exo 2', sans-serif;
+                    font-weight: 500;
+                    font-style: italic;
+                    letter-spacing: tracking(relaxed);
                     font-size: clamp(font(0), 1.5vw, font(2));
                     margin-bottom: space(4);
                     color: var(--primary-color);
@@ -83,7 +83,7 @@
                     
                     @media (min-width: 769px) {
                         text-align: left;
-                        padding-right: space(56);
+                        padding-right: clamp(space(23), 1.5vw, space(56));
                     }
                 }
             }
@@ -112,9 +112,8 @@
                 }
 
                 .hero-quote {
-                    font-size: clamp(font(0), 1vw, font(1));
+                    font-size: clamp(font(-1), 1vw, font(0));
                     font-style: italic;
-                    font-weight: 300;
                     line-height: 1.5;
                     position: relative;
                     display: block;
@@ -125,7 +124,7 @@
 
                 .hero-quote-author {
                     font-size: clamp(font(-1), 1vw, font(0));
-                    color: var(--primary-color);
+                    color: var(--secondary-color);
                     display: block;
                     margin-top: space(4);
                     align-self: flex-end;
@@ -136,13 +135,13 @@
 
         .poster-wrapper {
             width: 100%;
-            max-width: space(40)*5;
+            max-width: clamp(space(40)*2, 60vw, space(40)*5);
             border-radius: var(--radius);
             overflow: hidden;
             box-shadow: var(--glow);
             opacity: 0;
             transform: translateY(3.75rem);
-            margin-top: clamp(space(0), 2vw, space(20));
+            margin-top: clamp(space(4), 2vw, space(20));
             
             .poster-image {
                 width: 100%;
@@ -166,7 +165,7 @@
     height: 1.25em;
     margin-left: (space(0) + space(1))/2;
     background-color: var(--primary-color);
-    animation: blink 1s infinite;
+    animation: blink 1.2s steps(1) infinite;
     vertical-align: middle;
     position: relative;
 }
