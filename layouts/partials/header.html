@@ -1,7 +1,7 @@
 <header>
     <div class="site-branding">
         <a href="{{ "/" | relURL }}" class="site-logo">
-            {{ $logo := resources.Get "svg/logo.svg" }}
+            {{ $logo := resources.Get "svg/yt-adce-logo.svg" }}
             {{ $logo.Content | safeHTML }}
         </a>
         <div class="site-text">
@@ -15,61 +15,67 @@
         <span></span>
         <span></span>
     </button>
-
-    <nav>
-        <ul class="nav-links">
-            <li>
-                <a href="{{ "/" | relURL }}">
-                    <span>
-                        <span data-lucide="house" class="nav-icon"></span>
-                        Home
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ "/about/" | relURL }}">
-                    <span>
-                        <span data-lucide="user" class="nav-icon"></span>
-                        About
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ "/experience/" | relURL }}">
-                    <span>
-                        <span data-lucide="route" class="nav-icon"></span>
-                        Experience
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ "/projects/" | relURL }}">
-                    <span>
-                        <span data-lucide="lamp-desk" class="nav-icon"></span>
-                        Projects
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ "/articles/" | relURL }}">
-                    <span>
-                        <span data-lucide="notebook-pen" class="nav-icon"></span>
-                        Blog
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ "/contact/" | relURL }}">
-                    <span>
-                        <span data-lucide="send" class="nav-icon"></span>
-                        Contact
-                    </span>
-                </a>
-            </li>
-        </ul>
-
-        <button class="theme-toggle" id="theme-toggle">
-            <span data-lucide="sun" class="theme-icon"></span>
-        </button>
-    </nav>
 </header>
+
+<nav>
+    <div class="nav-header"></div>
+
+    <div class="nav-scroll">
+        <div class="nav-inner">
+            <ul class="nav-links">
+                <li>
+                    <a href="{{ "/" | relURL }}">
+                        <span>
+                            <span data-lucide="house" class="nav-icon"></span>
+                            Home
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ "/about/" | relURL }}">
+                        <span>
+                            <span data-lucide="user" class="nav-icon"></span>
+                            About
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ "/experience/" | relURL }}">
+                        <span>
+                            <span data-lucide="route" class="nav-icon"></span>
+                            Experience
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ "/projects/" | relURL }}">
+                        <span>
+                            <span data-lucide="lamp-desk" class="nav-icon"></span>
+                            Projects
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ "/articles/" | relURL }}">
+                        <span>
+                            <span data-lucide="notebook-pen" class="nav-icon"></span>
+                            Blog
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ "/contact/" | relURL }}">
+                        <span>
+                            <span data-lucide="send" class="nav-icon"></span>
+                            Contact
+                        </span>
+                    </a>
+                </li>
+            </ul>
+
+            <button class="theme-toggle" id="theme-toggle">
+                <span data-lucide="sun" class="theme-icon"></span>
+            </button>
+        </div>
+    </div>
+</nav>
