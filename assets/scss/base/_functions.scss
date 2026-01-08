@@ -1,5 +1,5 @@
 $spacing-scale: ();
-@for $i from 0 through 64 {
+@for $i from -64 through 64 {
     $spacing-value: $i * 0.25rem;
     $spacing-scale: map-merge($spacing-scale, ($i: $spacing-value));
 }
@@ -23,7 +23,7 @@ $font-scale: ();
     }
     @return $result;
 }
-@for $i from -4 through 8 {
+@for $i from -10 through 10 {
     $font-size: $font-base-size * pow($font-scale-ratio, $i);
     $font-scale: map-merge($font-scale, ($i: $font-size));
 }
