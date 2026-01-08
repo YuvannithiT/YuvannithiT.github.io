@@ -1,52 +1,54 @@
 ---
-title: "Aerospace Dynamics and Control Engineering (ADCE)"
+
+title: "Aerospace Dynamics and Control Engineering"
 description: "Welcome to the professional portfolio of Yuvannithi Thirumaran."
 
 hero:
-    greeting: "I'm Yuvannithi \"Yuvan\" Thirumaran"
+    greeting: "I am Yuvannithi Thirumaran"
     poster_image_src: "images/yt-adce.png"
     poster_alt: "PROJECT YT - ADCE"
 
 sections:
   - subtitle: "Discover My Journey"
-    title: "My Engineering Story"
-    description: "From first principles to flight-worthy control algorithms, learn how I blend deep theory with hands-on experimentation to push aerospace innovation."
+    title: "My Engineering Path"
+    description: "My path into aerospace engineering has been shaped by a focus on dynamics, control, and simulation. From graduate research to independent projects, I work at the intersection of theory and practical modeling—building, testing, and refining control-oriented simulations for flight and space systems."
     image: "images/sidestick.jpg"
     image_alt: "About Me"
     cta_text: "Explore Story"
     cta_link: "/about"
 
-  - subtitle: "Career Highlights"
-    title: "Driving Systemic Innovation"
-    description: "Overseeing multidisciplinary teams, I’ve delivered next-gen guidance, navigation & control solutions—bridging research and real-world missions."
+  - subtitle: "Professional Experience"
+    title: "Applied Dynamics & Control Work"
+    description: "I’ve contributed to academic research, early-stage aerospace programs, and independent consulting projects—supporting dynamics modeling, guidance and control architecture, and trajectory analysis across atmospheric and spaceflight applications."
     image: "images/rocket_trajectory.jpg"
     image_alt: "Professional Experience"
-    cta_text: "See Impact"
+    cta_text: "See Experience"
     cta_link: "/experience"
 
-  - subtitle: "Featured Portfolio"
-    title: "Selected Aerospace Solutions"
-    description: "A curated showcase: from conceptual designs in spacecraft dynamics to implemented autopilot systems, each project exemplifies precision and reliability."
+  - subtitle: "Project Portfolio"
+    title: "Modeling & Simulation Projects"
+    description: "A selection of technical projects focused on spacecraft attitude control, launch vehicle trajectories, UAV dynamics, and hybrid aircraft simulations. Most work centers on MATLAB/Simulink and Python-based modeling, with an emphasis on clarity, validation, and extensibility."
     image: "images/hubble.jpg"
     image_alt: "My Projects"
-    cta_text: "View Showcase"
+    cta_text: "View Projects"
     cta_link: "/projects"
 
-  - subtitle: "Insights & Analysis"
-    title: "Technical Deep-Dives"
-    description: "In-depth explorations of flight science, control theory breakthroughs, and emerging aerospace trends—packed with charts, code snippets, and case studies."
+  - subtitle: "Technical Notes"
+    title: "Engineering Write-Ups & Explorations"
+    description: "Here I document technical explorations in flight dynamics, control theory, and aerospace systems—breaking down models, assumptions, and results with equations, plots, and code to reinforce understanding."
     image: "images/concorde.jpg"
     image_alt: "My Articles"
-    cta_text: "Read Insights"
+    cta_text: "Read Articles"
     cta_link: "/articles"
 
-  - subtitle: "Let’s Collaborate"
-    title: "Connect & Innovate"
-    description: "I’m always open to pioneering partnerships in dynamics & control. Let’s discuss how we can engineer the next frontier of aerospace together."
+  - subtitle: "Get in Touch"
+    title: "Open to Collaboration"
+    description: "I’m interested in collaborating on aerospace modeling, dynamics, and control problems — whether for research support, early-stage design studies, or technical consulting. Feel free to reach out if you’d like to discuss a project or idea."
     image: "images/space_walk.jpg"
     image_alt: "Contact Me"
     cta_text: "Contact Me"
     cta_link: "/contact"
+
 ---
 
-an ADCE specializing in flight dynamics, GNC, and real-time control for aerospace vehicles. From first principles to flight-proven control — an exploration through Dynamics. Control. Flight.
+an Aerospace Dynamics and Control Engineer specializing in flight dynamics, GNC, and real-time control for aerospace vehicles. From first principles to flight-proven control — an exploration through Dynamics. Control. Flight.
