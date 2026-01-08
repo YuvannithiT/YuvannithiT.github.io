@@ -1,10 +1,10 @@
 .homepage-section {
     padding: clamp(space(12), 1vw, space(20)) clamp(space(6), 1vw, space(8));
+    margin-block: clamp(space(10), 15vh, space(50));
     overflow: hidden;
     position: relative;
 
     @media (min-width: 1024px) {
-        min-height: 100vmin;
         display: flex;
         align-items: center;
     }
@@ -18,10 +18,12 @@
     }
 
     .homepage-container {
-        max-width: clamp(1440px, 75vw, 2560px);
+        max-width: clamp(1024px, 80vw, 1920px);
         margin: space(0) auto;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        text-align: left;
         gap: space(8);
 
         @media (min-width: 1024px) {
@@ -37,7 +39,7 @@
             box-shadow: var(--glow);
             overflow: hidden;
             position: relative;
-            width: 100%;
+            width: 80%;
             aspect-ratio: 16 / 9;
 
             @media (min-width: 1024px) {
@@ -61,6 +63,7 @@
 
         .homepage-content {
             will-change: transform, opacity;
+            width: 80%;
 
             @media (min-width: 1024px) {
                 flex: 1;
@@ -68,13 +71,12 @@
 
             .homepage-subtitle {
                 display: inline-block;
-                font-family: 'Nasalization', sans-serif;
+                font-family: 'Exo 2', sans-serif;
                 font-weight: normal;
                 font-size: clamp(font(-2), 1vw, font(0));
                 text-transform: uppercase;
                 letter-spacing: tracking(wider);
                 color: var(--secondary-color);
-                margin-bottom: space(2);
                 position: relative;
                 padding-left: space(10);
 
@@ -85,14 +87,15 @@
                     top: 50%;
                     width: space(8);
                     height: space(1)/4;
-                    background-color: var(--secondary-color);
+                    background-color: var(--primary-color);
                 }
             }
 
             .homepage-title {
-                font-family: 'Cropaso', sans-serif;
+                font-family: 'Exo 2', sans-serif;
                 font-size: clamp(font(1), 1.5vw, font(3));
-                font-weight: normal;
+                font-weight: 700;
+                letter-spacing: tracking(normal);
                 margin: clamp(space(2), 1vh, space(4)) 0;
                 position: relative;
                 color: var(--primary-color);
@@ -109,15 +112,15 @@
                 align-items: center;
                 justify-content: center;
                 padding: (space(2) + space(3))/2;
-                background-color: var(--primary-color);
+                background: linear-gradient(to top, var(--primary-color), var(--secondary-color));
                 color: #FFFFFF;
                 text-decoration: none;
                 border-radius: var(--radius);
-                font-family: 'Nasalization', sans-serif;
+                font-family: 'Exo 2', sans-serif;
                 font-weight: normal;
                 font-size: clamp(font(-1), 1vw, font(1));
                 font-variant-caps: small-caps;
-                letter-spacing: tracking(wider);
+                letter-spacing: tracking(loose);
                 transition: all 0.3s ease;
                 position: relative;
                 overflow: hidden;
@@ -135,9 +138,30 @@
                     }
                 }
 
-                &:hover {
-                    background-color: var(--secondary-color);
-                    box-shadow: var(--glow);
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: -50%;
+                    left: -150%;
+                    width: 60%;
+                    height: 200%;
+
+                    background: linear-gradient(
+                        120deg,
+                        transparent 0%,
+                        rgba(255, 255, 255, 0.15) 40%,
+                        rgba(255, 255, 255, 0.35) 50%,
+                        rgba(255, 255, 255, 0.15) 60%,
+                        transparent 100%
+                    );
+
+                    transform: skewX(-20deg);
+                    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                    pointer-events: none;
+                }
+
+                &:hover::before {
+                    left: 150%;
                 }
             }
         }
