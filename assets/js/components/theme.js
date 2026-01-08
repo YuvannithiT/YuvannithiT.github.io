@@ -15,10 +15,8 @@ const themeIcons = {
 const cssVariablesToUpdate = [
     'bg-color',
     'text-color',
-    'accent-color',
-    'secondary-color',
-    'tertiary-color',
-    'header-bg'
+    'primary-color',
+    'secondary-color'
 ];
 
 initializeTheme();
@@ -44,11 +42,11 @@ themeToggle.addEventListener('click', function () {
     const iconHeight = parseFloat(iconStyles.height);
     const iconCenterY = paddingTop + (iconHeight / 2);
 
-    gsap.to(buttonElement, {
+    gsap.to(iconElement, {
         rotation: "+=360",
         duration: 0.5,
         ease: "power2.out",
-        transformOrigin: `${iconCenterX}px ${iconCenterY}px`
+        transformOrigin: "center center"
     });
 });
 
@@ -112,3 +110,27 @@ function handleSystemThemeChange(e) {
         applyTheme('system');
     }
 }
+
+// Keyboard accessibility - toggle theme with T
+document.addEventListener('keydown', function(e) {
+    if (e.key === 't' || e.key === 'T') {
+        // Advance index
+        currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+        const newThemeSetting = themes[currentThemeIndex];
+
+        // Apply theme and persist
+        applyTheme(newThemeSetting);
+        localStorage.setItem('preferredTheme', newThemeSetting);
+
+        // Animate the icon if present
+        const iconElement = themeToggle.querySelector('.theme-icon');
+        if (iconElement) {
+            gsap.to(iconElement, {
+                rotation: "+=360",
+                duration: 0.5,
+                ease: "power2.out",
+                transformOrigin: "center center"
+            });
+        }
+    }
+});
