@@ -15,20 +15,18 @@ export function createGlitchAnimation() {
     glitchContainer.className = 'glitch-container';
     heroNameElement.appendChild(glitchContainer);
 
-    // Refined, more "engineering-grade" glitch character set
-    const glitchChars = `░▒▓█▁▂▃▄▅▆▇▉▊▌▍▎▏─━│┃∑∏∂∇∞≠≈⊂⊃∈∉◈◆◇◉●○`;
-    const precisionChars = `█▓▒░▄▀▌▐■□◆◈∑∏∂∇`;
+    // Full original glitch character set
+    const glitchChars = `░▒▓█▁▂▃▄▅▆▇▉▊▌▍▎▏─━│┃∑∏∂∇∞≠≈⊂⊃∈∉◈◆◇◉●○θφψαβγ±≤≥∫Δ→←↑↓⊗⊕`;
+    const precisionChars = `█▓▒░▄▀▌▐■□◆◈∑∏∂∇θφψαβγ±≤≥∫Δ→←↑↓⊗⊕`;
     const allGlitchChars = glitchChars + precisionChars;
 
-    /* ---- Tuned Parameters (Key Improvements) ---- */
-    const charDelay = 130;          // slower, more intentional
-    const glitchSpeed = 55;        // less frantic
-    const minGlitchCycles = 4;
-    const maxExtraCycles = 3;      // total cycles: 4–7
-    const colorFlashProbability = 0.045;
-    const verticalJitterPx = 2;    // micro jitter only
+    /* ---- Smooth Parameters (No Hiccups) ---- */
+    const charDelay = 35;              // Consistent character progression
+    const glitchSpeed = 55;            // Smooth glitch update rate
+    const glitchCycles = 7;            // Fixed cycles for predictability
 
     let currentIndex = 0;
+    const charSpans = [];
 
     function animateNextChar() {
         if (currentIndex >= originalText.length) return;
@@ -36,39 +34,28 @@ export function createGlitchAnimation() {
         const charSpan = document.createElement('span');
         charSpan.className = 'glitch-char';
         glitchContainer.appendChild(charSpan);
-
-        charSpan.textContent = getRandomGlitchChar();
-
-        let glitchCycles = 0;
-        const maxGlitchCycles =
-            minGlitchCycles + Math.floor(Math.random() * maxExtraCycles);
+        charSpans.push(charSpan);
 
         const finalChar = originalText[currentIndex];
+        let cycles = 0;
 
         const glitchInterval = setInterval(() => {
-            glitchCycles++;
+            cycles++;
 
-            // Gradual stabilization curve (control-system-like)
-            const settleFactor = glitchCycles / maxGlitchCycles;
+            // Smooth probability-based stabilization
+            const stabilityThreshold = (cycles / glitchCycles) * 0.9;
 
-            if (Math.random() < settleFactor) {
+            if (Math.random() < stabilityThreshold) {
                 charSpan.textContent = finalChar;
             } else {
-                charSpan.textContent = getRandomGlitchChar();
+                charSpan.textContent = allGlitchChars.charAt(
+                    Math.floor(Math.random() * allGlitchChars.length)
+                );
             }
 
-            // Extremely subtle vertical perturbation
-            if (Math.random() < 0.12) {
-                charSpan.style.transform =
-                    `translateY(${(Math.random() * verticalJitterPx) - verticalJitterPx / 2}px)`;
-            } else {
-                charSpan.style.transform = '';
-            }
-
-            if (glitchCycles >= maxGlitchCycles) {
+            if (cycles >= glitchCycles) {
                 clearInterval(glitchInterval);
                 charSpan.textContent = finalChar;
-                charSpan.style.transform = '';
                 charSpan.className = 'glitch-char final';
             }
         }, glitchSpeed);
@@ -78,13 +65,13 @@ export function createGlitchAnimation() {
         if (currentIndex < originalText.length) {
             setTimeout(animateNextChar, charDelay);
         } else {
-            setTimeout(finalizeText, 450);
+            setTimeout(finalizeText, 350);
         }
     }
 
     function finalizeText() {
-        const allChars = glitchContainer.querySelectorAll('.glitch-char');
-        allChars.forEach(char => {
+        charSpans.forEach(char => {
+            char.textContent = originalText[charSpans.indexOf(char)];
             char.className = 'glitch-char final';
         });
 
@@ -93,19 +80,8 @@ export function createGlitchAnimation() {
         heroNameElement.style.textAlign = 'center';
         heroNameElement.style.width = '100%';
         heroNameElement.style.lineHeight = '1.25';
-
-        // Clean aerospace-grade gradient
-        // heroNameElement.style.background = 'radial-gradient(ellipse at center, var(--secondary-color), var(--primary-color))';
-        // heroNameElement.style.webkitBackgroundClip = 'text';
-        // heroNameElement.style.webkitTextFillColor = 'transparent';
-        // heroNameElement.style.backgroundClip = 'text';
     }
 
-    function getRandomGlitchChar() {
-        return allGlitchChars.charAt(
-            Math.floor(Math.random() * allGlitchChars.length)
-        );
-    }
-
-    setTimeout(animateNextChar, 450);
+    // Start animation
+    setTimeout(animateNextChar, 300);
 }
