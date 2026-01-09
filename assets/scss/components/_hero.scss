@@ -65,16 +65,17 @@
                     opacity: 0;
                     transform: translateX(-1.875rem);
                     position: relative;
+                    text-align: left;
                 }
 
                 .hero-description {
-                    font-size: clamp(font(0), 1vw, font(1));
+                    font-size: clamp((font(-1) + font(0))/2, 1vw, font(1));
                     line-height: 1.5;
                     color: var(--text-color);
                     margin-bottom: space(0);
                     opacity: 0;
                     transform: translateY(1.25rem);
-                    text-align: center;
+                    text-align: left;
 
                     strong {
                         color: var(--text-color);
