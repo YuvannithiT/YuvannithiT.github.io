@@ -1,6 +1,6 @@
 .homepage-section {
     padding: clamp(space(12), 1vw, space(20)) clamp(space(6), 1vw, space(8));
-    margin-block: clamp(space(10), 15vh, space(50));
+    margin-block: clamp(space(10), 5vh, space(50));
     overflow: hidden;
     position: relative;
 
@@ -102,7 +102,7 @@
             }
 
             .homepage-description {
-                font-size: clamp(font(0), 1vw, font(1));
+                font-size: clamp((font(-1) + font(0))/2, 1vw, font(1));
                 line-height: 1.5;
                 margin-bottom: space(6);
             }
