@@ -200,3 +200,7 @@ if (document.readyState === 'loading') {
 } else {
     new VanderPolBackground();
 }
+
+window.addEventListener('load', () => {
+    document.body.classList.add('is-loaded');
+});
