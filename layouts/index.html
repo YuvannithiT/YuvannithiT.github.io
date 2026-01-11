@@ -19,17 +19,15 @@
     <section class="hero">
         <div class="hero-container">
             <h1 class="hero-name">{{ .Title }}</h1>
-            <div class="content-row">
-                <div class="hero-intro">
-                    <div class="hero-greeting">{{ .Params.hero.greeting }}</div>
-                    <div class="hero-description">
-                        {{ .Content }}
-                    </div>
+            <div class="hero-intro">
+                <div class="hero-greeting">{{ .Params.hero.greeting }}</div>
+                <div class="hero-description">
+                    {{ .Content }}
                 </div>
-                <div class="quote-container">
-                    <p id="typed-quote" class="hero-quote"></p>
-                    <span id="quote-author" class="hero-quote-author"></span>
-                </div>
+            </div>
+            <div class="quote-container">
+                <p id="typed-quote" class="hero-quote"></p>
+                <span id="quote-author" class="hero-quote-author"></span>
             </div>
             <div class="poster-wrapper">
                 {{ partial "responsive_image.html" (dict 
@@ -41,6 +39,14 @@
             </div>
         </div>
     </section>
+
+    {{ if .Params.homepage_heading }}
+        <div class="homepage-section-heading">
+            <div class="homepage-container">
+                <h2>{{ .Params.homepage_heading }}</h2>
+            </div>
+        </div>
+    {{ end }}
 
     {{ range .Params.sections }}
         <section class="homepage-section">
@@ -55,7 +61,7 @@
                 </div>
                 <div class="homepage-content">
                     <span class="homepage-subtitle">{{ .subtitle }}</span>
-                    <h2 class="homepage-title">{{ .title }}</h2>
+                    <h3 class="homepage-title">{{ .title }}</h3>
                     <p class="homepage-description">{{ .description | markdownify }}</p>
                     <a href="{{ .cta_link }}" target="_blank" rel="noopener noreferrer" aria-label="CTA Button" class="cta-button">
                         <span>
