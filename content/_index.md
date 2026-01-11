@@ -11,7 +11,7 @@ hero:
 sections:
   - subtitle: "Discover My Journey"
     title: "My Engineering Path"
-    description: "My path into aerospace engineering has been shaped by a focus on dynamics, control, and simulation. From graduate research to independent projects, I work at the intersection of theory and practical modeling—building, testing, and refining control-oriented simulations for flight and space systems."
+    description: "My path into aerospace engineering has been shaped by a focus on dynamics, control, and simulation. From graduate research to independent projects, I work at the intersection of theory and practical modeling-building, testing, and refining control-oriented simulations for flight and space systems."
     image: "images/sidestick.jpg"
     image_alt: "About Me"
     cta_text: "Explore Story"
@@ -19,7 +19,7 @@ sections:
 
   - subtitle: "Professional Experience"
     title: "Applied Dynamics & Control Work"
-    description: "I’ve contributed to academic research, early-stage aerospace programs, and independent consulting projects—supporting dynamics modeling, guidance and control architecture, and trajectory analysis across atmospheric and spaceflight applications."
+    description: "I’ve contributed to academic research, early-stage aerospace programs, and independent consulting projects supporting dynamics modeling, guidance and control architecture, and trajectory analysis across atmospheric and spaceflight applications."
     image: "images/rocket_trajectory.jpg"
     image_alt: "Professional Experience"
     cta_text: "See Experience"
@@ -35,7 +35,7 @@ sections:
 
   - subtitle: "Technical Notes"
     title: "Engineering Write-Ups & Explorations"
-    description: "Here I document technical explorations in flight dynamics, control theory, and aerospace systems—breaking down models, assumptions, and results with equations, plots, and code to reinforce understanding."
+    description: "Here I document technical explorations in flight dynamics, control theory, and aerospace systems-breaking down models, assumptions, and results with equations, plots, and code to reinforce understanding."
     image: "images/concorde.jpg"
     image_alt: "My Articles"
     cta_text: "Read Articles"
@@ -43,11 +43,13 @@ sections:
 
   - subtitle: "Get in Touch"
     title: "Open to Collaboration"
-    description: "I’m interested in collaborating on aerospace modeling, dynamics, and control problems — whether for research support, early-stage design studies, or technical consulting. Feel free to reach out if you’d like to discuss a project or idea."
+    description: "I’m interested in collaborating on aerospace modeling, dynamics, and control problems, whether for research support, early-stage design studies, or technical consulting. Feel free to reach out if you’d like to discuss a project or idea."
     image: "images/space_walk.jpg"
     image_alt: "Contact Me"
     cta_text: "Contact Me"
     cta_link: "/contact"
+
+homepage_heading: "Areas of Focus"
 
 ---
 
