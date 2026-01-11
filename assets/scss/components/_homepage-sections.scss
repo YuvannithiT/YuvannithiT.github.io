@@ -1,127 +1,150 @@
+// ============================================================================
+// HOMEPAGE SECTION HEADING
+// ============================================================================
+
+.homepage-section-heading {
+    padding-inline: $spacing-fluid-inline;
+    margin-top: $spacing-fluid-vh-md;
+    margin-bottom: $spacing-fluid-vh-sm;
+
+    .homepage-container {
+        max-width: $width-container-md;
+        margin: 0 auto;
+    }
+
+    h2 {
+        font-size: $font-display-lg;
+        color: var(--primary-color);
+        position: relative;
+        display: inline-block;
+        margin: 0;
+    }
+}
+
+// ============================================================================
+// HOMEPAGE SECTIONS
+// ============================================================================
+
 .homepage-section {
-    padding: clamp(space(12), 1vw, space(20)) clamp(space(6), 1vw, space(8));
-    margin-block: clamp(space(10), 10vh, space(50));
+    padding: $spacing-fluid-section $spacing-fluid-inline;
     overflow: hidden;
     position: relative;
+    margin-bottom: $spacing-fluid-vh-lg;
 
-    @media (min-width: 1024px) {
+    @media (min-width: $breakpoint-md-alt) {
         display: flex;
         align-items: center;
     }
 
     &:nth-child(even) {
         .homepage-container {
-            @media (min-width: 1024px) {
+            @media (min-width: $breakpoint-md-alt) {
                 flex-direction: row-reverse;
             }
         }
     }
 
     .homepage-container {
-        max-width: clamp(1024px, 80vw, 1920px);
-        margin: space(0) auto;
+        max-width: $width-container-md;
+        margin: $spacing-none auto;
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: left;
-        gap: space(8);
+        gap: $spacing-lg;
 
-        @media (min-width: 1024px) {
+        @media (min-width: $breakpoint-md-alt) {
             flex-direction: row;
             align-items: center;
-            gap: space(24);
+            gap: $spacing-3xl;
         }
 
         .homepage-image-wrapper {
-            margin-bottom: space(0);
+            margin-bottom: $spacing-none;
             will-change: transform, opacity;
-            border-radius: var(--radius);
+            border-radius: $radius-md;
             box-shadow: var(--glow);
             overflow: hidden;
             position: relative;
-            width: 80%;
-            aspect-ratio: 16 / 9;
+            aspect-ratio: $aspect-video;
 
-            @media (min-width: 1024px) {
-                flex: 1.5;
-                aspect-ratio: 3 / 2;
+            @media (min-width: $breakpoint-md-alt) {
+                flex: $flex-grow;
+                aspect-ratio: $aspect-photo;
             }
 
             .homepage-image {
-                width: 100%;
-                height: 100%;
+                width: $width-full;
+                height: $height-full;
                 display: block;
                 object-fit: cover;
                 object-position: center;
-                transition: transform 0.3s ease;
+                transition: transform $duration-fast $ease-standard;
 
                 &:hover {
-                    transform: scale(1.02);
+                    transform: scale($scale-hover);
                 }
             }
         }
 
         .homepage-content {
             will-change: transform, opacity;
-            width: 80%;
 
-            @media (min-width: 1024px) {
-                flex: 1;
+            @media (min-width: $breakpoint-md-alt) {
+                flex: $flex-equal;
             }
 
             .homepage-subtitle {
                 display: inline-block;
                 font-family: 'Exo 2', sans-serif;
-                font-weight: normal;
-                font-size: clamp(font(-2), 1vw, font(0));
+                font-weight: $weight-normal;
+                font-size: $font-ui-sm;
                 text-transform: uppercase;
                 letter-spacing: tracking(wider);
                 color: var(--secondary-color);
                 position: relative;
-                padding-left: space(10);
+                padding-left: $spacing-subtitle-padding;
 
                 &:before {
                     content: "";
                     position: absolute;
-                    left: space(0);
-                    top: 50%;
-                    width: space(8);
-                    height: space(1)/4;
+                    left: $spacing-none;
+                    top: $gradient-middle;
+                    width: $size-element-subtitle-line;
+                    height: $size-element-line-medium;
                     background-color: var(--primary-color);
                 }
             }
 
             .homepage-title {
-                font-family: 'Exo 2', sans-serif;
-                font-size: clamp(font(1), 1.5vw, font(3));
-                font-weight: 700;
+                font-size: $font-display-md;
                 letter-spacing: tracking(normal);
-                margin: clamp(space(2), 1vh, space(4)) 0;
+                margin: clamp($spacing-2xs, 1vh, $spacing-sm) $spacing-none;
                 position: relative;
                 color: var(--primary-color);
             }
 
             .homepage-description {
-                font-size: clamp((font(-1) + font(0))/2, 1vw, font(1));
-                line-height: 1.5;
-                margin-bottom: space(6);
+                font-size: $font-body-xl;
+                line-height: $leading-normal;
+                margin-bottom: $spacing-md;
             }
 
             .cta-button {
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                padding: (space(2) + space(3))/2;
+                padding: ($spacing-2xs + $spacing-xs) / 2;
                 background: linear-gradient(to top, var(--primary-color), var(--secondary-color));
                 color: #FFFFFF;
                 text-decoration: none;
-                border-radius: var(--radius);
+                border-radius: $radius-md;
                 font-family: 'Exo 2', sans-serif;
-                font-weight: normal;
-                font-size: clamp(font(-1), 1vw, font(1));
+                font-weight: $weight-normal;
+                font-size: $font-ui-md;
                 font-variant-caps: small-caps;
                 letter-spacing: tracking(loose);
-                transition: all 0.3s ease;
+                transition: all $duration-fast $ease-standard;
                 position: relative;
                 overflow: hidden;
 
@@ -129,11 +152,11 @@
                     display: inline-flex;
                     align-self: center;
                     position: relative;
-                    gap: space(1);
+                    gap: $spacing-3xs;
 
                     .icon {
-                        width: clamp(font(-1), 1.5vw, font(1));
-                        height: clamp(font(-1), 1.5vw, font(1));
+                        width: $size-icon-fluid-sm;
+                        height: $size-icon-fluid-sm;
                         align-self: flex-end;
                     }
                 }
@@ -141,27 +164,27 @@
                 &::before {
                     content: '';
                     position: absolute;
-                    top: -50%;
-                    left: -150%;
-                    width: 60%;
-                    height: 200%;
+                    top: $gradient-position-top;
+                    left: $gradient-position-left-far;
+                    width: $gradient-width;
+                    height: $gradient-height;
 
                     background: linear-gradient(
-                        120deg,
-                        transparent 0%,
-                        rgba(255, 255, 255, 0.15) 40%,
-                        rgba(255, 255, 255, 0.35) 50%,
-                        rgba(255, 255, 255, 0.15) 60%,
-                        transparent 100%
+                        $gradient-angle-diagonal,
+                        transparent $gradient-start,
+                        rgba(255, 255, 255, 0.15) $gradient-early,
+                        rgba(255, 255, 255, 0.35) $gradient-middle,
+                        rgba(255, 255, 255, 0.15) $gradient-late,
+                        transparent $gradient-end
                     );
 
-                    transform: skewX(-20deg);
-                    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                    transform: skewX($skew-subtle);
+                    transition: left $duration-medium $ease-smooth;
                     pointer-events: none;
                 }
 
                 &:hover::before {
-                    left: 150%;
+                    left: $gradient-position-right-far;
                 }
             }
         }
