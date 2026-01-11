@@ -37,7 +37,6 @@ window.addEventListener('scroll', function() {
 
 // Toggle menu function
 function toggleMenu(isOpen) {
-    hamburger.classList.toggle('active', isOpen);
     nav.classList.toggle('active', isOpen);
     document.body.classList.toggle('menu-open', isOpen);
 
