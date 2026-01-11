@@ -1,176 +1,166 @@
+// ============================================================================
+// HERO SECTION - VERTICAL V-SHAPE PROGRESSION
+// ============================================================================
+
 .hero {
     position: relative;
-    min-height: 100vh;
-    padding: space(8);
+    min-height: $height-viewport;
+    padding: $spacing-lg;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: clamp(space(24), 12vw, space(64));
+    margin-top: $spacing-fluid-vh-lg;
 
     .hero-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        max-width: clamp(1024px, 80vw, 1920px);
-        width: 100%;
-        gap: space(8);
+        max-width: $width-container-md;
+        width: $width-full;
+        gap: $spacing-fluid-hero-container;
 
+        // ----------------------------------------------------------------
+        // 1. HERO NAME - Widest element (100% of container)
+        // ----------------------------------------------------------------
         .hero-name {
             font-family: 'Cropaso', sans-serif;
-            font-size: clamp(font(2), 3.75vw, font(9));
-            font-weight: normal;
+            font-size: $font-display-xl;
+            font-weight: $weight-normal;
             letter-spacing: tracking(normal);
             text-align: center;
-            width: 100%;
-            line-height: 1.25;
-            opacity: 0;
-            transform: translateY(2.5rem);
+            width: $width-full;
+            line-height: $leading-snug;
+            opacity: $opacity-hidden;
+            transform: translateY($translate-md);
             color: var(--primary-color);
-            margin-bottom: clamp(space(4), 2vw, space(20));
+            margin-bottom: $spacing-sm;
         }
 
-        .content-row {
+        // ----------------------------------------------------------------
+        // 2. HERO INTRO - Comfortable reading width (narrower than name)
+        // ----------------------------------------------------------------
+        .hero-intro {
             display: flex;
             flex-direction: column;
-            width: 75%;
-            gap: space(12);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: $width-full;
+            max-width: $width-reading-comfortable;
 
-            @media (min-width: 769px) {
-                flex-direction: row;
-                align-items: flex-start;
-                justify-content: space-between;
+            .hero-greeting {
+                font-family: 'Exo 2', sans-serif;
+                font-weight: $weight-medium;
+                font-style: italic;
+                letter-spacing: tracking(relaxed);
+                font-size: $font-heading-lg;
+                margin-bottom: $spacing-sm;
+                color: var(--primary-color);
+                opacity: $opacity-hidden;
+                transform: translateX(-$translate-sm);
             }
 
-            .hero-intro {
-                flex: 2;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
+            .hero-description {
+                font-size: $font-body-xl;
+                line-height: $leading-normal;
+                color: var(--text-color);
+                margin-bottom: $spacing-none;
+                opacity: $opacity-hidden;
+                transform: translateY($translate-xs);
                 text-align: center;
 
-                @media (min-width: 769px) {
-                    text-align: left;
-                }
-
-                .hero-greeting {
-                    font-family: 'Exo 2', sans-serif;
-                    font-weight: 500;
-                    font-style: italic;
-                    letter-spacing: tracking(relaxed);
-                    font-size: clamp(font(0), 1.5vw, font(2));
-                    margin-bottom: space(4);
-                    color: var(--primary-color);
-                    opacity: 0;
-                    transform: translateX(-1.875rem);
-                    position: relative;
-                    text-align: left;
-                }
-
-                .hero-description {
-                    font-size: clamp((font(-1) + font(0))/2, 1vw, font(1));
-                    line-height: 1.5;
+                strong {
                     color: var(--text-color);
-                    margin-bottom: space(0);
-                    opacity: 0;
-                    transform: translateY(1.25rem);
-                    text-align: left;
-
-                    strong {
-                        color: var(--text-color);
-                        font-style: italic;
-                    }
-                    
-                    @media (min-width: 769px) {
-                        text-align: left;
-                        padding-right: clamp(space(23), 1.5vw, space(56));
-                    }
-                }
-            }
-
-            .quote-container {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: flex-start;
-                flex: 1;
-                max-width: none;
-                width: auto;
-                padding: space(8);
-                transform: translateX(1.875rem);
-                opacity: 0;
-                position: relative;
-                overflow: hidden;
-                min-height: font(5);
-
-                @media (min-width: 769px) {
-                    width: 40%;
-                }
-                
-                @media (min-width: 1025px) {
-                    width: 30rem;
-                }
-
-                .hero-quote {
-                    font-size: clamp(font(-1), 1vw, font(0));
                     font-style: italic;
-                    line-height: 1.5;
-                    position: relative;
-                    display: block;
-                    width: 100%;
-                    word-wrap: break-word;
-                    color: var(--text-color);
-                }
-
-                .hero-quote-author {
-                    font-size: clamp(font(-1), 1vw, font(0));
-                    color: var(--secondary-color);
-                    display: block;
-                    margin-top: space(4);
-                    align-self: flex-end;
-                    position: relative;
                 }
             }
         }
 
+        // ----------------------------------------------------------------
+        // 3. QUOTE CONTAINER - Narrower than intro
+        // ----------------------------------------------------------------
+        .quote-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: $width-full;
+            max-width: $width-quote-narrow;
+            padding: $spacing-lg;
+            transform: translateX($translate-sm);
+            opacity: $opacity-hidden;
+            position: relative;
+            overflow: hidden;
+            min-height: $size-element-min-quote;
+
+            .hero-quote {
+                font-size: $font-body-md;
+                font-style: italic;
+                line-height: $leading-normal;
+                position: relative;
+                display: block;
+                width: $width-full;
+                word-wrap: break-word;
+                color: var(--text-color);
+                text-align: center;
+            }
+
+            .hero-quote-author {
+                font-size: $font-body-md;
+                color: var(--secondary-color);
+                display: block;
+                margin-top: $spacing-sm;
+                align-self: flex-end;
+                position: relative;
+            }
+        }
+
+        // ----------------------------------------------------------------
+        // 4. POSTER WRAPPER - Moderate width, visually balanced
+        // ----------------------------------------------------------------
         .poster-wrapper {
-            width: 100%;
-            max-width: clamp(space(40)*2, 60vw, space(40)*5);
-            border-radius: var(--radius);
+            width: $width-full;
+            max-width: $width-poster;
+            border-radius: $radius-md;
             overflow: hidden;
             box-shadow: var(--glow);
-            opacity: 0;
-            transform: translateY(3.75rem);
-            margin-top: clamp(space(4), 2vw, space(20));
+            opacity: $opacity-hidden;
+            transform: translateY($translate-lg);
+            margin-top: $spacing-md;
             
             .poster-image {
-                width: 100%;
-                height: auto;
+                width: $width-full;
+                height: $height-auto;
                 display: block;
-                transition: transform 0.3s ease;
+                transition: transform $duration-fast $ease-standard;
             }
             
             &:hover {
                 .poster-image {
-                    transform: scale(1.02);
+                    transform: scale($scale-hover);
                 }
             }
         }
     }
 }
 
+// ============================================================================
+// CURSOR ANIMATION
+// ============================================================================
+
 .cursor {
     display: inline-block;
-    width: (space(0) + space(1))/2;
-    height: 1.25em;
-    margin-left: (space(0) + space(1))/2;
+    width: $size-element-cursor-width;
+    height: $size-element-cursor-height;
+    margin-left: $size-element-cursor-width;
     background-color: var(--primary-color);
-    animation: blink 1.2s steps(1) infinite;
+    animation: blink $duration-blink steps(1) infinite;
     vertical-align: middle;
     position: relative;
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+    0%, 100% { opacity: $opacity-visible; }
+    50% { opacity: $opacity-hidden; }
 }
