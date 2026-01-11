@@ -1,7 +1,9 @@
-@import '../base/variables';
-@import '../base/global';
-@import '../base/fonts';
 @import '../base/functions';
+@import '../base/tokens';
+@import '../base/variables';
+@import '../base/fonts';
+@import '../base/global';
+@import '../base/layout';
 @import '../components/header';
 @import '../components/navigation';
 @import '../components/footer';

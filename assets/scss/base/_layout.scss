@@ -1,0 +1,38 @@
+// ============================================================================
+// LAYOUT COMPONENTS
+// ============================================================================
+
+#page-overlay {
+    position: fixed;
+    top: map-get($position-full-cover, top);
+    left: map-get($position-full-cover, left);
+    width: map-get($position-full-cover, width);
+    height: map-get($position-full-cover, height);
+    background-color: var(--overlay-color);
+    opacity: $opacity-hidden;
+    visibility: hidden;
+    transition: opacity $duration-fast $ease-standard, visibility $duration-instant $duration-fast;
+    z-index: $z-overlay;
+
+    &.is-visible {
+        opacity: $opacity-visible;
+        visibility: visible;
+        transition: opacity $duration-fast $ease-standard, visibility $duration-instant $duration-instant;
+    }
+}
+
+#vanderpol-canvas {
+    position: fixed;
+    top: map-get($position-full-cover, top);
+    left: map-get($position-full-cover, left);
+    width: map-get($position-full-cover, width);
+    height: map-get($position-full-cover, height);
+    z-index: $z-below;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity $duration-fast $ease-standard;
+}
+
+body.is-loaded #vanderpol-canvas {
+    opacity: var(--pattern-opacity);
+}
