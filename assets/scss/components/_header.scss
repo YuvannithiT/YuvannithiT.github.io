@@ -1,15 +1,21 @@
+// ============================================================================
+// HEADER
+// ============================================================================
+
 header {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: var(--z-header);
+    top: $spacing-none;
+    left: $spacing-none;
+    width: $width-full;
+    z-index: $z-hf;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: space(4) space(8);
-    transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
-    opacity: 0;
+    padding: $spacing-sm $spacing-lg;
+    transition: transform $duration-fast $ease-standard, 
+                background-color $duration-fast $ease-standard, 
+                opacity $duration-fast $ease-standard;
+    opacity: $opacity-hidden;
     background-color: transparent;
 
     &.scrolled {
@@ -17,24 +23,24 @@ header {
     }
 
     &.hidden {
-        transform: translateY(-100%);
-        opacity: 0;
+        transform: translateY($translate-neg-full);
+        opacity: $opacity-hidden;
         pointer-events: none;
     }
 
     .site-branding {
         display: flex;
         align-items: center;
-        margin-left: space(0);
+        margin-left: $spacing-none;
         
         .site-logo {
             display: block;
-            width: clamp(font(4), 2.75vw, font(6));
-            height: clamp(font(4), 2.75vw, font(6));
+            width: $size-icon-fluid-lg;
+            height: $size-icon-fluid-lg;
             
             svg {
-                height: 100%;
-                width: auto;
+                height: $height-full;
+                width: $width-auto;
                 color: var(--primary-color);
             }
         }
@@ -42,21 +48,21 @@ header {
         .site-text {
             display: none;
 
-            @media (min-width: 1500px) {
+            @media (min-width: $breakpoint-2xl) {
                 display: block;
-                margin-left: space(0);
+                margin-left: $spacing-none;
                 flex-direction: row;
             }
 
             .site-name {
                 font-family: 'Cropaso', sans-serif;
-                font-weight: normal;
-                font-size: clamp(font(0), 1.25vw, font(3));
-                transform: scaleX(0.9);
+                font-weight: $weight-normal;
+                font-size: $font-heading-md;
+                transform: scaleX($scale-compress-x);
                 color: var(--primary-color);
                 letter-spacing: tracking(normal);
-                margin-bottom: space(1);
-                margin-left: space(-4);
+                margin-bottom: $spacing-3xs;
+                margin-left: $spacing-neg-sm;
 
                 a {
                     text-decoration: none;
@@ -66,13 +72,13 @@ header {
 
             .site-tagline {
                 font-family: 'Exo 2', sans-serif;
-                font-size: clamp(font(-3), 0.5vw, font(-1));
-                font-weight: 300;
+                font-size: $font-body-xs;
+                font-weight: $weight-light;
                 letter-spacing: tracking(wider);
                 color: var(--text-color);
                 text-transform: uppercase;
-                margin-top: space(0);
-                line-height: 1.1;
+                margin-top: $spacing-none;
+                line-height: $leading-tight;
             }
         }
     }

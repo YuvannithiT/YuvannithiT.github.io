@@ -1,47 +1,51 @@
+// ============================================================================
+// FOOTER
+// ============================================================================
+
 footer {
     color: var(--primary-color);
-    padding: space(4) 0;
+    padding: $spacing-sm $spacing-none;
     text-align: center;
-    width: 100%;
-    opacity: 0;
-    z-index: 1000;
+    width: $width-full;
+    opacity: $opacity-hidden;
+    z-index: $z-hf;
 
     .footer-content {
-        max-width: clamp(1024px, 75vw, 1920px);
-        margin: 0 auto;
-        padding: 0 space(8);
+        max-width: $width-container-sm;
+        margin: $spacing-none auto;
+        padding: $spacing-none $spacing-lg;
         display: flex;
         flex-direction: column-reverse;
-        gap: space(4);
+        gap: $spacing-sm;
         text-align: center;
 
-        @media (min-width: 601px) {
+        @media (min-width: $breakpoint-md) {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
             text-align: left;
-            gap: 0;
+            gap: $spacing-none;
         }
 
         .footer-copyright {
             font-family: 'Exo 2', sans-serif;
-            font-weight: 300;
-            font-size: clamp(font(-2), 1.5vw, font(0));
+            font-weight: $weight-light;
+            font-size: $font-body-sm;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: space(6);
+            gap: $spacing-md;
             list-style: none;
-            padding: 0;
-            margin: 0;
+            padding: $spacing-none;
+            margin: $spacing-none;
 
             a {
                 display: inline-block;
                 color: var(--primary-color);
                 text-decoration: none;
-                transition: color 0.3s ease;
+                transition: color $duration-fast $ease-standard;
 
                 &:hover {
                     color: var(--secondary-color);
@@ -49,8 +53,8 @@ footer {
             }
 
             .social-icon {
-                width: (font(0) + font(1))/2;
-                height: (font(0) + font(1))/2;
+                width: $size-icon-sm;
+                height: $size-icon-sm;
                 vertical-align: middle;
             }
         }
