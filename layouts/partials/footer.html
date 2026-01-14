@@ -2,13 +2,6 @@
     <div class="footer-content">
         <p class="footer-copyright">© {{ now.Format "2006" }} {{ .Site.Params.author }}. All rights reserved.</p>
         <ul class="social-links">
-            {{ with .Site.Params.linkedin }}
-                <li>
-                    <a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <span data-lucide="linkedin" class="social-icon"></span>
-                    </a>
-                </li>
-            {{ end }}
             {{ with .Site.Params.github }}
                 <li>
                     <a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
