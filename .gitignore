@@ -4,6 +4,9 @@
 .hugo_build.lock
 hugo_stats.json
 
+# VS Code extension directories
+.VSCodeCounter/
+
 # OS generated files
 .DS_Store
 .DS_Store?
