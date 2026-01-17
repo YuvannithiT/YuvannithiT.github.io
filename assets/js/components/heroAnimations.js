@@ -6,11 +6,6 @@ import { loadAndAnimateQuote } from './quote.js';
 window.addEventListener('load', function() {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-    tl.to("header, footer", {
-        opacity: 1,
-        duration: 1
-    }, 0);
-
     if (typeof createGlitchAnimation === 'function') {
         createGlitchAnimation();
     } else {
