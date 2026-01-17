@@ -111,20 +111,31 @@ function handleSystemThemeChange(e) {
     }
 }
 
-// Keyboard accessibility - toggle theme with T
-document.addEventListener('keydown', function(e) {
-    if (e.key === 't' || e.key === 'T') {
-        // Advance index
+function isTypingContext(e) {
+    const el = document.activeElement;
+    if (!el) return false;
+
+    return (
+        el.tagName === 'INPUT' ||
+        el.tagName === 'TEXTAREA' ||
+        el.isContentEditable
+    );
+}
+
+document.addEventListener('keydown', (e) => {
+    if (isTypingContext()) return;
+
+    if (e.ctrlKey && e.altKey && e.key.toLowerCase() === 't') {
+        e.preventDefault();
+
         currentThemeIndex = (currentThemeIndex + 1) % themes.length;
         const newThemeSetting = themes[currentThemeIndex];
 
-        // Apply theme and persist
         applyTheme(newThemeSetting);
         localStorage.setItem('preferredTheme', newThemeSetting);
 
-        // Animate the icon if present
-        const iconElement = themeToggle.querySelector('.theme-icon');
-        if (iconElement) {
+        const iconElement = themeToggle?.querySelector('.theme-icon');
+        if (iconElement && window.gsap) {
             gsap.to(iconElement, {
                 rotation: "+=360",
                 duration: 0.5,
