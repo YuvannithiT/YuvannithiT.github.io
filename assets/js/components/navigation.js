@@ -9,7 +9,6 @@ let touchStartX = 0;
 let touchEndX = 0;
 let lastScrollY = window.scrollY;
 
-// Simplified scroll behavior - just hide/show header
 window.addEventListener('scroll', function() {
     if (document.body.classList.contains('menu-open')) {
         return;
@@ -35,7 +34,6 @@ window.addEventListener('scroll', function() {
     lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
 }, { passive: true });
 
-// Toggle menu function
 function toggleMenu(isOpen) {
     nav.classList.toggle('active', isOpen);
     document.body.classList.toggle('menu-open', isOpen);
@@ -44,9 +42,7 @@ function toggleMenu(isOpen) {
         pageOverlay.classList.toggle('is-visible', isOpen);
     }
     
-    // Prevent body scroll when menu is open
     if (isOpen) {
-        // Calculate scrollbar width before hiding it
         const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
         const scrollY = window.scrollY;
         
@@ -54,10 +50,8 @@ function toggleMenu(isOpen) {
         document.body.style.position = 'fixed';
         document.body.style.width = '100%';
         
-        // Compensate for scrollbar disappearance
         if (scrollbarWidth > 0) {
             document.body.style.paddingRight = `${scrollbarWidth}px`;
-            // Also adjust header if it's fixed/sticky
             if (header) {
                 header.style.paddingRight = `${scrollbarWidth}px`;
             }
@@ -65,7 +59,6 @@ function toggleMenu(isOpen) {
     } else {
         const scrollY = document.body.style.top;
         
-        // Remove all locks
         document.body.style.position = '';
         document.body.style.top = '';
         document.body.style.width = '';
@@ -79,14 +72,12 @@ function toggleMenu(isOpen) {
     }
 }
 
-// Hamburger click - works on all screen sizes
 hamburger.addEventListener('click', function(e) {
     const willBeOpen = !this.classList.contains('active');
     toggleMenu(willBeOpen);
     e.stopPropagation();
 });
 
-// Click outside to close
 document.addEventListener('click', function(e) {
     if (nav.classList.contains('active')) {
         if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
@@ -95,14 +86,12 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// Click overlay to close
 if (pageOverlay) {
     pageOverlay.addEventListener('click', function() {
         toggleMenu(false);
     });
 }
 
-// Close menu when clicking nav links
 nav.addEventListener('click', function(e) {
     if (e.target.tagName === 'A') {
         toggleMenu(false);
@@ -111,7 +100,6 @@ nav.addEventListener('click', function(e) {
     }
 });
 
-// Touch swipe to close (mobile)
 nav.addEventListener('touchstart', function(e) {
     touchStartX = e.changedTouches[0].screenX;
 }, { passive: true });
@@ -120,13 +108,11 @@ nav.addEventListener('touchend', function(e) {
     touchEndX = e.changedTouches[0].screenX;
     const swipeThreshold = 75;
     
-    // Swipe right to close
     if (touchEndX - touchStartX > swipeThreshold && nav.classList.contains('active')) {
         toggleMenu(false);
     }
 }, { passive: true });
 
-// Prevent scroll on body when menu is open
 document.addEventListener('touchmove', function(e) {
     if (document.body.classList.contains('menu-open')) {
         if (!nav.contains(e.target)) {
@@ -135,10 +121,22 @@ document.addEventListener('touchmove', function(e) {
     }
 }, { passive: false });
 
-// Keyboard accessibility - toggle menu with M
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'm' || e.key === 'M') {
-        // Toggle based on current state
+function isTypingContext(e) {
+    const el = document.activeElement;
+    if (!el) return false;
+
+    return (
+        el.tagName === 'INPUT' ||
+        el.tagName === 'TEXTAREA' ||
+        el.isContentEditable
+    );
+}
+
+document.addEventListener('keydown', (e) => {
+    if (isTypingContext()) return;
+
+    if (e.ctrlKey && e.altKey && e.key.toLowerCase() === 'm') {
+        e.preventDefault();
         const isActive = nav.classList.contains('active');
         toggleMenu(!isActive);
     }
