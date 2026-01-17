@@ -1,7 +1,3 @@
-// ============================================================================
-// HERO SECTION - VERTICAL V-SHAPE PROGRESSION
-// ============================================================================
-
 .hero {
     position: relative;
     min-height: $height-viewport;
@@ -20,9 +16,6 @@
         width: $width-full;
         gap: $spacing-fluid-hero-container;
 
-        // ----------------------------------------------------------------
-        // 1. HERO NAME - Widest element (100% of container)
-        // ----------------------------------------------------------------
         .hero-name {
             font-family: 'Cropaso', sans-serif;
             font-size: $font-display-xl;
@@ -37,9 +30,6 @@
             margin-bottom: $spacing-sm;
         }
 
-        // ----------------------------------------------------------------
-        // 2. HERO INTRO - Comfortable reading width (narrower than name)
-        // ----------------------------------------------------------------
         .hero-intro {
             display: flex;
             flex-direction: column;
@@ -77,9 +67,6 @@
             }
         }
 
-        // ----------------------------------------------------------------
-        // 3. QUOTE CONTAINER - Narrower than intro
-        // ----------------------------------------------------------------
         .quote-container {
             display: flex;
             flex-direction: column;
@@ -116,9 +103,6 @@
             }
         }
 
-        // ----------------------------------------------------------------
-        // 4. POSTER WRAPPER - Moderate width, visually balanced
-        // ----------------------------------------------------------------
         .poster-wrapper {
             width: $width-full;
             max-width: $width-poster;
@@ -144,10 +128,6 @@
         }
     }
 }
-
-// ============================================================================
-// CURSOR ANIMATION
-// ============================================================================
 
 .cursor {
     display: inline-block;

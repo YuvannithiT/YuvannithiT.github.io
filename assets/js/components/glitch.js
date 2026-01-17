@@ -15,15 +15,13 @@ export function createGlitchAnimation() {
     glitchContainer.className = 'glitch-container';
     heroNameElement.appendChild(glitchContainer);
 
-    // Full original glitch character set
     const glitchChars = `░▒▓█▁▂▃▄▅▆▇▉▊▌▍▎▏─━│┃∑∏∂∇∞≠≈⊂⊃∈∉◈◆◇◉●○θφψαβγ±≤≥∫Δ→←↑↓⊗⊕`;
     const precisionChars = `█▓▒░▄▀▌▐■□◆◈∑∏∂∇θφψαβγ±≤≥∫Δ→←↑↓⊗⊕`;
     const allGlitchChars = glitchChars + precisionChars;
 
-    /* ---- Smooth Parameters (No Hiccups) ---- */
-    const charDelay = 35;              // Consistent character progression
-    const glitchSpeed = 55;            // Smooth glitch update rate
-    const glitchCycles = 7;            // Fixed cycles for predictability
+    const charDelay = 35;
+    const glitchSpeed = 55;
+    const glitchCycles = 7;
 
     let currentIndex = 0;
     const charSpans = [];
@@ -42,7 +40,6 @@ export function createGlitchAnimation() {
         const glitchInterval = setInterval(() => {
             cycles++;
 
-            // Smooth probability-based stabilization
             const stabilityThreshold = (cycles / glitchCycles) * 0.9;
 
             if (Math.random() < stabilityThreshold) {
@@ -82,6 +79,5 @@ export function createGlitchAnimation() {
         heroNameElement.style.lineHeight = '1.25';
     }
 
-    // Start animation
     setTimeout(animateNextChar, 300);
 }
