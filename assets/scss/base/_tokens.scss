@@ -1,116 +1,82 @@
-// ============================================================================
-// SEMANTIC TOKENS - CONTEXT AGNOSTIC BUILDING BLOCKS
-// ============================================================================
-
-// ----------------------------------------------------------------------------
-// 1. SPACING TOKENS (Fixed - T-shirt sizing)
-// ----------------------------------------------------------------------------
 $spacing-none: 0;
-$spacing-3xs: space(1);   // 4px  - Minimal breathing room
-$spacing-2xs: space(2);   // 8px  - Tight spacing
-$spacing-xs: space(3);    // 12px - Extra small
-$spacing-sm: space(4);    // 16px - Small
-$spacing-md: space(6);    // 24px - Medium
-$spacing-lg: space(8);    // 32px - Large
-$spacing-xl: space(12);   // 48px - Extra large
-$spacing-2xl: space(16);  // 64px - 2X large
-$spacing-3xl: space(24);  // 96px - 3X large
-$spacing-4xl: space(32);  // 128px - 4X large
-$spacing-5xl: space(40);  // 160px - 5X large
-$spacing-6xl: space(64);  // 256px - 6X large
+$spacing-3xs: space(1);
+$spacing-2xs: space(2);
+$spacing-xs: space(3);
+$spacing-sm: space(4);
+$spacing-md: space(6);
+$spacing-lg: space(8);
+$spacing-xl: space(12);
+$spacing-2xl: space(16);
+$spacing-3xl: space(24);
+$spacing-4xl: space(32);
+$spacing-5xl: space(40);
+$spacing-6xl: space(64);
 
-// Negative spacing (for overlaps, adjustments)
-$spacing-neg-sm: space(-4);  // -16px
+$spacing-neg-sm: space(-4);
 
-// Special fixed spacing (specific use cases)
 $spacing-subtitle-padding: space(10);
 $spacing-section-heading-bottom: space(8);
 
-// ----------------------------------------------------------------------------
-// 2. SPACING TOKENS (Fluid - Responsive with clamp)
-// ----------------------------------------------------------------------------
-// Micro fluid (subtle responsiveness)
-$spacing-fluid-xs: clamp(space(2), 1vw, space(4));      // 8-16px
-$spacing-fluid-sm: clamp(space(4), 2vw, space(8));      // 16-32px
-$spacing-fluid-md: clamp(space(6), 3vw, space(12));     // 24-48px
+$spacing-fluid-xs: clamp(space(2), 1vw, space(4));
+$spacing-fluid-sm: clamp(space(4), 2vw, space(8));
+$spacing-fluid-md: clamp(space(6), 3vw, space(12));
 
-// Standard fluid (moderate responsiveness)
-$spacing-fluid-lg: clamp(space(8), 5vw, space(16));     // 32-64px
-$spacing-fluid-xl: clamp(space(12), 8vw, space(24));    // 48-96px
-$spacing-fluid-2xl: clamp(space(16), 10vw, space(32));  // 64-128px
+$spacing-fluid-lg: clamp(space(8), 5vw, space(16));
+$spacing-fluid-xl: clamp(space(12), 8vw, space(24));
+$spacing-fluid-2xl: clamp(space(16), 10vw, space(32));
 
-// Macro fluid (strong responsiveness - for sections)
-$spacing-fluid-3xl: clamp(space(24), 15vw, space(48));  // 96-192px
-$spacing-fluid-4xl: clamp(space(32), 20vw, space(64));  // 128-256px
+$spacing-fluid-3xl: clamp(space(24), 15vw, space(48));
+$spacing-fluid-4xl: clamp(space(32), 20vw, space(64));
 
-// Vertical fluid (viewport height based)
-$spacing-fluid-vh-sm: clamp(space(8), 5vh, space(16));   // 32-64px
-$spacing-fluid-vh-md: clamp(space(10), 10vh, space(50)); // 40-200px
-$spacing-fluid-vh-lg: clamp(space(24), 10vmax, space(64)); // 96-256px
+$spacing-fluid-vh-sm: clamp(space(8), 5vh, space(16));
+$spacing-fluid-vh-md: clamp(space(10), 10vh, space(50));
+$spacing-fluid-vh-lg: clamp(space(24), 10vmax, space(64));
 
-// Special fluid spacing (specific use cases)
-$spacing-fluid-section: clamp(space(12), 1vw, space(20));      // Section padding
-$spacing-fluid-inline: clamp(space(6), 1vw, space(8));         // Inline padding
-$spacing-fluid-hero-name: clamp(space(4), 2vw, space(20));     // Hero name margin
-$spacing-fluid-hero-container: clamp($spacing-xl, 5vmax, $spacing-3xl);     // Hero container gaps
-$spacing-fluid-nav-vertical: clamp(space(20), 2vw, space(30)); // Nav top padding
-$spacing-fluid-nav-inline: clamp(space(8), 1vw, space(10));    // Nav side padding
-$spacing-fluid-nav-bottom: clamp(space(8), 1vw, space(14));    // Nav bottom padding
-$spacing-fluid-hero-description-right: clamp(space(23), 1.5vw, space(56)); // Hero description right padding
+$spacing-fluid-section: clamp(space(12), 1vw, space(20));
+$spacing-fluid-inline: clamp(space(6), 1vw, space(8));
+$spacing-fluid-hero-name: clamp(space(4), 2vw, space(20));
+$spacing-fluid-hero-container: clamp($spacing-xl, 5vmax, $spacing-3xl);
+$spacing-fluid-nav-vertical: clamp(space(20), 2vw, space(30));
+$spacing-fluid-nav-inline: clamp(space(8), 1vw, space(10));
+$spacing-fluid-nav-bottom: clamp(space(8), 1vw, space(14));
+$spacing-fluid-hero-description-right: clamp(space(23), 1.5vw, space(56));
 
-// ----------------------------------------------------------------------------
-// 3. FONT SIZE TOKENS (Fluid - All responsive)
-// ----------------------------------------------------------------------------
-// Display sizes (hero, headlines)
-$font-display-xl: clamp(font(2), 3.75vw, font(9));   // Massive hero text
-$font-display-lg: clamp(font(2), 2.5vw, font(6));    // Large display
-$font-display-md: clamp(font(1), 1.5vw, font(3));    // Medium display
+$font-display-xl: clamp(font(2), 3.75vw, font(9));
+$font-display-lg: clamp(font(2), 2.5vw, font(6));
+$font-display-md: clamp(font(1), 1.5vw, font(3));
 
-// Heading sizes
-$font-heading-lg: clamp(font(0), 1.5vw, font(2));    // Large heading
-$font-heading-md: clamp(font(0), 1.25vw, font(3));   // Medium heading (site name)
-$font-heading-sm: clamp(font(-1), 1vw, font(1));     // Small heading
+$font-heading-lg: clamp(font(0), 1.5vw, font(2));
+$font-heading-md: clamp(font(0), 1.25vw, font(3));
+$font-heading-sm: clamp(font(-1), 1vw, font(1));
 
-// Body sizes
-$font-body-xl: clamp((font(-1) + font(0))/2, 1vw, font(1));  // Large body
-$font-body-lg: clamp(font(-1), 1vw, font(1));                 // Regular large
-$font-body-md: clamp(font(-1), 1vw, font(0));                 // Medium body
-$font-body-sm: clamp(font(-2), 1.5vw, font(0));              // Small body
-$font-body-xs: clamp(font(-3), 0.5vw, font(-1));             // Extra small
+$font-body-xl: clamp((font(-1) + font(0))/2, 1vw, font(1));
+$font-body-lg: clamp(font(-1), 1vw, font(1));
+$font-body-md: clamp(font(-1), 1vw, font(0));
+$font-body-sm: clamp(font(-2), 1.5vw, font(0));
+$font-body-xs: clamp(font(-3), 0.5vw, font(-1));
 
-// UI element sizes
-$font-ui-lg: clamp(font(0), 1vw, font(1));           // Large UI (nav links, buttons)
-$font-ui-md: clamp(font(-1), 1vw, font(1));          // Medium UI
-$font-ui-sm: clamp(font(-2), 1vw, font(0));          // Small UI (subtitles)
+$font-ui-lg: clamp(font(0), 1vw, font(1));
+$font-ui-md: clamp(font(-1), 1vw, font(1));
+$font-ui-sm: clamp(font(-2), 1vw, font(0));
 
-// ----------------------------------------------------------------------------
-// 4. ICON & ELEMENT SIZE TOKENS (Mixed)
-// ----------------------------------------------------------------------------
-// Fixed sizes
-$size-icon-xs: font(0);                    // 16px
-$size-icon-sm: (font(0) + font(1))/2;      // ~20px
-$size-icon-md: font(2);                    // ~31px
-$size-icon-lg: font(3);                    // ~39px
+$size-icon-xs: font(0);
+$size-icon-sm: (font(0) + font(1))/2;
+$size-icon-md: font(2);
+$size-icon-lg: font(3);
 
-// Fluid sizes
-$size-icon-fluid-sm: clamp(font(-1), 1.5vw, font(1));   // Responsive small icon
-$size-icon-fluid-md: clamp(font(1), 2vw, font(3));      // Responsive medium icon
-$size-icon-fluid-lg: clamp(font(4), 2.75vw, font(6));   // Responsive large (logo)
+$size-icon-fluid-sm: clamp(font(-1), 1.5vw, font(1));
+$size-icon-fluid-md: clamp(font(1), 2vw, font(3));
+$size-icon-fluid-lg: clamp(font(4), 2.75vw, font(6));
 
-// Element sizes (hamburger, lines, etc.)
-$size-element-line-thin: font(0)/8;        // Thin line (~2px)
-$size-element-line-medium: space(1)/4;     // Medium line (1px)
-$size-element-cursor-width: $spacing-3xs;  // Cursor width
-$size-element-cursor-height: space(5);       // Cursor height
-$size-element-hamburger-width: font(3);    // Hamburger width
-$size-element-hamburger-height: font(1);   // Hamburger height
-$size-element-min-quote: font(5);          // Quote min height
-$size-element-subtitle-line: $spacing-lg;  // Subtitle decorative line
+$size-element-line-thin: font(0)/8;
+$size-element-line-medium: space(1)/4;
+$size-element-cursor-width: $spacing-3xs;
+$size-element-cursor-height: space(5);
+$size-element-hamburger-width: font(3);
+$size-element-hamburger-height: font(1);
+$size-element-min-quote: font(5);
+$size-element-subtitle-line: $spacing-lg;
 
-// ----------------------------------------------------------------------------
-// 5. WIDTH & CONTAINER TOKENS
-// ----------------------------------------------------------------------------
-// Fixed widths
 $width-full: 100%;
 $width-viewport: 100vw;
 $width-narrow: 75%;
@@ -118,18 +84,16 @@ $width-standard: 80%;
 $width-quote-desktop-sm: 40%;
 $width-auto: auto;
 
-// Fluid container widths
+$width-container-xs: clamp(640px, 45vw, 820px);
 $width-container-sm: clamp(1024px, 75vw, 1920px);
 $width-container-md: clamp(1024px, 80vw, 1920px);
 $width-container-lg: clamp(1024px, 90vw, 1920px);
 
-// Specific element widths (fluid)
-$width-reading-comfortable: clamp(300px, 65vw, 800px); 
+$width-reading-comfortable: clamp(300px, 65vw, 800px);
 $width-quote-narrow: clamp(280px, 45vw, 600px);
 $width-poster: clamp(300px, 55vw, 700px);
 $width-quote-desktop-lg: 30rem;
 
-// Sidebar/Menu widths (responsive breakpoint-based)
 $width-sidebar-mobile: 75%;
 $width-sidebar-xs: 65%;
 $width-sidebar-sm: 55%;
@@ -138,75 +102,50 @@ $width-sidebar-lg: 25%;
 $width-sidebar-xl: 20%;
 $width-sidebar-max: 400px;
 
-// Heights
 $height-full: 100%;
 $height-viewport: 100vh;
 $height-auto: auto;
 
-// ----------------------------------------------------------------------------
-// 6. TRANSFORM TOKENS (Fixed - Semantic movement)
-// ----------------------------------------------------------------------------
-// Translation distances
-$translate-micro: 0.5rem;          // 8px - Subtle
-$translate-xs: 1.25rem;            // 20px - Extra small
-$translate-sm: 1.875rem;           // 30px - Small
-$translate-md: 2.5rem;             // 40px - Medium
-$translate-lg: 3.75rem;            // 60px - Large
-$translate-full: 100%;             // Full container
-$translate-neg-full: -100%;        // Negative full
+$translate-micro: 0.5rem;
+$translate-xs: 1.25rem;
+$translate-sm: 1.875rem;
+$translate-md: 2.5rem;
+$translate-lg: 3.75rem;
+$translate-full: 100%;
+$translate-neg-full: -100%;
 
-// Specific calculated values (for precision)
-$translate-hamburger: 0.5625rem;   // Hamburger animation
+$translate-hamburger: 0.5625rem;
 
-// Scale values
 $scale-none: 1;
-$scale-hover: 1.02;                // Subtle hover growth
-$scale-compress-x: 0.9;            // Horizontal compression
+$scale-hover: 1.02;
+$scale-compress-x: 0.9;
 
-// Rotation values
 $rotate-quarter: 45deg;
 $rotate-quarter-neg: -45deg;
 $rotate-half: 90deg;
 
-// Skew values
 $skew-subtle: -20deg;
 
-// ----------------------------------------------------------------------------
-// 7. OPACITY TOKENS (Fixed - Semantic transparency)
-// ----------------------------------------------------------------------------
 $opacity-hidden: 0;
 $opacity-faint: 0.5;
 $opacity-visible: 1;
 
-// ----------------------------------------------------------------------------
-// 8. Z-INDEX TOKENS (Fixed - Layering system)
-// ----------------------------------------------------------------------------
-$z-below: -1;           // Background elements
-$z-base: 0;             // Default layer
-$z-hf: 10;          // Fixed header
-$z-overlay: 20;         // Overlays
-$z-nav: 30;             // Navigation drawers
-$z-menu: 40;            // Menu toggle
-// $z-modal: 50;           // Modals (future)
-// $z-toast: 60;           // Notifications (future)
+$z-below: -1;
+$z-base: 0;
+$z-hf: 10;
+$z-overlay: 20;
+$z-nav: 30;
+$z-menu: 40;
 
-// ----------------------------------------------------------------------------
-// 9. TIMING TOKENS (Fixed - Animation/Transition)
-// ----------------------------------------------------------------------------
-// Durations
 $duration-instant: 0s;
 $duration-fast: 0.3s;
 $duration-medium: 0.4s;
 $duration-slow: 0.5s;
 $duration-blink: 1.2s;
 
-// Easing curves
 $ease-standard: ease;
 $ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 
-// ----------------------------------------------------------------------------
-// 10. LINE HEIGHT TOKENS (Fixed - Typography rhythm)
-// ----------------------------------------------------------------------------
 $leading-none: 1;
 $leading-tight: 1.1;
 $leading-snug: 1.25;
@@ -214,49 +153,35 @@ $leading-normal: 1.5;
 $leading-relaxed: 1.75;
 $leading-loose: 2;
 
-// ----------------------------------------------------------------------------
-// 11. FONT WEIGHT TOKENS (Fixed - Already semantic)
-// ----------------------------------------------------------------------------
 $weight-light: 300;
 $weight-normal: 400;
 $weight-medium: 500;
 $weight-semibold: 600;
 $weight-bold: 700;
 
-// ----------------------------------------------------------------------------
-// 12. FLEX TOKENS (Fixed - Flex grow/shrink)
-// ----------------------------------------------------------------------------
 $flex-none: 0;
 $flex-equal: 1;
 $flex-grow: 1.5;
 $flex-double: 2;
 
-// ----------------------------------------------------------------------------
-// 13. ASPECT RATIO TOKENS (Fixed - Common ratios)
-// ----------------------------------------------------------------------------
 $aspect-square: 1 / 1;
 $aspect-video: 16 / 9;
 $aspect-photo: 3 / 2;
 $aspect-portrait: 2 / 3;
 $aspect-golden: 1.618 / 1;
 
-// ----------------------------------------------------------------------------
-// 14. BORDER RADIUS TOKENS (Fixed - Corner rounding)
-// ----------------------------------------------------------------------------
 $radius-none: 0;
-$radius-sm: 0.125rem;      // 2px
-$radius-md: 0.25rem;       // 4px (default)
-$radius-lg: 0.5rem;        // 8px
-$radius-xl: 1rem;          // 16px
-$radius-full: 9999px;      // Pill shape
-$radius-circle: 50%;       // Perfect circle
-$radius-scrollbar: 3px;    // Scrollbar specific
+$radius-sm: 0.125rem;
+$radius-md: 0.25rem;
+$radius-lg: 0.5rem;
+$radius-xl: 1rem;
+$radius-full: 9999px;
+$radius-circle: 50%;
+$radius-scrollbar: 3px;
 
-// ----------------------------------------------------------------------------
-// 15. BREAKPOINT TOKENS (Fixed - Media query values)
-// ----------------------------------------------------------------------------
 $breakpoint-xs: 375px;
 $breakpoint-sm: 425px;
+$breakpoint-sm-up: 426px;
 $breakpoint-md: 601px;
 $breakpoint-md-alt: 768px;
 $breakpoint-md-up: 769px;
@@ -265,9 +190,6 @@ $breakpoint-lg-up: 1025px;
 $breakpoint-xl: 1440px;
 $breakpoint-2xl: 1500px;
 
-// ----------------------------------------------------------------------------
-// 16. GRADIENT TOKENS (Fixed - Gradient positions)
-// ----------------------------------------------------------------------------
 $gradient-start: 0%;
 $gradient-early: 40%;
 $gradient-middle: 50%;
@@ -281,14 +203,8 @@ $gradient-position-right-far: 150%;
 $gradient-height: 200%;
 $gradient-width: 60%;
 
-// ----------------------------------------------------------------------------
-// 17. SCROLLBAR TOKENS (Fixed)
-// ----------------------------------------------------------------------------
 $scrollbar-width: 6px;
 
-// ----------------------------------------------------------------------------
-// 18. POSITION TOKENS (Fixed - Common positioning)
-// ----------------------------------------------------------------------------
 $position-full-cover: (
     top: 0,
     left: 0,
