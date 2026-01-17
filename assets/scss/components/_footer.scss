@@ -1,7 +1,3 @@
-// ============================================================================
-// FOOTER
-// ============================================================================
-
 footer {
     color: var(--primary-color);
     padding: $spacing-sm $spacing-none;
@@ -11,7 +7,6 @@ footer {
     z-index: $z-hf;
 
     .footer-content {
-        max-width: $width-container-sm;
         margin: $spacing-none auto;
         padding: $spacing-none $spacing-lg;
         display: flex;
@@ -53,8 +48,8 @@ footer {
             }
 
             .social-icon {
-                width: $size-icon-sm;
                 height: $size-icon-sm;
+                width: $width-auto;
                 vertical-align: middle;
             }
         }
