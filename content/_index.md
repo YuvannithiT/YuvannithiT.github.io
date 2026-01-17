@@ -1,5 +1,4 @@
 ---
-
 title: "Aerospace Dynamics and Control Engineering"
 description: "Welcome to the professional portfolio of Yuvannithi Thirumaran."
 
@@ -50,7 +49,6 @@ sections:
     cta_link: "/contact"
 
 homepage_heading: "Areas of Focus"
-
 ---
 
 an Aerospace Dynamics and Control Engineer specializing in flight dynamics, GNC, and real-time control for aerospace vehicles. From first principles to flight-proven control — an exploration through Dynamics. Control. Flight.
