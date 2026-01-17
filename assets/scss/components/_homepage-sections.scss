@@ -1,15 +1,11 @@
-// ============================================================================
-// HOMEPAGE SECTION HEADING
-// ============================================================================
-
 .homepage-section-heading {
     padding-inline: $spacing-fluid-inline;
     margin-top: $spacing-fluid-vh-md;
-    margin-bottom: $spacing-fluid-vh-sm;
 
-    .homepage-container {
+    .homepage-section-container {
         max-width: $width-container-md;
-        margin: 0 auto;
+        margin: $spacing-none auto;
+        padding: $spacing-none $spacing-lg $spacing-none;
     }
 
     h2 {
@@ -20,10 +16,6 @@
         margin: 0;
     }
 }
-
-// ============================================================================
-// HOMEPAGE SECTIONS
-// ============================================================================
 
 .homepage-section {
     padding: $spacing-fluid-section $spacing-fluid-inline;
@@ -47,6 +39,7 @@
     .homepage-container {
         max-width: $width-container-md;
         margin: $spacing-none auto;
+        padding: $spacing-none $spacing-lg $spacing-none;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -56,7 +49,7 @@
         @media (min-width: $breakpoint-md-alt) {
             flex-direction: row;
             align-items: center;
-            gap: $spacing-3xl;
+            gap: $spacing-fluid-lg;
         }
 
         .homepage-image-wrapper {
@@ -130,36 +123,24 @@
                 margin-bottom: $spacing-md;
             }
 
-            .cta-button {
+            %button-base {
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                padding: ($spacing-2xs + $spacing-xs) / 2;
-                background: linear-gradient(to top, var(--primary-color), var(--secondary-color));
-                color: #FFFFFF;
-                text-decoration: none;
+                gap: $spacing-2xs;
+                padding: $spacing-xs;
+                background: var(--secondary-color);
+                color: var(--light-bg);
+                border: none;
                 border-radius: $radius-md;
                 font-family: 'Exo 2', sans-serif;
-                font-weight: $weight-normal;
-                font-size: $font-ui-md;
+                font-weight: $weight-semibold;
                 font-variant-caps: small-caps;
-                letter-spacing: tracking(loose);
-                transition: all $duration-fast $ease-standard;
+                cursor: pointer;
                 position: relative;
                 overflow: hidden;
-
-                > span {
-                    display: inline-flex;
-                    align-self: center;
-                    position: relative;
-                    gap: $spacing-3xs;
-
-                    .icon {
-                        width: $size-icon-fluid-sm;
-                        height: $size-icon-fluid-sm;
-                        align-self: flex-end;
-                    }
-                }
+                text-decoration: none;
+                transition: all $duration-fast $ease-standard;
 
                 &::before {
                     content: '';
@@ -168,7 +149,6 @@
                     left: $gradient-position-left-far;
                     width: $gradient-width;
                     height: $gradient-height;
-
                     background: linear-gradient(
                         $gradient-angle-diagonal,
                         transparent $gradient-start,
@@ -177,7 +157,6 @@
                         rgba(255, 255, 255, 0.15) $gradient-late,
                         transparent $gradient-end
                     );
-
                     transform: skewX($skew-subtle);
                     transition: left $duration-medium $ease-smooth;
                     pointer-events: none;
@@ -185,6 +164,18 @@
 
                 &:hover::before {
                     left: $gradient-position-right-far;
+                }
+            }
+
+            .cta-button {
+                @extend %button-base;
+                font-size: $font-ui-md;
+                letter-spacing: tracking(loose);
+
+                .button-icon {
+                    height: $size-icon-fluid-sm;
+                    width: $width-auto;
+                    transform: translateY(13.5%);
                 }
             }
         }

@@ -42,7 +42,7 @@
 
     {{ if .Params.homepage_heading }}
         <div class="homepage-section-heading">
-            <div class="homepage-container">
+            <div class="homepage-section-container">
                 <h2>{{ .Params.homepage_heading }}</h2>
             </div>
         </div>
@@ -64,10 +64,8 @@
                     <h3 class="homepage-title">{{ .title }}</h3>
                     <p class="homepage-description">{{ .description | markdownify }}</p>
                     <a href="{{ .cta_link }}" target="_blank" rel="noopener noreferrer" aria-label="CTA Button" class="cta-button">
-                        <span>
-                            {{ .cta_text }}
-                            <span data-lucide="arrow-right" class="icon"></span>
-                        </span>
+                        <span class="button-text">{{ .cta_text }}</span>
+                        <span data-lucide="arrow-right" class="button-icon"></span>
                     </a>
                 </div>
             </div>
