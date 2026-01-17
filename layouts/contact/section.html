@@ -1,0 +1,119 @@
+{{ define "page-styles" }}
+    {{ $options := (dict "targetPath" "css/contact.css" "outputStyle" "compressed" "enableSourceMap" true) }}
+    {{ $style := resources.Get "scss/pages/contact.scss" | toCSS $options | resources.Fingerprint "sha256" }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen">
+{{ end }}
+
+{{ define "page-script-bundles" }}
+    {{ $retrievedJsBuildOptions := $.Scratch.Get "jsBuildOptions" }}
+
+    {{ $contactPageJS := resources.Get "js/contactPage.js" | js.Build $retrievedJsBuildOptions | fingerprint }}
+    {{ if $contactPageJS }}
+        <script defer src="{{ $contactPageJS.RelPermalink }}"></script>
+    {{ else }}
+        {{ warnf "Failed to build page-specific JS bundle (js/contact.js) for page %s." $.File.Path }}
+    {{ end }}
+{{ end }}
+
+{{ define "main" }}
+    <section class="contact-hero">
+        <div class="contact-container">
+            <h1 class="contact-page-title">{{ .Title }}</h1>
+            <div class="contact-intro">
+                {{ .Content }}
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-form-section">
+        <div class="contact-container">
+            <div class="form-wrapper" id="contact-form-wrapper">
+                <div class="form-header">
+                    <h2 class="form-heading">{{ .Params.form.heading }}</h2>
+                    <p class="form-subheading">{{ .Params.form.subheading }}</p>
+                </div>
+
+                <form 
+                    id="contact-form" 
+                    class="contact-form" 
+                    action="{{ .Params.form.endpoint }}" 
+                    method="POST"
+                    novalidate
+                >
+                    {{ with .Params.form.formsubmit.next }}
+                        <input type="hidden" name="_next" value="{{ . }}">
+                    {{ end }}
+                    {{ if .Params.form.formsubmit.captcha }}
+                        <input type="hidden" name="_captcha" value="true">
+                    {{ else }}
+                        <input type="hidden" name="_captcha" value="false">
+                    {{ end }}
+                    <input type="hidden" name="_template" value="{{ .Params.form.formsubmit.template }}">
+                    <input type="hidden" name="_subject" value="New contact form submission from {{ $.Site.Title }}">
+                    
+                    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+                    {{ range .Params.form.fields }}
+                        <div class="form-group {{ if .required }}required{{ end }}" data-field="{{ .name }}">
+                            <label for="{{ .name }}" class="form-label">
+                                {{ .label }}{{ if .required }}<span class="required-indicator" aria-label="required">*</span>{{ end }}
+                            </label>
+                            
+                            {{ if eq .type "textarea" }}
+                                <textarea 
+                                    id="{{ .name }}" 
+                                    name="{{ .name }}" 
+                                    class="form-input form-textarea"
+                                    placeholder="{{ .placeholder }}"
+                                    rows="{{ .rows }}"
+                                    {{ if .required }}required{{ end }}
+                                    {{ if .max_length }}maxlength="{{ .max_length }}"{{ end }}
+                                    {{ if .autocomplete }}autocomplete="{{ .autocomplete }}"{{ end }}
+                                    aria-describedby="{{ .name }}-error {{ .name }}-hint"
+                                ></textarea>
+                                {{ if .max_length }}
+                                    <div class="char-counter" id="{{ .name }}-hint">
+                                        <span class="char-count">0</span> / {{ .max_length }}
+                                    </div>
+                                {{ end }}
+                            {{ else }}
+                                <input 
+                                    type="{{ .type }}" 
+                                    id="{{ .name }}" 
+                                    name="{{ .name }}" 
+                                    class="form-input"
+                                    placeholder="{{ .placeholder }}"
+                                    {{ if .required }}required{{ end }}
+                                    {{ if .max_length }}maxlength="{{ .max_length }}"{{ end }}
+                                    {{ if .autocomplete }}autocomplete="{{ .autocomplete }}"{{ end }}
+                                    aria-describedby="{{ .name }}-error"
+                                >
+                            {{ end }}
+                            
+                            <span class="form-error" id="{{ .name }}-error" role="alert"></span>
+                        </div>
+                    {{ end }}
+
+                    <button type="submit" class="submit-button" id="submit-button">
+                        <span class="button-text">{{ .Params.form.submit_button }}</span>
+                        <span class="button-loader" aria-hidden="true"></span>
+                        <span data-lucide="send" class="button-icon"></span>
+                    </button>
+                </form>
+
+                <div class="success-message" id="success-message" role="status" aria-live="polite">
+                    <div class="success-icon">
+                        <span data-lucide="check-circle"></span>
+                    </div>
+                    <h3 class="success-heading">{{ .Params.form.success.heading }}</h3>
+                    <p class="success-text">{{ .Params.form.success.message }}</p>
+                    <p class="success-subtext">{{ .Params.form.success.subtext }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script id="validation-messages" type="application/json">
+        {{ .Params.form.validation | jsonify | safeJS }}
+    </script>
+{{ end }}
