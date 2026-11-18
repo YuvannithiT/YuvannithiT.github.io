@@ -28,3 +28,6 @@ Thumbs.db
 
 # If using node_modules (unlikely for your setup)
 # node_modules/
+
+# Local editor-generated files
+jsconfig.json
