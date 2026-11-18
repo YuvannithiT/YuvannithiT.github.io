@@ -8,26 +8,10 @@ hero:
     poster_alt: "PROJECT YT - ADCE"
 
 sections:
-  - subtitle: "Discover My Journey"
-    title: "My Engineering Path"
-    description: "My path into aerospace engineering has been shaped by a focus on dynamics, control, and simulation. From graduate research to independent projects, I work at the intersection of theory and practical modeling-building, testing, and refining control-oriented simulations for flight and space systems."
-    image: "images/sidestick.jpg"
-    image_alt: "About Me"
-    cta_text: "Explore Story"
-    cta_link: "/about"
-
-  - subtitle: "Professional Experience"
-    title: "Applied Dynamics & Control Work"
-    description: "I’ve contributed to academic research, early-stage aerospace programs, and independent consulting projects supporting dynamics modeling, guidance and control architecture, and trajectory analysis across atmospheric and spaceflight applications."
-    image: "images/rocket_trajectory.jpg"
-    image_alt: "Professional Experience"
-    cta_text: "See Experience"
-    cta_link: "/experience"
-
   - subtitle: "Project Portfolio"
     title: "Modeling & Simulation Projects"
     description: "A selection of technical projects focused on spacecraft attitude control, launch vehicle trajectories, UAV dynamics, and hybrid aircraft simulations. Most work centers on MATLAB/Simulink and Python-based modeling, with an emphasis on clarity, validation, and extensibility."
-    image: "images/hubble.jpg"
+    image: "images/sidestick.jpg"
     image_alt: "My Projects"
     cta_text: "View Projects"
     cta_link: "/projects"
